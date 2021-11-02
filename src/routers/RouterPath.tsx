@@ -1,24 +1,25 @@
 export enum RouterPath {
   //automatic
   DashboardLayout = "/dashboard",
-  AutomaticLayout = "/dashboard/automatic/app",
-  AccumulatedTime = "/dashboard/automatic/accumulatedtime",
+  AutomaticLayout = "/dashboard/app",
+  AccumulatedTime = "accumulatedtime",
 
   //menual
-  MenualLayout = "/dashboard/menual/app",
-  HighSeparator = "/dashboard/menual/high-separator",
-  TimeWashing = "/dashboard/menual/time-washing",
-  FermentedDryer = "/dashboardmenual/fermenteddryer",
-  NotificationRecord = "/dashboard/menual/notification-record",
-  IntegratedPower = "/dashboard/menual/Integratedpower-record",
+  MenualLayout = "menual/app",
+  HighSeparator = "menual/high-separator",
+  TimeWashing = "menual/time-washing",
+  FermentedDryer = "menual/fermenteddryer",
+  NotificationRecord = "menual/notification-record",
+  IntegratedPower = "menual/Integratedpower",
 
   //manager
-  MemberManagement = "/dashboard/manager/member-management",
-  ManagerNoti = "/dashboard/manager/noti",
-  ManagerHistory = "/dashboardmanager/history",
+  MemberManagement = "manager/member-management",
+  ManagerNoti = "manager/noti",
+  ManagerHistory = "manager/history",
 
   //global
   ProductList = "/productList",
   Login = "/login",
-  NotFount = "/404",
+  NotFound = "/404",
+  AllAdress = "*",
 }
