@@ -9,10 +9,10 @@ const Header = () => {
         height: "64px",
         top: 0,
         left: 0,
+        background: "orange",
+        zIndex: -1,
       }}
-    >
-      Header
-    </div>
+    ></div>
   );
 };
 

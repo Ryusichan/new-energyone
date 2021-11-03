@@ -3,22 +3,7 @@ import { Route } from "react-router-dom";
 import Login from "../../pages/Login";
 import NotFound from "../../pages/NotFound";
 import ProductList from "../../pages/ProductList";
-
-const Header = () => {
-  return (
-    <div
-      style={{
-        position: "fixed",
-        width: "100%",
-        height: "64px",
-        top: 0,
-        left: 0,
-        background: "orange",
-        zIndex: -1,
-      }}
-    ></div>
-  );
-};
+import Header from "../Header";
 
 interface Props {
   match: any;

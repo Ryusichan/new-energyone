@@ -11,20 +11,7 @@ import IntegratedPower from "../../pages/menual/IntegratedPower";
 import MenualLayout from "../../pages/menual/MenualLayout";
 import NotificationRecord from "../../pages/menual/NotificationRecord";
 import TimeWashing from "../../pages/menual/TimeWashing";
-
-const DashboardSidebar = () => {
-  return (
-    <div
-      style={{
-        position: "absolute",
-        width: "280px",
-        height: "100%",
-        background: "#f0f0f0",
-        zIndex: -1,
-      }}
-    ></div>
-  );
-};
+import DashboardContent from "./DashboardContent";
 
 interface Props {
   match: any;
@@ -34,7 +21,7 @@ const DashboardLayout = ({ match }: Props) => {
   return (
     <>
       {/* automatic */}
-      <Route path={match.path} component={DashboardSidebar} />
+      <Route path={match.path} component={DashboardContent} />
       <Route
         path={`${match.path}/app`}
         component={AutomaticLayout}
