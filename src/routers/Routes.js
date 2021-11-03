@@ -84,7 +84,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path={RouterPath.DashboardLayout} component={DashboardLayout} />
+        <Route path="/dashboard" component={DashboardLayout} />
 
         {/* global */}
         <Route path="/" component={GlobalLayout} />
