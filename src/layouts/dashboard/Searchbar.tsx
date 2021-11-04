@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+
+import { Icon } from "@iconify/react";
 import { styled, alpha } from "@mui/material/styles";
 import {
   ClickAwayListener,
-  Icon,
   IconButton,
   Input,
   InputAdornment,
@@ -47,12 +48,10 @@ const Searchbar = () => {
   };
 
   return (
-    // @ts-ignore
     <ClickAwayListener onClickAway={handleClose}>
       <div>
         {!isOpen && (
           <IconButton onClick={handleOpen}>
-            {/* @ts-ignore */}
             <Icon icon={searchFill} width={20} height={20} />
           </IconButton>
         )}
@@ -72,7 +71,6 @@ const Searchbar = () => {
                 <InputAdornment position="start">
                   <Box
                     component={Icon}
-                    /* @ts-ignore */
                     icon={searchFill}
                     sx={{ color: "text.disabled", width: 20, height: 20 }}
                   />
@@ -85,7 +83,6 @@ const Searchbar = () => {
             </Button>
           </SearchbarStyle>
         </Slide>
-        ;
       </div>
     </ClickAwayListener>
   );

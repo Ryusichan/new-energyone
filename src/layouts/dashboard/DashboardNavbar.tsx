@@ -9,7 +9,7 @@ import { MHidden } from "../../components/@material-extend";
 
 import Searchbar from "./Searchbar";
 import AccountPopover from "./AccountPopover";
-// import NotificationsPopover from './NotificationsPopover';
+import NotificationsPopover from "./NotificationsPopover";
 
 const DRAWER_WIDTH = 280;
 const APPBAR_MOBILE = 64;
@@ -58,7 +58,7 @@ const DashboardNavbar = ({ onOpenSidebar }: Props) => {
           alignItems="center"
           spacing={{ xs: 0.5, sm: 1.5 }}
         >
-          {/* <NotificationsPopover /> */}
+          <NotificationsPopover />
           <AccountPopover />
         </Stack>
       </ToolbarStyle>

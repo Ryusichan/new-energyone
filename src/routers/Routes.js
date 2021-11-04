@@ -6,13 +6,9 @@ import {
   Route,
 } from "react-router-dom";
 // layouts
-import Login from "../pages/Login";
 
-import NotFound from "../pages/NotFound";
-import ProductList from "../pages/ProductList";
-import { RouterPath } from "./RouterPath";
 import DashboardLayout from "../layouts/dashboard";
-import Header from "../layouts/Header";
+
 import GlobalLayout from "../layouts/globalLayout";
 // import AutomaticLayout from "../pages/automatic/AutomaticLayout";
 // import MenualLayout from "../pages/menual/MenualLayout";
