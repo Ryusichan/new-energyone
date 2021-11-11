@@ -1,11 +1,13 @@
-import React, { useRef, useState } from "react";
-
-import { Link as RouterLink } from "react-router-dom";
-
 import faker from "faker";
+import PropTypes from "prop-types";
 import { noCase } from "change-case";
+import { useRef, useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { set, sub, formatDistanceToNow } from "date-fns";
-
+import { Icon } from "@iconify/react";
+import bellFill from "@iconify/icons-eva/bell-fill";
+import clockFill from "@iconify/icons-eva/clock-fill";
+import doneAllFill from "@iconify/icons-eva/done-all-fill";
 // material
 import { alpha } from "@mui/material/styles";
 import {
@@ -23,16 +25,13 @@ import {
   ListItemAvatar,
   ListItemButton,
 } from "@mui/material";
-
-import { Icon } from "@iconify/react";
-import bellFill from "@iconify/icons-eva/bell-fill";
-import doneAllFill from "@iconify/icons-eva/done-all-fill";
-import clockFill from "@iconify/icons-eva/clock-fill";
 // utils
 import { mockImgAvatar } from "../../utils/mockImages";
 // components
 import Scrollbar from "../../components/Scrollbar";
 import MenuPopover from "../../components/MenuPopover";
+
+// ----------------------------------------------------------------------
 
 const NOTIFICATIONS = [
   {
@@ -146,8 +145,12 @@ function renderContent(notification: any) {
   };
 }
 
-const NotificationItem = ({ notification }: any) => {
-  const { avatar, title }: any = renderContent(notification);
+NotificationItem.propTypes = {
+  notification: PropTypes.object.isRequired,
+};
+
+function NotificationItem({ notification }: any) {
+  const { avatar, title } = renderContent(notification);
 
   return (
     <ListItemButton
@@ -189,14 +192,14 @@ const NotificationItem = ({ notification }: any) => {
       />
     </ListItemButton>
   );
-};
+}
 
-const NotificationsPopover = () => {
+export default function NotificationsPopover() {
   const anchorRef = useRef(null);
   const [open, setOpen] = useState(false);
-  const [notifications, setNotifications] = useState<any>(NOTIFICATIONS);
+  const [notifications, setNotifications] = useState(NOTIFICATIONS);
   const totalUnRead = notifications.filter(
-    (item: any) => item.isUnRead === true
+    (item) => item.isUnRead === true
   ).length;
 
   const handleOpen = () => {
@@ -209,7 +212,7 @@ const NotificationsPopover = () => {
 
   const handleMarkAllAsRead = () => {
     setNotifications(
-      notifications.map((notification: any) => ({
+      notifications.map((notification) => ({
         ...notification,
         isUnRead: false,
       }))
@@ -276,7 +279,7 @@ const NotificationsPopover = () => {
               </ListSubheader>
             }
           >
-            {notifications.slice(0, 2).map((notification: any) => (
+            {notifications.slice(0, 2).map((notification) => (
               <NotificationItem
                 key={notification.id}
                 notification={notification}
@@ -295,7 +298,7 @@ const NotificationsPopover = () => {
               </ListSubheader>
             }
           >
-            {notifications.slice(2, 5).map((notification: any) => (
+            {notifications.slice(2, 5).map((notification) => (
               <NotificationItem
                 key={notification.id}
                 notification={notification}
@@ -314,6 +317,4 @@ const NotificationsPopover = () => {
       </MenuPopover>
     </>
   );
-};
-
-export default NotificationsPopover;
+}
