@@ -6,21 +6,8 @@ import { styled } from '@mui/material/styles';
 import DashboardNavbar from "./DashboardNavbar";
 import DashboardSidebar from "./DashboardSidebar";
 
-// import AccumulatedTime from "../../pages/automatic/AccumulatedTime";
-// import AutomaticLayout from "../../pages/automatic/AutomaticLayout";
-// import ManagerHistory from "../../pages/manager/ManagerHistory";
-// import ManagerNoti from "../../pages/manager/ManagerNoti";
-// import MemberManagement from "../../pages/manager/MemberManagement";
-// import FermentedDryer from "../../pages/menual/FermentedDryer";
-// import HighSeparator from "../../pages/menual/HighSeparator";
-// import IntegratedPower from "../../pages/menual/IntegratedPower";
-// import MenualLayout from "../../pages/menual/MenualLayout";
-// import NotificationRecord from "../../pages/menual/NotificationRecord";
-// import TimeWashing from "../../pages/menual/TimeWashing";
-// import DashboardContent from "./DashboardContent";
-
 interface Props {
-  match: any;
+  // match: any;
 }
 
 const APP_BAR_MOBILE = 64;
@@ -45,7 +32,7 @@ const MainStyle = styled('div')(({ theme }) => ({
   }
 }));
 
-const DashboardLayout = ({ match }: Props) => {
+const DashboardLayout = ({  }: Props) => {
   const [open, setOpen] = useState(false);
   return (
     <RootStyle>

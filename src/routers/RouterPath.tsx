@@ -5,12 +5,12 @@ export enum RouterPath {
   AccumulatedTime = "accumulatedtime",
 
   //menual
-  MenualLayout = "menual/app",
-  HighSeparator = "menual/high-separator",
-  TimeWashing = "menual/time-washing",
-  FermentedDryer = "menual/fermenteddryer",
-  NotificationRecord = "menual/notification-record",
-  IntegratedPower = "menual/Integratedpower",
+  MenualLayout = "/dashboard/menual/app",
+  HighSeparator = "/dashboard/menual/high-separator",
+  TimeWashing = "/dashboard/menual/time-washing",
+  FermentedDryer = "/dashboard/menual/fermenteddryer",
+  NotificationRecord = "/dashboard/menual/notification-record",
+  IntegratedPower = "/dashboard/menual/Integratedpower",
 
   //manager
   MemberManagement = "manager/member-management",
@@ -18,8 +18,8 @@ export enum RouterPath {
   ManagerHistory = "manager/history",
 
   //global
-  ProductList = "/productList",
-  Login = "/login",
-  NotFound = "/404",
+  ProductList = "productList",
+  Login = "login",
+  NotFound = "404",
   AllAdress = "*",
 }

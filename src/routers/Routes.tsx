@@ -1,8 +1,4 @@
-import {
-  Navigate,
-  useRoutes,
-  BrowserRouter
-} from "react-router-dom";
+import { Navigate, useRoutes, BrowserRouter } from "react-router-dom";
 // layouts
 
 import DashboardLayout from "../layouts/dashboard";
@@ -24,6 +20,7 @@ import { RouterPath } from "./RouterPath";
 import Header from "../layouts/Header";
 import Login from "../pages/Login";
 import ProductList from "../pages/ProductList";
+import NotFound from "../pages/NotFound";
 
 // ----------------------------------------------------------------------
 
@@ -32,41 +29,45 @@ const Router = () => {
     // automatic
     {
       path: "/dashboard",
-      // @ts-ignore
+
       element: <DashboardLayout />,
       children: [
         //automatic
-        { element: <Navigate to="/dashboard/app" replace /> },
+        { element: <Navigate to="/dashboard/app" replace={true} /> },
         { path: "app", element: <AutomaticLayout /> },
         { path: "accumulatedtime", element: <AccumulatedTime /> },
         // menual
-        { path: RouterPath.MenualLayout, element: <MenualLayout /> },
-        { path: RouterPath.HighSeparator, element: <HighSeparator /> },
-        { path: RouterPath.TimeWashing, element: <TimeWashing /> },
-        { path: RouterPath.FermentedDryer, element: <FermentedDryer /> },
+        { path: "MenualLayout", element: <MenualLayout /> },
+        { path: "HighSeparator", element: <HighSeparator /> },
+        { path: "TimeWashing", element: <TimeWashing /> },
+        { path: "FermentedDryer", element: <FermentedDryer /> },
         {
-          path: RouterPath.NotificationRecord,
+          path: "NotificationRecord",
           element: <NotificationRecord />,
         },
-        { path: RouterPath.IntegratedPower, element: <IntegratedPower /> },
+        { path: "IntegratedPower", element: <IntegratedPower /> },
         // manager
-        { path: RouterPath.MemberManagement, element: <MemberManagement /> },
-        { path: RouterPath.ManagerNoti, element: <ManagerNoti /> },
-        { path: RouterPath.ManagerHistory, element: <ManagerHistory /> },
+        { path: "MemberManagement", element: <MemberManagement /> },
+        { path: "ManagerNoti", element: <ManagerNoti /> },
+        { path: "ManagerHistory", element: <ManagerHistory /> },
       ],
     },
     // global
-    {
-      path: "/",
-      element: <Header />,
-      children: [
-        { path: RouterPath.Login, element: <Login /> },
-        { path: RouterPath.ProductList, element: <ProductList /> },
-        { path: "/", element: <Navigate to="/dashboard" /> },
-        { path: "*", element: <Navigate to="/404" /> },
-      ],
-    },
-    { path: RouterPath.AllAdress, element: <Navigate to="/404" replace /> },
+    { path: "/login", element: <Login /> },
+    { path: "/productList", element: <ProductList /> },
+    { path: "/404", element: <NotFound /> },
+    // {
+    //   path: "/",
+    //   element: <Header />,
+    //   children: [
+    //     { path: "login", element: <Login /> },
+    //     { path: "productList", element: <ProductList /> },
+    //     { path: "404", element: <NotFound /> },
+    //     { path: "/", element: <Navigate to="/dashboard" /> },
+    //     { path: "*", element: <Navigate to="/404" /> },
+    //   ],
+    // },
+    // { path: "*", element: <Navigate to="/404" replace={true} /> },
   ]);
 };
 
