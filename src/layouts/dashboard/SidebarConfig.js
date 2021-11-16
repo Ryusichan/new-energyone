@@ -14,59 +14,59 @@ const getIcon = (name) => <Icon icon={name} width={22} height={22} />;
 const sidebarConfig = [
   //automatic
   {
-    title: "AutomaticLayout",
+    title: "자동운전화면",
     path: "/dashboard/app",
     icon: getIcon(pieChart2Fill),
   },
   {
-    title: "AccumulatedTime",
+    title: "누적시간화면",
     path: "/dashboard/accumulatedtime",
     icon: getIcon(peopleFill),
   },
   //menual
   {
-    title: "MenualLayout",
+    title: "수동운전화면",
     path: "/dashboard/MenualLayout",
     icon: getIcon(shoppingBagFill),
   },
   {
-    title: "HighSeparator",
+    title: "고액분리기 설정화면",
     path: "/dashboard/HighSeparator",
     icon: getIcon(fileTextFill),
   },
   {
-    title: "TimeWashing",
+    title: "시간세척 설정화면",
     path: "/dashboard/TimeWashing",
     icon: getIcon(shoppingBagFill),
   },
   {
-    title: "FermentedDryer",
+    title: "발효건조기 설정화면",
     path: "/dashboard/FermentedDryer",
     icon: getIcon(shoppingBagFill),
   },
   {
-    title: "NotificationRecord",
+    title: "작동/알람 기록화면",
     path: "/dashboard/NotificationRecord",
     icon: getIcon(lockFill),
   },
   {
-    title: "IntegratedPower",
+    title: "적산전력 기록화면",
     path: "/dashboard/IntegratedPower",
     icon: getIcon(lockFill),
   },
   //manager
   {
-    title: "MemberManagement",
+    title: "관리자화면",
     path: "/dashboard/MemberManagement",
     icon: getIcon(lockFill),
   },
   {
-    title: "ManagerNoti",
+    title: "알림",
     path: "/dashboard/ManagerNoti",
     icon: getIcon(lockFill),
   },
   {
-    title: "ManagerHistory",
+    title: "기록",
     path: "/dashboard/ManagerHistory",
     icon: getIcon(lockFill),
   },

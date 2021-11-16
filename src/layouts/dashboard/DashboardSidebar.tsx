@@ -72,9 +72,6 @@ const DashboardSidebar = ({ isOpensidebar, onCloseSidebar }: Props) => {
               <Typography variant="subtitle2" sx={{ color: "text.primary" }}>
                 {account.displayName}
               </Typography>
-              <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                {account.email}
-              </Typography>
             </Box>
           </AccountStyle>
         </Link>

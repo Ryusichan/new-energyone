@@ -29,16 +29,16 @@ import {
   UserListHead,
   UserListToolbar,
   UserMoreMenu,
-} from "../../components/_dashboard/user";
+} from "../../components/_dashboard/notification";
 //
 import USERLIST from "../../_mocks_/user";
 
 const TABLE_HEAD = [
-  { id: "number", label: "번호", alignRight: false },
   { id: "name", label: "이름", alignRight: false },
   { id: "onTime", label: "ON시간", alignRight: false },
   { id: "offTime", label: "OFF시간", alignRight: false },
   { id: "count", label: "발생횟수", alignRight: false },
+  { id: "" },
 ];
 
 const descendingComparator = (a: any, b: any, orderBy: any) => {
@@ -141,7 +141,7 @@ export default function NotificationRecord() {
   const isUserNotFound = filteredUsers.length === 0;
 
   return (
-    <div title="User | Minimal-UI">
+    <div title="NotificationRecord | Minimal-UI">
       <Container>
         <Stack
           direction="row"
@@ -150,16 +150,8 @@ export default function NotificationRecord() {
           mb={5}
         >
           <Typography variant="h4" gutterBottom>
-            User
+            작동/알람 기록화면
           </Typography>
-          <Button
-            variant="contained"
-            component={RouterLink}
-            to="#"
-            startIcon={<Icon icon={plusFill} />}
-          >
-            New User
-          </Button>
         </Stack>
 
         <Card>
@@ -185,15 +177,7 @@ export default function NotificationRecord() {
                   {filteredUsers
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row: any) => {
-                      const {
-                        id,
-                        name,
-                        role,
-                        status,
-                        company,
-                        avatarUrl,
-                        isVerified,
-                      } = row;
+                      const { id, name, onTime, offTime, number, count } = row;
                       const isItemSelected = selected.indexOf(name) !== -1;
 
                       return (
@@ -211,33 +195,22 @@ export default function NotificationRecord() {
                               onChange={(event) => handleClick(event, name)}
                             />
                           </TableCell>
+
                           <TableCell component="th" scope="row" padding="none">
                             <Stack
                               direction="row"
                               alignItems="center"
                               spacing={2}
+                              sx={{ pl: 2 }}
                             >
-                              <Avatar alt={name} src={avatarUrl} />
                               <Typography variant="subtitle2" noWrap>
                                 {name}
                               </Typography>
                             </Stack>
                           </TableCell>
-                          <TableCell align="left">{company}</TableCell>
-                          <TableCell align="left">{role}</TableCell>
-                          <TableCell align="left">
-                            {isVerified ? "Yes" : "No"}
-                          </TableCell>
-                          <TableCell align="left">
-                            <Label
-                              variant="ghost"
-                              color={
-                                (status === "banned" && "error") || "success"
-                              }
-                            >
-                              {sentenceCase(status)}
-                            </Label>
-                          </TableCell>
+                          <TableCell align="left">{onTime}</TableCell>
+                          <TableCell align="left">{offTime}</TableCell>
+                          <TableCell align="left">{count}</TableCell>
 
                           <TableCell align="right">
                             <UserMoreMenu />
