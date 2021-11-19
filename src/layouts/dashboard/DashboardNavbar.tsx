@@ -1,13 +1,13 @@
 import React from "react";
 
-import { Icon } from "@iconify/react";
+import { MHidden } from "../../components/@material-extend";
 import menu2Fill from "@iconify/icons-eva/menu-2-fill";
+
+import { Icon } from "@iconify/react";
 
 import { alpha, styled } from "@mui/material/styles";
 import { Box, Stack, AppBar, Toolbar, IconButton } from "@mui/material";
-import { MHidden } from "../../components/@material-extend";
 
-import Searchbar from "./Searchbar";
 import AccountPopover from "./AccountPopover";
 import NotificationsPopover from "./NotificationsPopover";
 
@@ -49,9 +49,6 @@ const DashboardNavbar = ({ onOpenSidebar }: Props) => {
             <Icon icon={menu2Fill} />
           </IconButton>
         </MHidden>
-
-        <Searchbar />
-        <Box sx={{ flexGrow: 1 }} />
 
         <Stack
           direction="row"

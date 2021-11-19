@@ -71,16 +71,16 @@ const sidebarConfig = [
     icon: getIcon(lockFill),
   },
   //global
-  {
-    title: "productList",
-    path: "/productList",
-    icon: getIcon(personAddFill),
-  },
-  {
-    title: "login",
-    path: "/login",
-    icon: getIcon(personAddFill),
-  },
+  // {
+  //   title: "productList",
+  //   path: "/productList",
+  //   icon: getIcon(personAddFill),
+  // },
+  // {
+  //   title: "login",
+  //   path: "/",
+  //   icon: getIcon(personAddFill),
+  // },
 ];
 
 export default sidebarConfig;

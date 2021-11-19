@@ -1,6 +1,12 @@
 import { Container, Stack, Typography } from "@mui/material";
 import React from "react";
 
+import {
+  HighsettingList,
+  HighsettingWidget,
+} from "../../components/_dashboard/highsettingList";
+import HighSetting from "../../_mocks_/highsettinglist";
+
 const HighSeparator = () => {
   return (
     <div title="HighSeparator">
@@ -9,20 +15,7 @@ const HighSeparator = () => {
           고액분리기 설정화면
         </Typography>
 
-        <Stack
-          direction="row"
-          flexWrap="wrap-reverse"
-          alignItems="center"
-          justifyContent="flex-end"
-          sx={{ mb: 5 }}
-        >
-          <Stack
-            direction="row"
-            spacing={1}
-            flexShrink={0}
-            sx={{ my: 1 }}
-          ></Stack>
-        </Stack>
+        <HighsettingList highsetting={HighSetting} />
       </Container>
     </div>
   );

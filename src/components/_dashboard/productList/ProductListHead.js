@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { visuallyHidden } from "@mui/utils";
 import {
   Box,
-  Checkbox,
   TableRow,
   TableCell,
   TableHead,
@@ -17,19 +16,14 @@ UserListHead.propTypes = {
   orderBy: PropTypes.string,
   rowCount: PropTypes.number,
   headLabel: PropTypes.array,
-  numSelected: PropTypes.number,
   onRequestSort: PropTypes.func,
-  onSelectAllClick: PropTypes.func,
 };
 
 export default function UserListHead({
   order,
   orderBy,
-  rowCount,
   headLabel,
-  numSelected,
   onRequestSort,
-  onSelectAllClick,
 }) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);

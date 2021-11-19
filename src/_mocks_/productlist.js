@@ -5,17 +5,17 @@ import { mockImgAvatar } from "../utils/mockImages";
 
 // ----------------------------------------------------------------------
 
-let randomNum = Math.random() * 10;
+let randomNum = Math.random() * 100;
 
-const users = [...Array(24)].map((_, index) => ({
+const users = [...Array(16)].map((_, index) => ({
   id: faker.datatype.uuid(),
   location: faker.address.city(),
   name: faker.name.findName(),
-  number: index,
+  number: index + 1,
   count: faker.random.number(),
   contractdate: faker.date.month(),
   AccumulatedTime: faker.date.month(),
-  tankLevel: faker.date.month(),
+  tankLevel: Math.floor(randomNum) + 1 + index,
   onTime: faker.date.weekday(),
   offTime: faker.date.weekday(),
 }));

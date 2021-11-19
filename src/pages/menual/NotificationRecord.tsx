@@ -141,7 +141,7 @@ export default function NotificationRecord() {
   const isUserNotFound = filteredUsers.length === 0;
 
   return (
-    <div title="NotificationRecord | Minimal-UI">
+    <Page title="NotificationRecord | Minimal-UI">
       <Container>
         <Stack
           direction="row"
@@ -248,6 +248,6 @@ export default function NotificationRecord() {
           />
         </Card>
       </Container>
-    </div>
+    </Page>
   );
 }

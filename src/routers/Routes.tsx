@@ -53,7 +53,7 @@ const Router = () => {
       ],
     },
     // global
-    { path: "/login", element: <Login /> },
+    { path: "/", element: <Login /> },
     { path: "/productList", element: <ProductList /> },
     { path: "/404", element: <NotFound /> },
     // {
