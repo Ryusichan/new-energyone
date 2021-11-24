@@ -49,7 +49,7 @@ const DashboardNavbar = ({ onOpenSidebar }: Props) => {
             <Icon icon={menu2Fill} />
           </IconButton>
         </MHidden>
-
+        <Box sx={{ flexGrow: 1 }} />
         <Stack
           direction="row"
           alignItems="center"

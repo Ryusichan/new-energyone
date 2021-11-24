@@ -13,7 +13,7 @@ export default function Logo({ sx }) {
     <Box
       component="img"
       src="/static/logo.svg"
-      sx={{ width: 40, height: 40, ...sx }}
+      sx={{ width: "auto", height: 40, ...sx }}
     />
   );
 }
