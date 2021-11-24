@@ -41,7 +41,6 @@ export const hightMainSetList = [...Array(4)].map((_, index) => {
     name: MAIN_SET[index].name,
     value: MAIN_SET[index].value,
   };
-  // return <></>;
 });
 
 export const highDetailSetList = [...Array(7)].map((_, index) => {
@@ -50,7 +49,6 @@ export const highDetailSetList = [...Array(7)].map((_, index) => {
     name: DETAIL_SET[index].name,
     value: DETAIL_SET[index].value,
   };
-  // return <></>;
 });
 
 export const highHZSetList = [...Array(8)].map((_, index) => {
@@ -59,7 +57,4 @@ export const highHZSetList = [...Array(8)].map((_, index) => {
     name: HZ_SET[index].name,
     value: HZ_SET[index].value,
   };
-  // return <></>;
 });
-
-export default hightMainSetList;

@@ -20,6 +20,7 @@ import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import MainSetting from "./MainSetting";
 import DetailSetting from "./DetailSetting";
+import HzSetting from "./HzSetting";
 
 // ----------------------------------------------------------------------
 
@@ -43,19 +44,19 @@ export default function HighSeparatorList({ ...other }: Props) {
   return (
     <Container sx={{ flexGrow: 1 }}>
       <Grid container spacing={3}>
-        <InnerGrid xs={12} sm={6} md={4}>
+        <InnerGrid xs={12} md={4}>
           <GridBox>
             <MainSetting />
           </GridBox>
         </InnerGrid>
-        <InnerGrid xs={12} sm={6} md={4}>
+        <InnerGrid xs={12} md={4}>
           <GridBox>
             <DetailSetting />
           </GridBox>
         </InnerGrid>
-        <InnerGrid xs={12} sm={6} md={4}>
+        <InnerGrid xs={12} md={4}>
           <GridBox>
-            <Typography variant="h6">고액분리기 HZ설정</Typography>
+            <HzSetting />
           </GridBox>
         </InnerGrid>
       </Grid>

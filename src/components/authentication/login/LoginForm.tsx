@@ -35,7 +35,7 @@ export default function LoginForm() {
       remember: true,
     },
     validationSchema: LoginSchema,
-    onSubmit: () => {
+    onSubmit: (data) => {
       navigate("/productList", { replace: true });
     },
   });

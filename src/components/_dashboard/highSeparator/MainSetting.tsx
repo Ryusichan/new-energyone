@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import mainSetting from "../../../_mocks_/highsetlist";
+import { hightMainSetList } from "../../../_mocks_/highsetlist";
 
 const MainSetting = () => {
   const [checked, setChecked] = useState(["TANKLEVEL"]);
@@ -25,12 +25,11 @@ const MainSetting = () => {
     setChecked(newChecked);
   };
 
-  console.log(mainSetting);
   return (
     <>
       <Typography variant="h6">메인설정</Typography>
       <List>
-        {mainSetting.map((mainset) => (
+        {hightMainSetList.map((mainset) => (
           <ListItem>
             <ListItemText primary={mainset.name} />
             <Switch
