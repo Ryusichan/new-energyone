@@ -161,7 +161,6 @@ export default function ProductList() {
                           location,
                           name,
                           number,
-                          count,
                           contractdate,
                           AccumulatedTime,
                           tankLevel,

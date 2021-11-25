@@ -42,24 +42,22 @@ interface Props {}
 
 export default function HighSeparatorList({ ...other }: Props) {
   return (
-    <Container sx={{ flexGrow: 1 }}>
-      <Grid container spacing={3}>
-        <InnerGrid xs={12} md={4}>
-          <GridBox>
-            <MainSetting />
-          </GridBox>
-        </InnerGrid>
-        <InnerGrid xs={12} md={4}>
-          <GridBox>
-            <DetailSetting />
-          </GridBox>
-        </InnerGrid>
-        <InnerGrid xs={12} md={4}>
-          <GridBox>
-            <HzSetting />
-          </GridBox>
-        </InnerGrid>
-      </Grid>
-    </Container>
+    <Grid container spacing={3}>
+      <InnerGrid xs={12} md={4}>
+        <GridBox sx={{ height: "100%" }}>
+          <MainSetting />
+        </GridBox>
+      </InnerGrid>
+      <InnerGrid xs={12} md={4}>
+        <GridBox sx={{ height: "100%" }}>
+          <DetailSetting />
+        </GridBox>
+      </InnerGrid>
+      <InnerGrid xs={12} md={4}>
+        <GridBox>
+          <HzSetting />
+        </GridBox>
+      </InnerGrid>
+    </Grid>
   );
 }

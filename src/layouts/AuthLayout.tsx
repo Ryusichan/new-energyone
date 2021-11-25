@@ -31,6 +31,7 @@ const AuthLayout = ({ children }: Props) => {
   return (
     <HeaderStyle>
       <RouterLink to="/">
+        {/* @ts-ignore */}
         <Logo />
       </RouterLink>
 

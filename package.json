@@ -64,5 +64,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/numeral": "^2.0.2"
+  }
 }

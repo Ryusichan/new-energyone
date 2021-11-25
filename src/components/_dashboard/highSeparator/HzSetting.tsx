@@ -17,10 +17,11 @@ const HzSetting = () => {
           <ListItem>
             <ListItemText primary={hzset.name} />
             <TextField
-              sx={{ maxWidth: 64, marginRight: 1 }}
+              size="small"
+              sx={{ maxWidth: 54, marginRight: 1 }}
               value={hzset.value}
             />
-            %
+            HZ
           </ListItem>
         ))}
       </List>

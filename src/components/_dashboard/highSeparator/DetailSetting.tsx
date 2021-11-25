@@ -4,7 +4,6 @@ import {
   ListItemText,
   TextField,
   Typography,
-  Box,
 } from "@mui/material";
 import React from "react";
 import { highDetailSetList } from "../../../_mocks_/highsetlist";
@@ -18,7 +17,8 @@ const DetailSetting = () => {
           <ListItem>
             <ListItemText primary={detailset.name} />
             <TextField
-              sx={{ maxWidth: 64, marginRight: 1 }}
+              size="small"
+              sx={{ maxWidth: 54, marginRight: 1 }}
               value={detailset.value}
             />
             %

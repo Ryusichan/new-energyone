@@ -2,18 +2,13 @@ import React from "react";
 // material
 import { Box, Grid, Container, Typography } from "@mui/material";
 // components
-import Page from "../../components/Page";
 import {
-  AppTasks,
   AppNewUsers,
   AppBugReports,
   AppItemOrders,
-  AppNewsUpdate,
   AppWeeklySales,
-  AppOrderTimeline,
   AppCurrentVisits,
   AppWebsiteVisits,
-  AppTrafficBySite,
   AppCurrentSubject,
   AppConversionRates,
 } from "../../components/_dashboard/app";
@@ -22,21 +17,36 @@ const AutomaticLayout = () => {
   return (
     <div title="Dashboard">
       <Container maxWidth="xl">
-        {/* @ts-ignore */}
-        <Box sx={{ pd: 5 }}>
-          <Typography variant="h4">Hi, Welcome back</Typography>
+        <Box>
+          <Typography variant="h4" sx={{ mb: 5 }}>
+            Hi, Welcome back
+          </Typography>
         </Box>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={3}>
-            <AppWeeklySales />
+        <Grid container spacing={4}>
+          <Grid item xs={12} sm={6} md={4}>
+            <Grid item>
+              <AppWeeklySales />
+            </Grid>
+            <Grid item sx={{ mt: 4 }}>
+              <AppWeeklySales />
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <AppNewUsers />
+          <Grid item xs={12} sm={6} md={4}>
+            <Grid item>
+              <AppNewUsers />
+            </Grid>
+            <Grid item sx={{ mt: 4 }}>
+              <AppNewUsers />
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={4}>
             <AppItemOrders />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+
+          <Grid item xs={12} sm={6} md={6}>
+            <AppBugReports />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
             <AppBugReports />
           </Grid>
 
@@ -54,22 +64,6 @@ const AutomaticLayout = () => {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppCurrentSubject />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppNewsUpdate />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppOrderTimeline />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppTrafficBySite />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppTasks />
           </Grid>
         </Grid>
       </Container>

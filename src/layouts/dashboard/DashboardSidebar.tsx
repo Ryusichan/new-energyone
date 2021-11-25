@@ -1,9 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useEffect } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 //material
-import { Drawer, Box, Link, Avatar, Typography, Stack } from "@mui/material";
+import { Drawer, Box, Link, Avatar, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 //components
 import Logo from "../../components/Logo";

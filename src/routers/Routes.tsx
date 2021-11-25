@@ -16,8 +16,6 @@ import IntegratedPower from "../pages/menual/IntegratedPower";
 import MemberManagement from "../pages/manager/MemberManagement";
 import ManagerNoti from "../pages/manager/ManagerNoti";
 import ManagerHistory from "../pages/manager/ManagerHistory";
-import { RouterPath } from "./RouterPath";
-import Header from "../layouts/Header";
 import Login from "../pages/Login";
 import ProductList from "../pages/ProductList";
 import NotFound from "../pages/NotFound";

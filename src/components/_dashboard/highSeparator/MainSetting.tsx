@@ -34,10 +34,10 @@ const MainSetting = () => {
             <ListItemText primary={mainset.name} />
             <Switch
               edge="end"
-              onChange={handleToggle("TANKLEVEL")}
-              checked={checked.indexOf("TANKLEVEL") !== -1}
+              onChange={handleToggle(mainset.id)}
+              checked={checked.indexOf(mainset.id) !== -1}
               inputProps={{
-                "aria-labelledby": "switch-list-label-TANKLEVEL",
+                "aria-labelledby": `switch-list-label-${mainset.id}`,
               }}
             />
           </ListItem>

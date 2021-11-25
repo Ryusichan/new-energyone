@@ -1,16 +1,10 @@
 import { filter } from "lodash";
-import { Icon } from "@iconify/react";
-import { sentenceCase } from "change-case";
 import { useState } from "react";
-import plusFill from "@iconify/icons-eva/plus-fill";
-import { Link as RouterLink } from "react-router-dom";
 // material
 import {
   Card,
   Table,
   Stack,
-  Avatar,
-  Button,
   Checkbox,
   TableRow,
   TableBody,
@@ -22,7 +16,6 @@ import {
 } from "@mui/material";
 // components
 import Page from "../../components/Page";
-import Label from "../../components/Label";
 import Scrollbar from "../../components/Scrollbar";
 import SearchNotFound from "../../components/SearchNotFound";
 import {
@@ -177,7 +170,7 @@ export default function NotificationRecord() {
                   {filteredUsers
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row: any) => {
-                      const { id, name, onTime, offTime, number, count } = row;
+                      const { id, name, onTime, offTime, count } = row;
                       const isItemSelected = selected.indexOf(name) !== -1;
 
                       return (
