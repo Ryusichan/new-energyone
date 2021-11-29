@@ -1,13 +1,43 @@
-import { alpha } from "@mui/material/styles";
+import { alpha, PaletteOptions } from "@mui/material/styles";
 
 // ----------------------------------------------------------------------
+
+interface Grey {
+  0: string;
+  100: string;
+  200: string;
+  300: string;
+  400: string;
+  500: string;
+  600: string;
+  700: string;
+  800: string;
+  900: string;
+  500_8: string;
+  500_12: string;
+  500_16: string;
+  500_24: string;
+  500_32: string;
+  500_48: string;
+  500_56: string;
+  500_80: string;
+}
+
+interface Color {
+  lighter: string;
+  light: string;
+  main: string;
+  dark: string;
+  darker: string;
+  contrastText: string;
+}
 
 function createGradient(color1: string, color2: string) {
   return `linear-gradient(to bottom, ${color1}, ${color2})`;
 }
 
 // SETUP COLORS
-const GREY = {
+const GREY: Grey = {
   0: "#FFFFFF",
   100: "#F9FAFB",
   200: "#F4F6F8",
@@ -28,7 +58,7 @@ const GREY = {
   500_80: alpha("#919EAB", 0.8),
 };
 
-const PRIMARY = {
+const PRIMARY: Color = {
   lighter: "#e3f2fd",
   light: "#90caf9",
   main: "#2196f3",
@@ -36,7 +66,7 @@ const PRIMARY = {
   darker: "#1565c0",
   contrastText: "#fff",
 };
-const SECONDARY = {
+const SECONDARY: Color = {
   lighter: "#D6E4FF",
   light: "#84A9FF",
   main: "#3366FF",
@@ -44,7 +74,7 @@ const SECONDARY = {
   darker: "#091A7A",
   contrastText: "#fff",
 };
-const INFO = {
+const INFO: Color = {
   lighter: "#ede7f6",
   light: "#b39ddb",
   main: "#673ab7",
@@ -52,7 +82,7 @@ const INFO = {
   darker: "#4527a0",
   contrastText: "#fff",
 };
-const SUCCESS = {
+const SUCCESS: Color = {
   lighter: "#E9FCD4",
   light: "#AAF27F",
   main: "#54D62C",
@@ -60,7 +90,7 @@ const SUCCESS = {
   darker: "#08660D",
   contrastText: GREY[800],
 };
-const WARNING = {
+const WARNING: Color = {
   lighter: "#FFF7CD",
   light: "#FFE16A",
   main: "#FFC107",
@@ -68,7 +98,7 @@ const WARNING = {
   darker: "#7A4F01",
   contrastText: GREY[800],
 };
-const ERROR = {
+const ERROR: Color = {
   lighter: "#FFE7D9",
   light: "#FFA48D",
   main: "#FF4842",
@@ -93,7 +123,33 @@ const CHART_COLORS = {
   red: ["#FF6C40", "#FF8F6D", "#FFBD98", "#FFF2D4"],
 };
 
-const palette = {
+export interface ExtendedPalette extends PaletteOptions {
+  common: {
+    black: string;
+    white: string;
+  };
+  primary: Color;
+  secondary: Color;
+  info: Color;
+  success: Color;
+  warning: Color;
+  error: Color;
+  grey: Grey;
+  gradients: {
+    primary: string;
+    info: string;
+    success: string;
+    warning: string;
+    error: string;
+  };
+  chart: any;
+  divider: any;
+  text: any;
+  background: { paper: string; default: string; neutral: string };
+  action: any;
+}
+
+const palette: ExtendedPalette = {
   common: { black: "#000", white: "#fff" },
   primary: { ...PRIMARY },
   secondary: { ...SECONDARY },

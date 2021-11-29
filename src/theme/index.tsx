@@ -1,38 +1,51 @@
-import PropTypes from "prop-types";
-import { useMemo } from "react";
 // material
-import { CssBaseline } from "@mui/material";
+
+import { CssBaseline, ThemeOptions } from "@mui/material";
 import {
-  ThemeProvider,
   createTheme,
   StyledEngineProvider,
+  ThemeProvider,
 } from "@mui/material/styles";
-//
-import shape from "./shape";
-import palette from "./palette";
-import typography from "./typography";
+import { TypographyOptions } from "@mui/material/styles/createTypography";
+import { Shadows } from "@mui/material/styles/shadows";
+import PropTypes from "prop-types";
+import { useMemo } from "react";
+import breakpoints, { Breakpoints } from "./breakpoints";
 import componentsOverride from "./overrides";
-import shadows, { customShadows } from "./shadows";
+import palette, { ExtendedPalette } from "./palette";
+import shadows, { CustomShadows, customShadows } from "./shadows";
+//
+import shape, { Shape } from "./shape";
+import typography from "./typography";
 
 // ----------------------------------------------------------------------
+
+export interface ExtendedTheme extends ThemeOptions {
+  palette: ExtendedPalette;
+  shape: Shape;
+  typography: TypographyOptions;
+  shadows: Shadows;
+  customShadows: CustomShadows;
+  breakpoints: Breakpoints;
+}
 
 ThemeConfig.propTypes = {
   children: PropTypes.node,
 };
 
 export default function ThemeConfig({ children }: any) {
-  const themeOptions = useMemo(
+  const themeOptions = useMemo<ExtendedTheme>(
     () => ({
       palette,
       shape,
       typography,
       shadows,
       customShadows,
+      breakpoints,
     }),
     []
   );
 
-  // @ts-ignore
   const theme = createTheme(themeOptions);
   theme.components = componentsOverride(theme);
 
