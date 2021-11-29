@@ -120,7 +120,7 @@ export default function ProductList() {
 
   return (
     <ProductionLayout>
-      <Page title="accumulatedTime | Minimal-UI">
+      <Page title="ProductList | Minimal-UI">
         <Container>
           <Stack
             direction="row"
@@ -138,94 +138,79 @@ export default function ProductList() {
               filterName={filterName}
               onFilterName={handleFilterByName}
             />
-            {/* @ts-ignore */}
-            <Scrollbar>
-              <TableContainer sx={{ minWidth: 800 }}>
-                <Table>
-                  <ProductListHead
-                    order={order}
-                    orderBy={orderBy}
-                    headLabel={TABLE_HEAD}
-                    rowCount={PRODUCTLIST.length}
-                    onRequestSort={handleRequestSort}
-                  />
-                  <TableBody onClick={handleClickList}>
-                    {filteredProducts
-                      .slice(
-                        page * rowsPerPage,
-                        page * rowsPerPage + rowsPerPage
-                      )
-                      .map((row: any) => {
-                        const {
-                          id,
-                          location,
-                          name,
-                          number,
-                          contractdate,
-                          AccumulatedTime,
-                          tankLevel,
-                        } = row;
+            <TableContainer sx={{ minWidth: 800 }}>
+              <Table>
+                <ProductListHead
+                  order={order}
+                  orderBy={orderBy}
+                  headLabel={TABLE_HEAD}
+                  rowCount={PRODUCTLIST.length}
+                  onRequestSort={handleRequestSort}
+                />
+                <TableBody onClick={handleClickList}>
+                  {filteredProducts
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map((row: any) => {
+                      const {
+                        id,
+                        location,
+                        name,
+                        number,
+                        contractdate,
+                        AccumulatedTime,
+                        tankLevel,
+                      } = row;
 
-                        return (
-                          <TableRow
-                            hover
-                            key={id}
-                            tabIndex={-1}
-                            role="checkbox"
-                          >
-                            <TableCell align="left">{number}</TableCell>
+                      return (
+                        <TableRow hover key={id} tabIndex={-1}>
+                          <TableCell component="th" scope="row">
+                            {number}
+                          </TableCell>
 
-                            <TableCell align="left">{location}</TableCell>
+                          <TableCell align="left">{location}</TableCell>
 
-                            <TableCell
-                              component="th"
-                              scope="row"
-                              padding="none"
+                          <TableCell component="th" scope="row" padding="none">
+                            <Stack
+                              direction="row"
+                              alignItems="center"
+                              spacing={2}
+                              sx={{ pl: 2 }}
                             >
-                              <Stack
-                                direction="row"
-                                alignItems="center"
-                                spacing={2}
-                                sx={{ pl: 2 }}
-                              >
-                                <Typography variant="subtitle2" noWrap>
-                                  {name}
-                                </Typography>
-                              </Stack>
-                            </TableCell>
+                              <Typography variant="subtitle2" noWrap>
+                                {name}
+                              </Typography>
+                            </Stack>
+                          </TableCell>
 
-                            <TableCell align="left">{contractdate}</TableCell>
+                          <TableCell align="left">{contractdate}</TableCell>
 
-                            <TableCell align="left">
-                              {AccumulatedTime}
-                            </TableCell>
+                          <TableCell align="left">{AccumulatedTime}</TableCell>
 
-                            <TableCell align="left">{tankLevel}%</TableCell>
+                          <TableCell align="left">{tankLevel}%</TableCell>
 
-                            {/* <TableCell align="right">
+                          {/* <TableCell align="right">
                             <UserMoreMenu />
                           </TableCell> */}
-                          </TableRow>
-                        );
-                      })}
-                    {emptyRows > 0 && (
-                      <TableRow style={{ height: 53 * emptyRows }}>
-                        <TableCell colSpan={6} />
-                      </TableRow>
-                    )}
-                  </TableBody>
-                  {isProductNotFound && (
-                    <TableBody>
-                      <TableRow>
-                        <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
-                          <SearchNotFound searchQuery={filterName} />
-                        </TableCell>
-                      </TableRow>
-                    </TableBody>
+                        </TableRow>
+                      );
+                    })}
+                  {emptyRows > 0 && (
+                    <TableRow style={{ height: 53 * emptyRows }}>
+                      <TableCell colSpan={6} />
+                    </TableRow>
                   )}
-                </Table>
-              </TableContainer>
-            </Scrollbar>
+                </TableBody>
+                {isProductNotFound && (
+                  <TableBody>
+                    <TableRow>
+                      <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
+                        <SearchNotFound searchQuery={filterName} />
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                )}
+              </Table>
+            </TableContainer>
 
             <TablePagination
               rowsPerPageOptions={[10, 20]}

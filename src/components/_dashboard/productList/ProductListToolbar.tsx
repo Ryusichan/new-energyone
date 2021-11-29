@@ -36,7 +36,7 @@ ProductListToolbar.propTypes = {
 
 interface Props {
   filterName: string;
-  onFilterName: () => void;
+  onFilterName: (event: any) => void;
 }
 
 export default function ProductListToolbar({

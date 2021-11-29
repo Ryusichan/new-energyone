@@ -11,7 +11,7 @@ import NavSection from "../../components/NavSection";
 import { MHidden } from "../../components/@material-extend";
 
 import sidebarConfig from "./SidebarConfig";
-import account from "../../_mocks_/account";
+import productlist from "../../_mocks_/productlist";
 
 const DRAWER_WIDTH = 280;
 
@@ -46,7 +46,6 @@ const DashboardSidebar = ({ isOpensidebar, onCloseSidebar }: Props) => {
   }, [pathname]);
 
   const renderContent = (
-    // @ts-ignore
     <Scrollbar
       sx={{
         height: "100%",
@@ -63,13 +62,17 @@ const DashboardSidebar = ({ isOpensidebar, onCloseSidebar }: Props) => {
         </Box>
       </Box>
 
+      {/* 사이드바 아파트 component 선택한 아파트명 보여짐*/}
       <Box sx={{ mb: 5, mx: 2.5 }}>
         <Link underline="none" component={RouterLink} to="#">
           <AccountStyle>
-            <Avatar src={account.photoURL} alt="photoURL" />
+            {/* <Avatar src={account.photoURL} alt="photoURL" /> */}
             <Box sx={{ ml: 2 }}>
-              <Typography variant="subtitle2" sx={{ color: "text.primary" }}>
-                {account.displayName}
+              <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
+                {productlist[0].location}
+              </Typography>
+              <Typography variant="h6" sx={{ color: "text.primary" }}>
+                {productlist[0].name}
               </Typography>
             </Box>
           </AccountStyle>
@@ -93,6 +96,7 @@ const DashboardSidebar = ({ isOpensidebar, onCloseSidebar }: Props) => {
           {renderContent}
         </Drawer>
       </MHidden>
+      {/* 1200px 미만시 드로우 숨겨지게 처리 */}
       <MHidden width="lgDown">
         <Drawer
           open={true}

@@ -36,7 +36,7 @@ const SimpleBarStyle = styled(SimpleBarReact)(({ theme }) => ({
 
 interface Props {
   children: any;
-  sx: object;
+  sx?: object;
 }
 
 export default function Scrollbar({ children, sx, ...other }: Props) {

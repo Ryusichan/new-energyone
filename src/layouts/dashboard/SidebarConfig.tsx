@@ -53,11 +53,11 @@ const sidebarConfig = [
     icon: getIcon(lockFill),
   },
   //manager
-  {
-    title: "관리자화면",
-    path: "/dashboard/MemberManagement",
-    icon: getIcon(lockFill),
-  },
+  // {
+  //   title: "관리자화면",
+  //   path: "/dashboard/MemberManagement",
+  //   icon: getIcon(lockFill),
+  // },
   {
     title: "알림",
     path: "/dashboard/ManagerNoti",

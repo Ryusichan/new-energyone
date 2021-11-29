@@ -13,7 +13,7 @@ import TimeWashing from "../pages/menual/TimeWashing";
 import HighSeparator from "../pages/menual/HighSeparator";
 import NotificationRecord from "../pages/menual/NotificationRecord";
 import IntegratedPower from "../pages/menual/IntegratedPower";
-import MemberManagement from "../pages/manager/MemberManagement";
+// import MemberManagement from "../pages/manager/MemberManagement";
 import ManagerNoti from "../pages/manager/ManagerNoti";
 import ManagerHistory from "../pages/manager/ManagerHistory";
 import Login from "../pages/Login";
@@ -45,7 +45,7 @@ const Router = () => {
         },
         { path: "IntegratedPower", element: <IntegratedPower /> },
         // manager
-        { path: "MemberManagement", element: <MemberManagement /> },
+        // { path: "MemberManagement", element: <MemberManagement /> },
         { path: "ManagerNoti", element: <ManagerNoti /> },
         { path: "ManagerHistory", element: <ManagerHistory /> },
       ],
