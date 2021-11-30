@@ -1,6 +1,8 @@
 // ----------------------------------------------------------------------
 
-export default function IconButton(theme: any) {
+import { ExtendedTheme } from "..";
+
+export default function IconButton(theme: ExtendedTheme) {
   return {
     MuiIconButton: {
       variants: [

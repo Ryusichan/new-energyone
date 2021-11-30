@@ -28,12 +28,11 @@ export interface ExtendedTheme extends ThemeOptions {
   customShadows: CustomShadows;
   breakpoints: Breakpoints;
 }
+interface Props {
+  children: React.ReactNode;
+}
 
-ThemeConfig.propTypes = {
-  children: PropTypes.node,
-};
-
-export default function ThemeConfig({ children }: any) {
+export default function ThemeConfig({ children }: Props) {
   const themeOptions = useMemo<ExtendedTheme>(
     () => ({
       palette,

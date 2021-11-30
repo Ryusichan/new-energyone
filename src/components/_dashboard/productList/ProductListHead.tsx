@@ -19,13 +19,21 @@ UserListHead.propTypes = {
   onRequestSort: PropTypes.func,
 };
 
+interface Props {
+  order: any;
+  orderBy: string;
+  rowCount: number;
+  headLabel: Array<any>;
+  onRequestSort: (event: any, property: any) => void;
+}
+
 export default function UserListHead({
   order,
   orderBy,
   headLabel,
   onRequestSort,
-}) {
-  const createSortHandler = (property) => (event) => {
+}: Props) {
+  const createSortHandler = (property: any) => (event: any) => {
     onRequestSort(event, property);
   };
 

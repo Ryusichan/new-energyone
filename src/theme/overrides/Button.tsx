@@ -1,6 +1,8 @@
 // ----------------------------------------------------------------------
 
-export default function Button(theme: any) {
+import { ExtendedTheme } from "..";
+
+export default function Button(theme: ExtendedTheme) {
   return {
     MuiButton: {
       styleOverrides: {

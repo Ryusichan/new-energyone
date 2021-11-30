@@ -12,8 +12,8 @@ const RootStyle = styled(Card)(({ theme }: any) => ({
   boxShadow: "none",
   textAlign: "center",
   padding: theme.spacing(5, 0),
-  color: theme.palette.error.darker,
-  backgroundColor: theme.palette.error.lighter,
+  color: theme.palette.error.dark,
+  backgroundColor: theme.palette.error.light,
 }));
 
 const IconWrapperStyle = styled("div")(({ theme }) => ({

@@ -1,6 +1,8 @@
 // ----------------------------------------------------------------------
 
-export default function TextField(theme: any) {
+import { ExtendedTheme } from "..";
+
+export default function TextField(theme: ExtendedTheme) {
   return {
     MuiInputBase: {
       styleOverrides: {

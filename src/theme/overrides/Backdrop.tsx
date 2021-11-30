@@ -1,8 +1,9 @@
 import { alpha } from "@mui/material/styles";
+import { ExtendedTheme } from "..";
 
 // ----------------------------------------------------------------------
 
-export default function Backdrop(theme: any) {
+export default function Backdrop(theme: ExtendedTheme) {
   const varLow = alpha(theme.palette.grey[900], 0.48);
   const varHigh = alpha(theme.palette.grey[900], 1);
 

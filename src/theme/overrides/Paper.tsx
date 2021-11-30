@@ -1,6 +1,8 @@
 // ----------------------------------------------------------------------
 
-export default function Paper(theme: any) {
+import { ExtendedTheme } from "..";
+
+export default function Paper(theme: ExtendedTheme) {
   return {
     MuiPaper: {
       defaultProps: {

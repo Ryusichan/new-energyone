@@ -20,11 +20,28 @@ MHidden.propTypes = {
   ]).isRequired,
 };
 
-export default function MHidden({ width, children }) {
+interface Props {
+  children: any;
+  width: any;
+  // | "xsDown"
+  // | "smDown"
+  // | "mdDown"
+  // | "lgDown"
+  // | "xlDown"
+  // | "xsUp"
+  // | "smUp"
+  // | "mdUp"
+  // | "lgUp"
+  // | "xlUp";
+}
+
+export default function MHidden({ width, children }: Props) {
   const breakpoint = width.substring(0, 2);
 
-  const hiddenUp = useMediaQuery((theme) => theme.breakpoints.up(breakpoint));
-  const hiddenDown = useMediaQuery((theme) =>
+  const hiddenUp = useMediaQuery((theme: any) =>
+    theme.breakpoints.up(breakpoint)
+  );
+  const hiddenDown = useMediaQuery((theme: any) =>
     theme.breakpoints.down(breakpoint)
   );
 
