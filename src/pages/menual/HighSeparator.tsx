@@ -23,7 +23,7 @@ const HighSeparator = () => {
             고액분리기 설정화면
           </Typography>
         </Box>
-        {/* @ts-ignore */}
+
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <GridBox sx={{ height: "100%" }}>
