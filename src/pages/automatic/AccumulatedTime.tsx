@@ -19,12 +19,12 @@ import {
 import Scrollbar from "../../components/Scrollbar";
 import SearchNotFound from "../../components/SearchNotFound";
 import {
-  UserListHead,
-  UserListToolbar,
-  UserMoreMenu,
+  AccumulatedTimeHead,
+  AccumulatedTimeToolbar,
+  AccumulatedTimeMenu,
 } from "../../components/_dashboard/accumulatedtime";
 //
-import USERLIST from "../../_mocks_/user";
+import accumulTime from "../../_mocks_/accumulTime";
 
 const TABLE_HEAD = [
   { id: "number", label: "번호", alignRight: false },
@@ -71,7 +71,7 @@ export default function AccumulatedTime() {
   const [page, setPage] = useState<number>(0);
   const [order, setOrder] = useState<string>("asc");
   const [selected, setSelected] = useState<any>([]);
-  const [orderBy, setOrderBy] = useState<string>("name");
+  const [orderBy, setOrderBy] = useState<string>("number");
   const [filterName, setFilterName] = useState<string>("");
   const [rowsPerPage, setRowsPerPage] = useState<number>(5);
 
@@ -113,10 +113,10 @@ export default function AccumulatedTime() {
   };
 
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - accumulTime.length) : 0;
 
   const filteredUsers = applySortFilter(
-    USERLIST,
+    accumulTime,
     getComparator(order, orderBy),
     filterName
   );
@@ -138,18 +138,18 @@ export default function AccumulatedTime() {
         </Stack>
 
         <Card>
-          <UserListToolbar
+          <AccumulatedTimeToolbar
             numSelected={selected.length}
             filterName={filterName}
             onFilterName={handleFilterByName}
           />
           <TableContainer sx={{ minWidth: 800 }}>
             <Table>
-              <UserListHead
+              <AccumulatedTimeHead
                 order={order}
                 orderBy={orderBy}
                 headLabel={TABLE_HEAD}
-                rowCount={USERLIST.length}
+                rowCount={accumulTime.length}
                 numSelected={selected.length}
                 onRequestSort={handleRequestSort}
               />
@@ -186,7 +186,7 @@ export default function AccumulatedTime() {
                         <TableCell align="left">{count}</TableCell>
 
                         <TableCell align="right">
-                          <UserMoreMenu />
+                          <AccumulatedTimeMenu />
                         </TableCell>
                       </TableRow>
                     );
@@ -212,7 +212,7 @@ export default function AccumulatedTime() {
           <TablePagination
             rowsPerPageOptions={[5, 10, 25]}
             component="div"
-            count={USERLIST.length}
+            count={accumulTime.length}
             rowsPerPage={rowsPerPage}
             page={page}
             onPageChange={handleChangePage}

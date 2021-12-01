@@ -4,6 +4,7 @@ import { Navigate, useRoutes, BrowserRouter } from "react-router-dom";
 import DashboardLayout from "../layouts/dashboard";
 
 // import GlobalLayout from "../layouts/globalLayout";
+import MainAppPage from "../pages/MainAppPage";
 import AutomaticLayout from "../pages/automatic/AutomaticLayout";
 import MenualLayout from "../pages/menual/MenualLayout";
 
@@ -32,7 +33,8 @@ const Router = () => {
       children: [
         //automatic
         { element: <Navigate to="/dashboard/app" replace={true} /> },
-        { path: "app", element: <AutomaticLayout /> },
+        { path: "app", element: <MainAppPage /> },
+        { path: "AutomaticLayout", element: <AutomaticLayout /> },
         { path: "accumulatedtime", element: <AccumulatedTime /> },
         // menual
         { path: "MenualLayout", element: <MenualLayout /> },

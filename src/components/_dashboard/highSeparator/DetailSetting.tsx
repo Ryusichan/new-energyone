@@ -59,8 +59,6 @@ const DetailSetting = ({ name, value }: Props) => {
     setOpenModal(false);
   };
 
-  console.log(detailValue);
-
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleOpenModal();

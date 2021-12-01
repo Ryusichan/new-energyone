@@ -4,6 +4,7 @@ import Lists from "./Lists";
 import Paper from "./Paper";
 import Input from "./Input";
 import Button from "./Button";
+import Fab from "./Fab";
 import Tooltip from "./Tooltip";
 import Backdrop from "./Backdrop";
 import Typography from "./Typography";
@@ -25,6 +26,7 @@ export default function ComponentsOverrides(theme: any) {
     Typography(theme),
     IconButton(theme),
     Autocomplete(theme),
-    TextField(theme)
+    TextField(theme),
+    Fab(theme)
   );
 }

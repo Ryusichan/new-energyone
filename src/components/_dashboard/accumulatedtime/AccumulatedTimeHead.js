@@ -11,7 +11,7 @@ import {
 
 // ----------------------------------------------------------------------
 
-UserListHead.propTypes = {
+AccumulatedTimeHead.propTypes = {
   order: PropTypes.oneOf(["asc", "desc"]),
   orderBy: PropTypes.string,
   rowCount: PropTypes.number,
@@ -21,7 +21,7 @@ UserListHead.propTypes = {
   onSelectAllClick: PropTypes.func,
 };
 
-export default function UserListHead({
+export default function AccumulatedTimeHead({
   order,
   orderBy,
   rowCount,

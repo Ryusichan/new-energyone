@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import chartPie from "@iconify/icons-mdi/chart-pie";
 import applicationSettings from "@iconify/icons-mdi/application-settings-outline";
 import clockOutline from "@iconify/icons-mdi/clock-outline";
 import accountSettingsSutline from "@iconify/icons-mdi/account-settings-outline";
@@ -18,10 +19,15 @@ import lockFill from "@iconify/icons-eva/lock-fill";
 const getIcon = (name: any) => <Icon icon={name} width={22} height={22} />;
 
 const sidebarConfig = [
+  {
+    title: "DashBoard",
+    path: "/dashboard/app",
+    icon: getIcon(chartPie),
+  },
   //automatic
   {
     title: "자동운전화면",
-    path: "/dashboard/app",
+    path: "/dashboard/AutomaticLayout",
     icon: getIcon(applicationSettings),
   },
   {

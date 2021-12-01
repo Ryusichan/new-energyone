@@ -19,12 +19,12 @@ import Page from "../../components/Page";
 import Scrollbar from "../../components/Scrollbar";
 import SearchNotFound from "../../components/SearchNotFound";
 import {
-  UserListHead,
-  UserListToolbar,
-  UserMoreMenu,
+  NotificationHead,
+  NotificationToolbar,
+  NotificationMenu,
 } from "../../components/_dashboard/notification";
 //
-import USERLIST from "../../_mocks_/user";
+import notifiRecord from "../../_mocks_/notifiRecord";
 
 const TABLE_HEAD = [
   { id: "name", label: "이름", alignRight: false },
@@ -84,7 +84,7 @@ export default function NotificationRecord() {
 
   const handleSelectAllClick = (event: any) => {
     if (event.target.checked) {
-      const newSelecteds = USERLIST.map((n: any) => n.name);
+      const newSelecteds = notifiRecord.map((n: any) => n.name);
       setSelected(newSelecteds);
       return;
     }
@@ -123,10 +123,10 @@ export default function NotificationRecord() {
   };
 
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - notifiRecord.length) : 0;
 
   const filteredUsers = applySortFilter(
-    USERLIST,
+    notifiRecord,
     getComparator(order, orderBy),
     filterName
   );
@@ -148,18 +148,18 @@ export default function NotificationRecord() {
         </Stack>
 
         <Card>
-          <UserListToolbar
+          <NotificationToolbar
             numSelected={selected.length}
             filterName={filterName}
             onFilterName={handleFilterByName}
           />
           <TableContainer sx={{ minWidth: 800 }}>
             <Table>
-              <UserListHead
+              <NotificationHead
                 order={order}
                 orderBy={orderBy}
                 headLabel={TABLE_HEAD}
-                rowCount={USERLIST.length}
+                rowCount={notifiRecord.length}
                 numSelected={selected.length}
                 onRequestSort={handleRequestSort}
                 onSelectAllClick={handleSelectAllClick}
@@ -204,7 +204,7 @@ export default function NotificationRecord() {
                         <TableCell align="left">{count}</TableCell>
 
                         <TableCell align="right">
-                          <UserMoreMenu />
+                          <NotificationMenu />
                         </TableCell>
                       </TableRow>
                     );
@@ -230,7 +230,7 @@ export default function NotificationRecord() {
           <TablePagination
             rowsPerPageOptions={[5, 10, 25]}
             component="div"
-            count={USERLIST.length}
+            count={notifiRecord.length}
             rowsPerPage={rowsPerPage}
             page={page}
             onPageChange={handleChangePage}

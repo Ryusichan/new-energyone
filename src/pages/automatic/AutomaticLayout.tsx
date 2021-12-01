@@ -1,17 +1,31 @@
 import React from "react";
 // material
-import { Box, Grid, Container, Typography } from "@mui/material";
-// components
 import {
-  AppNewUsers,
-  AppBugReports,
-  AppItemOrders,
-  AppWeeklySales,
-  AppCurrentVisits,
-  AppWebsiteVisits,
-  AppCurrentSubject,
-  AppConversionRates,
-} from "../../components/_dashboard/app";
+  Box,
+  Grid,
+  Container,
+  Typography,
+  Button,
+  TextField,
+  IconButton,
+} from "@mui/material";
+
+import { styled } from "@mui/material/styles";
+
+// components
+import AutomaticDrive from "../../components/_dashboard/automatic/AutomaticDrive";
+import DischargeReservation from "../../components/_dashboard/automatic/DischargeReservation";
+import Aseperator from "../../components/_dashboard/automatic/Aseperator";
+import Bseperator from "../../components/_dashboard/automatic/Bseperator";
+import AutomaticSaveTank from "../../components/_dashboard/automatic/AutomaticSaveTank";
+import AutoFermenTation from "../../components/_dashboard/automatic/AutoFermenTation";
+import AutoTankLevel from "../../components/_dashboard/automatic/AutoTankLevel";
+
+const GridBox = styled(Grid)(({ theme }) => ({
+  border: `1px solid ${theme.palette.divider}`,
+  padding: theme.spacing(3),
+  borderRadius: 12,
+}));
 
 const AutomaticLayout = () => {
   return (
@@ -23,47 +37,27 @@ const AutomaticLayout = () => {
           </Typography>
         </Box>
         <Grid container spacing={4}>
-          <Grid item xs={12} sm={6} md={4}>
-            <Grid item>
-              <AppWeeklySales />
-            </Grid>
-            <Grid item sx={{ mt: 4 }}>
-              <AppWeeklySales />
+          <Grid item container xs={12} sm={6} md={4}>
+            <Grid item xs={12}>
+              <AutomaticDrive />
+              <DischargeReservation />
             </Grid>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Grid item>
-              <AppNewUsers />
-            </Grid>
-            <Grid item sx={{ mt: 4 }}>
-              <AppNewUsers />
-            </Grid>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <AppItemOrders />
+
+          <Grid item container xs={12} sm={6} md={5}>
+            <Aseperator />
+            <Bseperator />
           </Grid>
 
-          <Grid item xs={12} sm={6} md={6}>
-            <AppBugReports />
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <AppBugReports />
+          <Grid item xs={12} sm={12} md={3}>
+            <AutoTankLevel />
           </Grid>
 
-          <Grid item xs={12} md={6} lg={8}>
-            <AppWebsiteVisits />
+          <Grid item xs={12} sm={6}>
+            <AutomaticSaveTank />
           </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppCurrentVisits />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppConversionRates />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppCurrentSubject />
+          <Grid item xs={12} sm={6}>
+            <AutoFermenTation />
           </Grid>
         </Grid>
       </Container>

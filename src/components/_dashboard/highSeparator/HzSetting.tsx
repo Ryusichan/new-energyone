@@ -58,9 +58,6 @@ const HzSetting = ({ name, value }: Props) => {
   const handleSubmit = (e: any) => {
     setOpenModal(false);
   };
-
-  console.log(detailValue);
-
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleOpenModal();

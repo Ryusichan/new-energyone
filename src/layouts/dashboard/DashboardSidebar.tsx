@@ -69,10 +69,12 @@ const DashboardSidebar = ({ isOpensidebar, onCloseSidebar }: Props) => {
             {/* <Avatar src={account.photoURL} alt="photoURL" /> */}
             <Box sx={{ ml: 2 }}>
               <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
-                {productlist[0].location}
+                {/* {productlist[0].location} */}
+                대한민국 하남시
               </Typography>
               <Typography variant="h6" sx={{ color: "text.primary" }}>
-                {productlist[0].name}
+                {/* {productlist[0].name} */}
+                고덕 센트럴 아이파크
               </Typography>
             </Box>
           </AccountStyle>
