@@ -12,13 +12,6 @@ import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import { hightMainSetList } from "../../../_mocks_/highsetlist";
 
-const WarpToggleButton = styled(ToggleButton)(({ theme }) => ({
-  "& .Mui-selected": {
-    backgroundColor: "#2196f3",
-    color: "red",
-  },
-}));
-
 const WarpMainSetting = () => {
   return (
     <>
@@ -63,9 +56,15 @@ const MainSetting = ({ name, value }: Props) => {
           exclusive
           value={toggleValue}
           color={"primary"}
+          sx={{
+            "& .Mui-selected": {
+              backgroundColor: "#2196f3",
+              color: "#fff",
+            },
+          }}
         >
-          <WarpToggleButton value={true}>ON</WarpToggleButton>
-          <WarpToggleButton value={false}>OFF</WarpToggleButton>
+          <ToggleButton value={true}>ON</ToggleButton>
+          <ToggleButton value={false}>OFF</ToggleButton>
         </ToggleButtonGroup>
       </ListItem>
     </>
