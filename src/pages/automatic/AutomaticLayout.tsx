@@ -29,7 +29,7 @@ const GridBox = styled(Grid)(({ theme }) => ({
 
 const AutomaticLayout = () => {
   return (
-    <div title="Dashboard">
+    <div title="AutomaticLayout">
       <Container maxWidth="xl">
         <Box>
           <Typography variant="h4" sx={{ mb: 5 }}>

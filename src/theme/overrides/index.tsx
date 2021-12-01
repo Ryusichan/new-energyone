@@ -11,6 +11,7 @@ import Typography from "./Typography";
 import IconButton from "./IconButton";
 import Autocomplete from "./Autocomplete";
 import TextField from "./TextField";
+import Toggle from "./Toggle";
 
 // ----------------------------------------------------------------------
 
@@ -27,6 +28,7 @@ export default function ComponentsOverrides(theme: any) {
     IconButton(theme),
     Autocomplete(theme),
     TextField(theme),
-    Fab(theme)
+    Fab(theme),
+    Toggle(theme)
   );
 }

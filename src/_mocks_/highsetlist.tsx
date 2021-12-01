@@ -5,7 +5,7 @@ import faker from "faker";
 const MAIN_SET = [
   { name: "저장탱크 수위 감지방식", value: true, title: "TANKLEVEL" },
   { name: "A LINE HOLDING", value: true, title: "ALINEHOLDING" },
-  { name: "B LINE HOLDING", value: true, title: "BLINEHOLDING" },
+  { name: "B LINE HOLDING", value: false, title: "BLINEHOLDING" },
   { name: "오버플로워 센서작동", value: true, title: "OVERSENCER" },
 ];
 
