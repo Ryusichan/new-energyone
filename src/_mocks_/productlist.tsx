@@ -118,21 +118,21 @@ const Products = [
     name: "고덕 센트럴 아이파크",
     date: "2020.09.13",
     lateTime: "324DAY",
-    level: "14%",
+    level: 14,
   },
   {
     location: "대한민국 성남시",
     name: "용인 아이파크",
     date: "2020.09.13",
     lateTime: "324DAY",
-    level: "28%",
+    level: 28,
   },
   {
     location: "대한민국 하남시",
     name: "레미안 아이파크",
     date: "2020.09.13",
     lateTime: "324DAY",
-    level: "24%",
+    level: 24,
   },
 ];
 
@@ -149,8 +149,6 @@ const users = [...Array(19)].map((_, index) => ({
   contractdate: Products[index].date,
   AccumulatedTime: Products[index].lateTime,
   tankLevel: Products[index].level,
-  onTime: faker.date.weekday(),
-  offTime: faker.date.weekday(),
 }));
 
 export default users;
