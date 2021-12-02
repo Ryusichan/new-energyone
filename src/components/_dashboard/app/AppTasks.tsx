@@ -14,11 +14,11 @@ import {
 // ----------------------------------------------------------------------
 
 const TASKS = [
-  "Create FireStone Logo",
-  "Add SCSS and JS files if required",
-  "Stakeholder Meeting",
-  "Scoping & Estimations",
-  "Sprint Showcase",
+  "자동운전화면 점검하기",
+  "PM 12시 수동운전화면-배기밸브 점검",
+  "알림 요청 체크하기",
+  "Noti 확인하기",
+  "적산전력 기록화면 Full 삭제하기",
 ];
 
 // ----------------------------------------------------------------------
@@ -75,7 +75,7 @@ export default function AppTasks() {
 
   return (
     <Card>
-      <CardHeader title="Tasks" />
+      <CardHeader title="체크 리스트" />
       <Box sx={{ px: 3, py: 1 }}>
         <FormikProvider value={formik}>
           <Form autoComplete="off" noValidate onSubmit={handleSubmit}>

@@ -9,9 +9,7 @@ import { BaseOptionChart } from "../../charts";
 
 // ----------------------------------------------------------------------
 
-const CHART_DATA = [
-  { data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380] },
-];
+const CHART_DATA = [{ data: [84, 68, 56, 46, 44, 40, 32, 24, 14, 8] }];
 
 export default function AppConversionRates() {
   const chartOptions = merge(BaseOptionChart(), {
@@ -20,7 +18,8 @@ export default function AppConversionRates() {
       y: {
         formatter: (seriesName: any) => fNumber(seriesName),
         title: {
-          formatter: (seriesName: any) => `#${seriesName}`,
+          // formatter: (seriesName: any) => `#${seriesName}`,
+          formatter: (seriesName: any) => "Time",
         },
       },
     },
@@ -29,23 +28,26 @@ export default function AppConversionRates() {
     },
     xaxis: {
       categories: [
-        "Italy",
-        "Japan",
-        "China",
-        "Canada",
-        "France",
-        "Germany",
-        "South Korea",
-        "Netherlands",
-        "United States",
-        "United Kingdom",
+        "고액분리기 자동운전",
+        "A 고액 분리기",
+        "A 흡입 PUMP",
+        "A 배수 PUMP",
+        "B 고액 분리기",
+        "B 흡입 PUMP",
+        "B 배수 PUMP",
+        "발효건조기 자동운전",
+        "발효건조기 교반기",
+        "발효건조기 배출",
       ],
     },
   });
 
   return (
     <Card>
-      <CardHeader title="Conversion Rates" subheader="(+43%) than last year" />
+      <CardHeader
+        title="누적시간"
+        subheader="누석시간이 높은 10종류 장치를 보여줍니다."
+      />
       <Box sx={{ mx: 3 }} dir="ltr">
         <ReactApexChart
           type="bar"

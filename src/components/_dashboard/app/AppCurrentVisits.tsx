@@ -32,7 +32,7 @@ const ChartWrapperStyle = styled("div")(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const CHART_DATA = [4344, 5435, 1443, 4443];
+const CHART_DATA = [1120, 800, 420, 190, 320];
 
 export default function AppCurrentVisits() {
   const theme = useTheme();
@@ -44,7 +44,13 @@ export default function AppCurrentVisits() {
       theme.palette.warning.main,
       theme.palette.error.main,
     ],
-    labels: ["America", "Asia", "Europe", "Africa"],
+    labels: [
+      "발효건조기 교반기 역회전 ON",
+      "B배수 PUMP ON",
+      "B고액분리기 세척 ON",
+      "B 흡입 PUMP ON",
+      "B 흡입 PUMP ON",
+    ],
     stroke: { colors: [theme.palette.background.paper] },
     legend: { floating: true, horizontalAlign: "center" },
     dataLabels: { enabled: true, dropShadow: { enabled: false } },
@@ -64,7 +70,10 @@ export default function AppCurrentVisits() {
 
   return (
     <Card>
-      <CardHeader title="Current Visits" />
+      <CardHeader
+        title="발생횟수"
+        subheader="수정된 횟수가 많은순 5종류 기기를 보여줍니다."
+      />
       <ChartWrapperStyle dir="ltr">
         <ReactApexChart
           type="pie"
