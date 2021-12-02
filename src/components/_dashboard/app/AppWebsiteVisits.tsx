@@ -44,6 +44,7 @@ export default function AppWebsiteVisits() {
       "11/01/2021",
     ],
     xaxis: { type: "datetime" },
+    colors: ["#2196f3", "#ffe700", "#2cd9c5"],
     tooltip: {
       shared: true,
       intersect: false,

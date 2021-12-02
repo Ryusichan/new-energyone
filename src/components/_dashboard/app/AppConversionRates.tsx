@@ -26,6 +26,18 @@ export default function AppConversionRates() {
     plotOptions: {
       bar: { horizontal: true, barHeight: "28%", borderRadius: 2 },
     },
+    // colors: [
+    //   "#2196f3",
+    //   "#2196f3e6",
+    //   "#2196f3cc",
+    //   "#2196f3b3",
+    //   "#2196f399",
+    //   "#2196f380",
+    //   "#2196f366",
+    //   "#2196f34d",
+    //   "#2196f333",
+    //   "#2196f31a",
+    // ],
     xaxis: {
       categories: [
         "고액분리기 자동운전",
