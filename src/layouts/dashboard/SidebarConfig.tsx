@@ -2,14 +2,14 @@ import { Icon } from "@iconify/react";
 import chartPie from "@iconify/icons-mdi/chart-pie";
 import applicationSettings from "@iconify/icons-mdi/application-settings-outline";
 import clockOutline from "@iconify/icons-mdi/clock-outline";
-import accountSettingsSutline from "@iconify/icons-mdi/account-settings-outline";
+import shape from "@iconify/icons-mdi/shape";
 import weatherWindy from "@iconify/icons-mdi/weather-windy";
 import clipboardClock from "@iconify/icons-mdi/clipboard-text-clock-outline";
 import textSearch from "@iconify/icons-mdi/text-search";
 import bellOutline from "@iconify/icons-mdi/bell-outline";
 import noteText from "@iconify/icons-mdi/note-text-outline";
 import layers from "@iconify/icons-mdi/layers";
-import dishwasher from "@iconify/icons-mdi/dishwasher";
+import showerHead from "@iconify/icons-mdi/shower-head";
 import pieChart2Fill from "@iconify/icons-eva/pie-chart-2-fill";
 import shoppingBagFill from "@iconify/icons-eva/shopping-bag-fill";
 import fileTextFill from "@iconify/icons-eva/file-text-fill";
@@ -40,7 +40,7 @@ const sidebarConfig = [
   {
     title: "수동운전화면",
     path: "/dashboard/MenualLayout",
-    icon: getIcon(accountSettingsSutline),
+    icon: getIcon(shape),
   },
   {
     title: "고액분리기 설정화면",
@@ -50,7 +50,7 @@ const sidebarConfig = [
   {
     title: "시간세척 설정화면",
     path: "/dashboard/TimeWashing",
-    icon: getIcon(dishwasher),
+    icon: getIcon(showerHead),
   },
   {
     title: "발효건조기 설정화면",

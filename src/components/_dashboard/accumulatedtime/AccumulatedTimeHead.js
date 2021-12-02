@@ -24,11 +24,8 @@ AccumulatedTimeHead.propTypes = {
 export default function AccumulatedTimeHead({
   order,
   orderBy,
-  rowCount,
   headLabel,
-  numSelected,
   onRequestSort,
-  onSelectAllClick,
 }) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);

@@ -57,7 +57,6 @@ const applySortFilter = (array: any, comparator: any, query: any) => {
     return a[1] - b[1];
   });
   if (query) {
-    // @ts-ignore
     return filter(
       array,
       (_user: any) =>
@@ -79,24 +78,6 @@ export default function AccumulatedTime() {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
-  };
-
-  const handleClick = (event: any, name: any) => {
-    const selectedIndex = selected.indexOf(name);
-    let newSelected: any[] = [];
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1)
-      );
-    }
-    setSelected(newSelected);
   };
 
   const handleChangePage = (event: any, newPage: any) => {
