@@ -64,7 +64,7 @@ const DashboardSidebar = ({ isOpensidebar, onCloseSidebar }: Props) => {
 
       {/* 사이드바 아파트 component 선택한 아파트명 보여짐*/}
       <Box sx={{ mb: 5, mx: 2.5 }}>
-        <Link underline="none" component={RouterLink} to="#">
+        <Link underline="none" component={RouterLink} to="/productList">
           <AccountStyle>
             {/* <Avatar src={account.photoURL} alt="photoURL" /> */}
             <Box sx={{ ml: 2 }}>
