@@ -41,9 +41,11 @@ const MainSetting = ({ name, value }: Props) => {
 
   const handleToggle = (
     e: React.MouseEvent<HTMLElement>,
-    newToggle: boolean
+    newToggle: boolean | null
   ) => {
-    setToggleValue(newToggle);
+    if (newToggle !== null) {
+      setToggleValue(newToggle);
+    }
   };
 
   return (
