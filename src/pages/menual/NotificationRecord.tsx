@@ -27,7 +27,8 @@ import {
 import notifiRecord from "../../_mocks_/notifiRecord";
 
 const TABLE_HEAD = [
-  { id: "name", label: "이름", alignRight: false },
+  { id: "number", label: "번호", alignRight: false },
+  { id: "name", label: "이름" },
   { id: "onTime", label: "ON시간", alignRight: false },
   { id: "offTime", label: "OFF시간", alignRight: false },
   { id: "count", label: "발생횟수", alignRight: false },
@@ -72,7 +73,7 @@ export default function NotificationRecord() {
   const [page, setPage] = useState<number>(0);
   const [order, setOrder] = useState<string>("asc");
   const [selected, setSelected] = useState<any>([]);
-  const [orderBy, setOrderBy] = useState<string>("name");
+  const [orderBy, setOrderBy] = useState<string>("number");
   const [filterName, setFilterName] = useState<string>("");
   const [rowsPerPage, setRowsPerPage] = useState<number>(5);
 
@@ -168,7 +169,7 @@ export default function NotificationRecord() {
                 {filteredUsers
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row: any) => {
-                    const { id, name, onTime, offTime, count } = row;
+                    const { id, name, onTime, offTime, count, number } = row;
                     const isItemSelected = selected.indexOf(name) !== -1;
 
                     return (
@@ -195,9 +196,14 @@ export default function NotificationRecord() {
                             sx={{ pl: 2 }}
                           >
                             <Typography variant="subtitle2" noWrap>
-                              {name}
+                              {number}
                             </Typography>
                           </Stack>
+                        </TableCell>
+                        <TableCell>
+                          <Typography variant="subtitle2" align="left">
+                            {name}
+                          </Typography>
                         </TableCell>
                         <TableCell align="left">{onTime}</TableCell>
                         <TableCell align="left">{offTime}</TableCell>

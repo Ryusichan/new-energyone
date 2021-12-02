@@ -28,6 +28,7 @@ import accumulTime from "../../_mocks_/accumulTime";
 
 const TABLE_HEAD = [
   { id: "number", label: "번호", alignRight: false },
+  { id: "caption", label: "분류", alignRight: false },
   { id: "name", label: "이름", alignRight: false },
   { id: "accumulateTime", label: "가동누적시간", alignRight: false },
   { id: "" },
@@ -138,7 +139,7 @@ export default function AccumulatedTime() {
                 {filteredUsers
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row: any) => {
-                    const { id, name, number, count } = row;
+                    const { id, name, number, accumulatedTime, caption } = row;
                     const isItemSelected = selected.indexOf(name) !== -1;
 
                     return (
@@ -152,6 +153,8 @@ export default function AccumulatedTime() {
                       >
                         <TableCell align="left">{number}</TableCell>
 
+                        <TableCell align="left">{caption}</TableCell>
+
                         <TableCell component="th" scope="row" padding="none">
                           <Stack
                             direction="row"
@@ -164,7 +167,7 @@ export default function AccumulatedTime() {
                             </Typography>
                           </Stack>
                         </TableCell>
-                        <TableCell align="left">{count}</TableCell>
+                        <TableCell align="left">{accumulatedTime}</TableCell>
 
                         <TableCell align="right">
                           <AccumulatedTimeMenu />
