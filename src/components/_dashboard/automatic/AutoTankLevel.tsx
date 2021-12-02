@@ -15,6 +15,7 @@ const WaterBox = styled("div")(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alighItem: "center",
+  position: "relative",
 }));
 
 const WaterWrapper = styled("div")(({ theme }) => ({
@@ -26,6 +27,13 @@ const WaterWrapper = styled("div")(({ theme }) => ({
   backgroundColor: "rgba(34,79,242,0.8)",
   borderBottomRightRadius: "12px",
   borderBottomLeftRadius: "12px",
+}));
+
+const LevelText = styled(Typography)(({ theme }) => ({
+  color: "#fff",
+  position: "absolute",
+  bottom: "10px",
+  left: "10px",
 }));
 
 const Water01 = styled("div")(({ theme }) => ({
@@ -67,6 +75,7 @@ const AutoTankLevel = () => {
           <Water01 />
           <Water02 />
         </WaterWrapper>
+        <LevelText variant="h3">53%</LevelText>
       </WaterBox>
     </GridBox>
   );
