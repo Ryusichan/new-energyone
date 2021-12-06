@@ -77,6 +77,7 @@ html * {
     dotum;
   /* font-family: 'Noto Sans KR', sans-serif; */
   font-family: "SCDream", sans-serif !important;
+  word-break: keep-all;
 }
 
 body {
