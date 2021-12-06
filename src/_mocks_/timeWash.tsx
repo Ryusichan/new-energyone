@@ -2,14 +2,6 @@ import faker from "faker";
 
 // ----------------------------------------------------------------------
 
-const SAVETANK = [
-  { name: "A수중PUMP", value: true },
-  { name: "B수중PUMP", value: false },
-  { name: "A전자밸브", value: true },
-  { name: "B전자밸브", value: true },
-  { name: "오버플로워", value: false },
-];
-
 const ASEPERATOR = [
   { name: "A흡입PUMP", value: true },
   { name: "A고액분리기", value: true },
@@ -28,14 +20,24 @@ const BSEPERATOR = [
   { name: "B세척밸브", value: true },
 ];
 
-const FERMENTATION = [
-  { name: "교반기정회전", value: true },
-  { name: "교반기역회전", value: false },
-  { name: "배출정회전", value: true },
-  { name: "배출역회전", value: true },
-  { name: "분진제거밸브", value: false },
-  { name: "배기FAN", value: true },
-  { name: "배기밸브", value: true },
+const MAINSET = [
+  { name: "A LINE 세척", value: true },
+  { name: "B LINE 세척", value: false },
+  { name: "A 고액분리기", value: true },
+  { name: "B 고액분리기", value: true },
+];
+
+const TIMEWASHSET = [
+  { name: "수동PUMP 가동시간설정", value: 34 },
+  { name: "흡입PUMP 가동지연 시간설정", value: 14 },
+  { name: "고액분리기 가동시연 시간설정", value: 84 },
+  { name: "고액분리기 OFF지연 시간설정", value: 75 },
+  { name: "배수 PUMP 가동지연 시간설정", value: 24 },
+  { name: "고액분리기 고속시간 설정", value: 36 },
+  { name: "고액분리기 저속시간 설정", value: 43 },
+  { name: "배수 PUMP END 시간 설정", value: 80 },
+  { name: "자동세척 횟수 설정", value: 25 },
+  { name: "자동세척 시간 설정", value: 15 },
 ];
 
 // ----------------------------------------------------------------------
@@ -56,18 +58,18 @@ export const washBseperator = [...Array(6)].map((_, index) => {
   };
 });
 
-// export const autoSaveTank = [...Array(5)].map((_, index) => {
-//   return {
-//     id: faker.datatype.uuid(),
-//     name: SAVETANK[index].name,
-//     value: SAVETANK[index].value,
-//   };
-// });
+export const washMainset = [...Array(4)].map((_, index) => {
+  return {
+    id: faker.datatype.uuid(),
+    name: MAINSET[index].name,
+    value: MAINSET[index].value,
+  };
+});
 
-// export const autoFermentation = [...Array(7)].map((_, index) => {
-//   return {
-//     id: faker.datatype.uuid(),
-//     name: FERMENTATION[index].name,
-//     value: FERMENTATION[index].value,
-//   };
-// });
+export const washTimeset = [...Array(10)].map((_, index) => {
+  return {
+    id: faker.datatype.uuid(),
+    name: TIMEWASHSET[index].name,
+    value: TIMEWASHSET[index].value,
+  };
+});

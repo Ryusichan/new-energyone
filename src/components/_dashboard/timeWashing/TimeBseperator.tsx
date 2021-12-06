@@ -19,7 +19,7 @@ const GridBox = styled(Grid)(({ theme }) => ({
 const TimeBseperator = () => {
   return (
     <GridBox item xs={12}>
-      <Typography variant="h6">A 고액분리기</Typography>
+      <Typography variant="h6">B 고액분리기</Typography>
       <Box sx={{ display: "flex", mt: 4, pb: 2, overflowX: "auto" }}>
         {washBseperator.map((data) => (
           <Box
