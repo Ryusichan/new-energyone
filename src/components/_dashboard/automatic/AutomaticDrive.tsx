@@ -20,9 +20,12 @@ const GridBox = styled(Grid)(({ theme }) => ({
 
 const AutomaticDrive = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [highSeperator, setHighSeperator] = useState<boolean>(true);
+  const [drySet, setDrySet] = useState<boolean>(false);
 
-  const handleOpenModal = () => {
+  const handleOpenModal = (name: string, value: boolean) => {
     setOpenModal(true);
+    console.log(name, value);
   };
 
   const handleCloseModal = () => {
@@ -33,21 +36,29 @@ const AutomaticDrive = () => {
     setOpenModal(false);
   };
 
+  const sysTem = [
+    { name: "고액분리기", systemValue: highSeperator },
+    { name: "발효건조기", systemValue: drySet },
+  ];
+
   return (
     <>
       <GridBox item xs={12}>
         <Typography variant="h6">자동운전</Typography>
         <Box style={{ display: "flex" }} sx={{ mt: 6 }}>
-          <Button variant="contained" fullWidth onClick={handleOpenModal}>
-            고액분리기
-            <br />
-            가동중
-          </Button>
-          <Button variant="contained" color="inherit" fullWidth sx={{ ml: 2 }}>
-            발효건조기
-            <br />
-            정지상태
-          </Button>
+          {sysTem.map(({ name, systemValue }) => (
+            <Button
+              variant="contained"
+              color={systemValue ? "primary" : "inherit"}
+              fullWidth
+              onClick={() => handleOpenModal(name, systemValue)}
+              sx={{ ml: 1, mr: 1 }}
+            >
+              {name}
+              <br />
+              {systemValue ? "가동" : "정지"}상태
+            </Button>
+          ))}
         </Box>
       </GridBox>
       <Dialog open={openModal} onClose={handleCloseModal}>
