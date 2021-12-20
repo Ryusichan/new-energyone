@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
+import countSlice from "./counterSlice"
 
 const rootReducer = combineReducers({
     // state 관리
     
     // A고액분리기
+    countSlice: countSlice.reducer,
     // B고액분리기
     // 저장탱크
     // 발효건조기
