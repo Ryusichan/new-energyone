@@ -5,12 +5,9 @@ import {
   Grid,
   Container,
   Typography,
-  Button,
-  TextField,
-  IconButton,
 } from "@mui/material";
 
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 
 // components
 import TimeAseperator from "../../components/_dashboard/timeWashing/TimeAseperator";
@@ -18,11 +15,11 @@ import TimeMainset from "../../components/_dashboard/timeWashing/TimeMainset";
 import TimeWashSet from "../../components/_dashboard/timeWashing/TimeWashSet";
 import TimeBseperator from "../../components/_dashboard/timeWashing/TimeBseperator";
 
-const GridBox = styled(Grid)(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  padding: theme.spacing(3),
-  borderRadius: 12,
-}));
+// const GridBox = styled(Grid)(({ theme }) => ({
+//   border: `1px solid ${theme.palette.divider}`,
+//   padding: theme.spacing(3),
+//   borderRadius: 12,
+// }));
 
 const TimeWasing = () => {
   return (

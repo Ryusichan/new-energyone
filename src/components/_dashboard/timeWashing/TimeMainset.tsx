@@ -1,9 +1,7 @@
 import {
-  Button,
   List,
   ListItem,
   ListItemText,
-  Switch,
   ToggleButton,
   ToggleButtonGroup,
   Typography,
@@ -25,7 +23,7 @@ const TimeMainset = () => {
       <Typography variant="h6">메인설정</Typography>
       <List>
         {washMainset.map((data) => (
-          <MainSetting name={data.name} value={data.value} />
+          <MainSetting name={data.name} value={data.value} key={data.name}/>
         ))}
       </List>
     </GridBox>

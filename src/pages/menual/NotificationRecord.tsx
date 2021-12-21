@@ -16,7 +16,6 @@ import {
 } from "@mui/material";
 // components
 import Page from "../../components/Page";
-import Scrollbar from "../../components/Scrollbar";
 import SearchNotFound from "../../components/SearchNotFound";
 import {
   NotificationHead,

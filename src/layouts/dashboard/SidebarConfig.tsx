@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react";
-import chartPie from "@iconify/icons-mdi/chart-pie";
 import applicationSettings from "@iconify/icons-mdi/application-settings-outline";
 import clockOutline from "@iconify/icons-mdi/clock-outline";
 import shape from "@iconify/icons-mdi/shape";
@@ -11,9 +10,6 @@ import noteText from "@iconify/icons-mdi/note-text-outline";
 import layers from "@iconify/icons-mdi/layers";
 import showerHead from "@iconify/icons-mdi/shower-head";
 import pieChart2Fill from "@iconify/icons-eva/pie-chart-2-fill";
-import shoppingBagFill from "@iconify/icons-eva/shopping-bag-fill";
-import fileTextFill from "@iconify/icons-eva/file-text-fill";
-import lockFill from "@iconify/icons-eva/lock-fill";
 
 // ----------------------------------------------------------------------
 

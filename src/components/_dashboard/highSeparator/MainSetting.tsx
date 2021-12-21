@@ -3,13 +3,11 @@ import {
   List,
   ListItem,
   ListItemText,
-  Switch,
   ToggleButton,
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { styled } from "@mui/material/styles";
 import { hightMainSetList } from "../../../_mocks_/highsetlist";
 
 const WarpMainSetting = () => {
@@ -18,7 +16,7 @@ const WarpMainSetting = () => {
       <Typography variant="h6">고액분리기 세부설정</Typography>
       <List>
         {hightMainSetList.map((data) => (
-          <MainSetting name={data.name} value={data.value} />
+          <MainSetting name={data.name} value={data.value} key={data.name}/>
         ))}
         <ListItem sx={{ flexDirection: "column", alignItems: "start" }}>
           <ListItemText primary="강제배출" />

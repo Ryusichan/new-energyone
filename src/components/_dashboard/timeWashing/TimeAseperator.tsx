@@ -2,8 +2,6 @@ import {
   Typography,
   Box,
   Grid,
-  TextField,
-  IconButton,
   Fab,
 } from "@mui/material";
 import React from "react";
@@ -23,6 +21,7 @@ const TimeAseperator = () => {
       <Box sx={{ display: "flex", mt: 4, pb: 2, overflowX: "auto" }}>
         {washAseperator.map((data) => (
           <Box
+            key={data.name}
             sx={{
               display: "flex",
               flexDirection: "column",

@@ -138,8 +138,6 @@ const Products = [
 
 // ----------------------------------------------------------------------
 
-let randomNum = Math.random() * 100;
-
 const users = [...Array(19)].map((_, index) => ({
   id: faker.datatype.uuid(),
   location: Products[index].location,

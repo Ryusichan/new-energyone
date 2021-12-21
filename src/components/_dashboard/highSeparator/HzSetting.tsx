@@ -27,7 +27,7 @@ const WarpHzSetting = () => {
       <Typography variant="h6">고액분리기 세부설정</Typography>
       <List>
         {highHZSetList.map((data) => (
-          <HzSetting name={data.name} value={data.value} />
+          <HzSetting name={data.name} value={data.value} key={data.name}/>
         ))}
       </List>
     </>

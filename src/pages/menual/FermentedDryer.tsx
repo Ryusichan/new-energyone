@@ -5,23 +5,20 @@ import {
   Grid,
   Container,
   Typography,
-  Button,
-  TextField,
-  IconButton,
 } from "@mui/material";
 
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 
 // components
 import FermenMainset from "../../components/_dashboard/fermenTation/FermenMainset";
 import FermenDetail01 from "../../components/_dashboard/fermenTation/FermenDetail01";
 import FermenDetail02 from "../../components/_dashboard/fermenTation/FermenDetail02";
 
-const GridBox = styled(Grid)(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  padding: theme.spacing(3),
-  borderRadius: 12,
-}));
+// const GridBox = styled(Grid)(({ theme }) => ({
+//   border: `1px solid ${theme.palette.divider}`,
+//   padding: theme.spacing(3),
+//   borderRadius: 12,
+// }));
 
 const FermentedDryer = () => {
   return (

@@ -5,12 +5,9 @@ import {
   Grid,
   Container,
   Typography,
-  Button,
-  TextField,
-  IconButton,
 } from "@mui/material";
 
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 
 // components
 import AutomaticDrive from "../../components/_dashboard/automatic/AutomaticDrive";
@@ -21,11 +18,11 @@ import AutomaticSaveTank from "../../components/_dashboard/automatic/AutomaticSa
 import AutoFermenTation from "../../components/_dashboard/automatic/AutoFermenTation";
 import AutoTankLevel from "../../components/_dashboard/automatic/AutoTankLevel";
 
-const GridBox = styled(Grid)(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  padding: theme.spacing(3),
-  borderRadius: 12,
-}));
+// const GridBox = styled(Grid)(({ theme }) => ({
+//   border: `1px solid ${theme.palette.divider}`,
+//   padding: theme.spacing(3),
+//   borderRadius: 12,
+// }));
 
 const AutomaticLayout = () => {
   return (

@@ -35,7 +35,7 @@ const FermenDetail01 = () => {
       <Typography variant="h6">시간세척 설정</Typography>
       <List>
         {fermenDetail01.map((data) => (
-          <DetailSetting name={data.name} value={data.value} />
+          <DetailSetting name={data.name} value={data.value} key={data.name}/>
         ))}
       </List>
     </GridBox>

@@ -1,9 +1,7 @@
 import {
-  Button,
   List,
   ListItem,
   ListItemText,
-  Switch,
   ToggleButton,
   ToggleButtonGroup,
   Typography,
@@ -31,7 +29,7 @@ const FermenMainset = () => {
       <Typography variant="h6">메인설정</Typography>
       <ListSet>
         {fermenMainset.map((data) => (
-          <MainSetting name={data.name} value={data.value} />
+          <MainSetting name={data.name} value={data.value} key={data.name}/>
         ))}
       </ListSet>
     </GridBox>

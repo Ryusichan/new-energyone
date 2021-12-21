@@ -3,13 +3,8 @@ import React from "react";
 import { Box, Grid, Container, Typography } from "@mui/material";
 // components
 import {
-  AppNewUsers,
-  AppBugReports,
-  AppItemOrders,
-  AppWeeklySales,
   AppCurrentVisits,
   AppWebsiteVisits,
-  AppCurrentSubject,
   AppConversionRates,
 } from "../components/_dashboard/app";
 import AppTasks from "../components/_dashboard/app/AppTasks";

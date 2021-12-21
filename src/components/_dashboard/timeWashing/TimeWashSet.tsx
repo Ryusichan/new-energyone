@@ -35,7 +35,7 @@ const TimeWashSet = () => {
       <Typography variant="h6">시간세척 설정</Typography>
       <List>
         {washTimeset.map((data) => (
-          <DetailSetting name={data.name} value={data.value} />
+          <DetailSetting name={data.name} value={data.value} key={data.name}/>
         ))}
       </List>
     </GridBox>

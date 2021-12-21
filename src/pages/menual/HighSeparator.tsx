@@ -8,9 +8,9 @@ import DetailSetting from "../../components/_dashboard/highSeparator/DetailSetti
 import HzSetting from "../../components/_dashboard/highSeparator/HzSetting";
 import MainSetting from "../../components/_dashboard/highSeparator/MainSetting";
 
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../store/store";
-import countSlice from "../../store/reducers/counterSlice";
+// import { useSelector, useDispatch } from "react-redux";
+// import { RootState } from "../../store/store";
+// import countSlice from "../../store/reducers/counterSlice";
 
 const GridBox = styled(Grid)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -21,19 +21,19 @@ const GridBox = styled(Grid)(({ theme }) => ({
 const HighSeparator = () => {
 
   // test useSelector, useDispatch
-  const dispatch = useDispatch();
-  const state = useSelector((
-    state: RootState) => state.countSlice.count);
+  // const dispatch = useDispatch();
+  // const state = useSelector((
+  //   state: RootState) => state.countSlice.count);
 
-    console.log('state', state);
+  //   console.log('state', state);
 
-  const handlePlus = () => {
-    dispatch(countSlice.actions.increase(1))
-  };
+  // const handlePlus = () => {
+  //   dispatch(countSlice.actions.increase(1))
+  // };
 
-  const handleMinus = () => {
-    dispatch(countSlice.actions.decrease(1))
-  };
+  // const handleMinus = () => {
+  //   dispatch(countSlice.actions.decrease(1))
+  // };
 
   return (
     <div title="HighSeparator">
@@ -41,9 +41,9 @@ const HighSeparator = () => {
         <Box>
           <Typography variant="h4" sx={{ mb: 5 }}>
             고액분리기 설정화면
-            {state}
+            {/* {state}
             <button onClick={() => handlePlus()}>+</button>
-            <button onClick={() => handleMinus()}>-</button>
+            <button onClick={() => handleMinus()}>-</button> */}
           </Typography>
         </Box>
 

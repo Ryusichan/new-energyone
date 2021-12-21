@@ -5,12 +5,9 @@ import {
   Grid,
   Container,
   Typography,
-  Button,
-  TextField,
-  IconButton,
 } from "@mui/material";
 
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 
 // components
 import InterPower from "../../components/_dashboard/integratedPower/InterPower";
@@ -18,11 +15,11 @@ import IntermiddleVoltage from "../../components/_dashboard/integratedPower/Inte
 import InterVoltage from "../../components/_dashboard/integratedPower/InterVoltage";
 import InterValue from "../../components/_dashboard/integratedPower/InterValue";
 
-const GridBox = styled(Grid)(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  padding: theme.spacing(3),
-  borderRadius: 12,
-}));
+// const GridBox = styled(Grid)(({ theme }) => ({
+//   border: `1px solid ${theme.palette.divider}`,
+//   padding: theme.spacing(3),
+//   borderRadius: 12,
+// }));
 
 const IntegratedPower = () => {
   return (

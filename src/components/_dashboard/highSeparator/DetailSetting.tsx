@@ -27,7 +27,7 @@ const WarpDetailSet = () => {
       <Typography variant="h6">고액분리기 세부설정</Typography>
       <List>
         {highDetailSetList.map((data) => (
-          <DetailSetting name={data.name} value={data.value} />
+          <DetailSetting name={data.name} value={data.value} key={data.name}/>
         ))}
       </List>
     </>

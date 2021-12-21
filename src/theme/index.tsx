@@ -8,7 +8,7 @@ import {
 } from "@mui/material/styles";
 import { TypographyOptions } from "@mui/material/styles/createTypography";
 import { Shadows } from "@mui/material/styles/shadows";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { useMemo } from "react";
 import breakpoints, { Breakpoints } from "./breakpoints";
 import componentsOverride from "./overrides";

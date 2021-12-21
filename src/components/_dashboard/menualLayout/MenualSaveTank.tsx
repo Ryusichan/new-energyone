@@ -1,15 +1,12 @@
 import {
-  Button,
   List,
   ListItem,
   ListItemText,
-  Switch,
   ToggleButton,
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { styled } from "@mui/material/styles";
 import { menualSaveTank } from "../../../_mocks_/menualLayout";
 
 const MenualSaveTank = () => {
@@ -18,7 +15,7 @@ const MenualSaveTank = () => {
       <Typography variant="h6">저장탱크</Typography>
       <List>
         {menualSaveTank.map((data) => (
-          <MainSetting name={data.name} value={data.value} />
+          <MainSetting name={data.name} value={data.value} key={data.name}/>
         ))}
       </List>
     </>

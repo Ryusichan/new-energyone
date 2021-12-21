@@ -1,4 +1,4 @@
-import { Typography, Box, Grid, IconButton, Fab } from "@mui/material";
+import { Typography, Box, Grid, Fab } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
 import { autoFermentation } from "../../../_mocks_/autoLayout";
@@ -16,6 +16,7 @@ const AutoFermenTation = () => {
       <Box sx={{ display: "flex", mt: 4, pb: 2, overflowX: "auto" }}>
         {autoFermentation.map((data) => (
           <Box
+            key={data.name}
             sx={{
               display: "flex",
               flexDirection: "column",

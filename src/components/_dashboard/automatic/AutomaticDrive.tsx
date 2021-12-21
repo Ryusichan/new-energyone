@@ -48,6 +48,7 @@ const AutomaticDrive = () => {
         <Box style={{ display: "flex" }} sx={{ mt: 6 }}>
           {sysTem.map(({ name, systemValue }) => (
             <Button
+              key={name}
               variant="contained"
               color={systemValue ? "primary" : "inherit"}
               fullWidth

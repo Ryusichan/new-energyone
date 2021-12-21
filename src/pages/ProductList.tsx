@@ -15,7 +15,6 @@ import {
   TablePagination,
 } from "@mui/material";
 // components
-import Scrollbar from "../components/Scrollbar";
 import SearchNotFound from "../components/SearchNotFound";
 import {
   ProductListHead,

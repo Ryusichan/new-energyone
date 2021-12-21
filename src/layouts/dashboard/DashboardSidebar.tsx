@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 //material
-import { Drawer, Box, Link, Avatar, Typography } from "@mui/material";
+import { Drawer, Box, Link, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 //components
 import Logo from "../../components/Logo";
@@ -11,7 +11,7 @@ import NavSection from "../../components/NavSection";
 import { MHidden } from "../../components/@material-extend";
 
 import sidebarConfig from "./SidebarConfig";
-import productlist from "../../_mocks_/productlist";
+// import productlist from "../../_mocks_/productlist";
 
 const DRAWER_WIDTH = 280;
 
