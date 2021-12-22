@@ -81,7 +81,6 @@ const accumulTime = [...Array(14)].map((_, index) => ({
   id: faker.datatype.uuid(),
   name: deviceList[index].name,
   number: index + 1,
-  count: faker.random.number(),
   contractdate: faker.date.month(),
   caption: deviceList[index].caption,
   accumulatedTime: deviceList[index].accumulatedTime,

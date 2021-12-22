@@ -143,7 +143,6 @@ const users = [...Array(19)].map((_, index) => ({
   location: Products[index].location,
   name: Products[index].name,
   number: index + 1,
-  count: faker.random.number(),
   contractdate: Products[index].date,
   AccumulatedTime: Products[index].lateTime,
   tankLevel: Products[index].level,

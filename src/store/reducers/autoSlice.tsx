@@ -58,9 +58,9 @@ type InitialState = {
     // 배기밸브
     dischargeValve: boolean;
     // 배출예약 SV
-    dischargeReserveSV: boolean;
+    dischargeReserveSV: number;
     // 배출예약 PV
-    dischargeReservePV: boolean;
+    dischargeReservePV: number;
 
 };
 
@@ -91,21 +91,24 @@ const initialState: InitialState = {
     removeValve: false,
     dischargeFan: false,
     dischargeValve: false,
-    dischargeReserveSV: false,
-    dischargeReservePV: false,
+    dischargeReserveSV: 720,
+    dischargeReservePV: 20,
 };
 
-console.log('counterSlice.tsx: initialState: ', initialState);
+console.log('자동운전 State 관리: ', initialState);
 
 const  autoSlice = createSlice({
     name: 'autoSlice',
     initialState,
     reducers: {
-        setToggleSelect: (state, action) => {
+        setToggleSelect: (state: any, action) => {
             
-            const { name, value } = action.payload;
-            // @ts-ignore
-            state[name] = value;
+            const { name, newValue } = action.payload;
+
+            console.log('리덕스 들어온값: ', name, newValue);
+
+            
+            state[name] = newValue;
         },
         // increase: (state, action) => {
         //     state.ainletPump = state.ainletPump + action.payload;

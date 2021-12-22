@@ -4,6 +4,11 @@ import { createBrowserHistory } from 'history';
 
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import createSagaMiddleware from "redux-saga";
+
+import rootSaga from "./sagas";
+
+const sagaMiddleware = createSagaMiddleware();
 
 export const history = createBrowserHistory();
 
@@ -24,12 +29,16 @@ const store = configureStore({
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({
             serializableCheck: false
-        })
+        }).concat(sagaMiddleware),
+
+        devTools: process.env.NODE_ENV === 'development'
 });
 
 
 // for typescript
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
+sagaMiddleware.run(rootSaga);
 
 export default store;

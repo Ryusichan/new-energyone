@@ -28,33 +28,36 @@ const AutomaticDrive = () => {
     setOpenModal(true);
     console.log(name, value);
   };
-  
+
   const handleCloseModal = () => {
     setOpenModal(false);
   };
-  
+
   const handleSubmit = () => {
     setOpenModal(false);
     // setStateAutoSlice(name, !value);
   };
-  
+
   const dispatch = useDispatch();
-  const highSeparatorState = useSelector((
-    state: RootState) => state.autoSlice.highSeparator);
+  const highSeparatorState = useSelector(
+    (state: RootState) => state.autoSlice.highSeparator
+  );
 
-  const fermentDry = useSelector((
-    state: RootState) => state.autoSlice.fermentDry);
+  const fermentDryState = useSelector(
+    (state: RootState) => state.autoSlice.fermentDry
+  );
 
-  const setStateAutoSlice = (name: any, value: any) => {
-    dispatch(autoSlice.actions.setToggleSelect((value: any) => ({
-      name,
-      value,
-      })));
+  const setStateAutoSlice = (name: string, value:boolean) => {
+    let newValue = !value;
+    // setTimeout(() => {
+    //   console.log(  "보내기전 값", name, newValue);
+    // }, 1000);
+    dispatch(autoSlice.actions.setToggleSelect({name, newValue}));
   };
 
   const sysTem = [
-    { name: "고액분리기", systemValue: highSeparatorState},
-    { name: "발효건조기", systemValue: fermentDry },
+    { name: "고액분리기", type: "highSeparator", systemValue: highSeparatorState },
+    { name: "발효건조기", type: "fermentDry", systemValue: fermentDryState },
   ];
 
   return (
@@ -62,14 +65,14 @@ const AutomaticDrive = () => {
       <GridBox item xs={12}>
         <Typography variant="h6">자동운전</Typography>
         <Box style={{ display: "flex" }} sx={{ mt: 6 }}>
-          {sysTem.map(({ name, systemValue }) => (
+          {sysTem.map(({ name, type, systemValue }) => (
             <Button
               key={name}
               variant="contained"
               color={systemValue ? "primary" : "inherit"}
               fullWidth
               // onClick={() => handleOpenModal("highSeparatorState", systemValue)}
-              // onClick={() => setStateAutoSlice(name, {highSeparator, systemValue})}
+              onClick={() => setStateAutoSlice( type, systemValue)}
               sx={{ ml: 1, mr: 1 }}
             >
               {name}
@@ -79,7 +82,7 @@ const AutomaticDrive = () => {
           ))}
         </Box>
       </GridBox>
-      
+
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle id="modal-modal-title">고액 분리기</DialogTitle>
         <DialogContent

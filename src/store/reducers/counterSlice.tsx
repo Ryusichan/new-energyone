@@ -9,8 +9,6 @@ const initialState: InitialState = {
     count: 0,
 };
 
-console.log('counterSlice.tsx: initialState: ', initialState);
-
 const  countSlice = createSlice({
     name: 'countSlice',
     initialState,
