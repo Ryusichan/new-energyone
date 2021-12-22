@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store/store";
-import autoSlice from "../../../store/reducers/autoSlice";
+import aSeperatorState from "../../../store/reducers/aSeperatorState";
 
 const GridBox = styled(Grid)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -35,24 +35,24 @@ const AutomaticDrive = () => {
 
   const handleSubmit = () => {
     setOpenModal(false);
-    // setStateAutoSlice(name, !value);
+    // setStateautoDetailState(name, !value);
   };
 
   const dispatch = useDispatch();
   const highSeparatorState = useSelector(
-    (state: RootState) => state.autoSlice.highSeparator
+    (state: RootState) => state.aSeperatorState.ainletPump
   );
 
   const fermentDryState = useSelector(
-    (state: RootState) => state.autoSlice.fermentDry
+    (state: RootState) => state.aSeperatorState.ahighSeparator
   );
 
-  const setStateAutoSlice = (name: string, value:boolean) => {
+  const setStateautoDetailState = (name: string, value:boolean) => {
     let newValue = !value;
     // setTimeout(() => {
     //   console.log(  "보내기전 값", name, newValue);
     // }, 1000);
-    dispatch(autoSlice.actions.setToggleSelect({name, newValue}));
+    dispatch(aSeperatorState.actions.setToggleSelect({name, newValue}));
   };
 
   const sysTem = [
@@ -72,7 +72,7 @@ const AutomaticDrive = () => {
               color={systemValue ? "primary" : "inherit"}
               fullWidth
               // onClick={() => handleOpenModal("highSeparatorState", systemValue)}
-              onClick={() => setStateAutoSlice( type, systemValue)}
+              onClick={() => setStateautoDetailState( type, systemValue)}
               sx={{ ml: 1, mr: 1 }}
             >
               {name}

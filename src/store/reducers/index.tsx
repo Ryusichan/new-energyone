@@ -1,24 +1,36 @@
 import { combineReducers } from 'redux';
 
-import autoSlice from "./autoSlice"
-import highSlice from "./highSlice"
-import timeSlice from "./timeSlice"
-import fermentDrySlice from "./fermentDrySlice"
-import intergratedPowerSlice from "./intergratedPowerSlice"
+import aSeperatorState from "./aSeperatorState"
+import bSeperatorState from "./bSeperatorState"
+import saveTankState from "./saveTankState"
+import fermenterState from "./fermenterState"
+import autoDetailState from "./autoDetailState"
+import highSeperatorDetailState from "./highSeperatorDetailState"
+import timeWashState from "./timeWashState"
+import fermentDryState from "./fermentDryState"
+import intergratedPowerState from "./intergratedPowerState"
 
 const rootReducer = combineReducers({
     // state 관리
     
-    // 자동운전화면 + 수동운전화면
-    autoSlice: autoSlice.reducer,
-    // 고액분리기 설정화면
-    highSlice: highSlice.reducer,
+    // A 고액분리기
+    aSeperatorState: aSeperatorState.reducer,
+    // B 고액분리기
+    bSeperatorState: bSeperatorState.reducer,
+    // 저장탱크
+    saveTankState: saveTankState.reducer,
+    // 발효건조기
+    fermenterState: fermenterState.reducer,
+    // 자동운전세부항목
+    autoDetailState: autoDetailState.reducer,
+    // 고액분리기 세부설정
+    highSeperatorDetailState: highSeperatorDetailState.reducer,
     // 시간세척 설정화면
-    timeSlice: timeSlice.reducer,
+    timeWashState: timeWashState.reducer,
     // 발효건조기 설정화면
-    fermentDrySlice: fermentDrySlice.reducer,
+    fermentDryState: fermentDryState.reducer,
     // 적산전력 기록화면
-    intergratedPowerSlice: intergratedPowerSlice.reducer,
+    intergratedPowerState: intergratedPowerState.reducer,
 
 });
 

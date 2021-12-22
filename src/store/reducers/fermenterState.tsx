@@ -31,36 +31,6 @@ type InitialState = {
     acleanValve: boolean;
     // B세척밸브
     bcleanValve: boolean;
-    // 저장탱크 ---------------------------------------
-    // A수중펌프
-    awaterPump: boolean;
-    // B수중펌프
-    bwaterPump: boolean;
-    // A전자밸브
-    aelectroValve: boolean;
-    // B전자밸브
-    belectroValve: boolean;
-    // 오버플러워
-    overFlow: boolean;
-    // 발효건조기 ---------------------------------------
-    // 교반기정회전
-    systemTurn: boolean;
-    // 교반기역회전
-    systemRturn: boolean;
-    // 배출정회전
-    dischargeTurn: boolean;
-    // 배출역회전
-    dischargeRturn: boolean;
-    // 분진제거밸브
-    removeValve: boolean;
-    // 배기팬
-    dischargeFan: boolean;
-    // 배기밸브
-    dischargeValve: boolean;
-    // 배출예약 SV
-    dischargeReserveSV: number;
-    // 배출예약 PV
-    dischargeReservePV: number;
 
 };
 
@@ -79,20 +49,6 @@ const initialState: InitialState = {
     boutletPump: true,
     acleanValve: false,
     bcleanValve: true,
-    awaterPump: false,
-    bwaterPump: true,
-    aelectroValve: false,
-    belectroValve: true,
-    overFlow: false,
-    systemTurn: false,
-    systemRturn: true,
-    dischargeTurn: false,
-    dischargeRturn: true,
-    removeValve: false,
-    dischargeFan: false,
-    dischargeValve: false,
-    dischargeReserveSV: 720,
-    dischargeReservePV: 20,
 };
 
 console.log('자동운전 State 관리: ', initialState);
