@@ -1,53 +1,38 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 // import { increaseAsync, decreaseAsync } from './actions/counterActions';
 
 type InitialState = {
-    // B흡입펌프
-    binletPump: boolean;
-    // B고액분리기
-    bhighSeparator: boolean;
-    // B고속
-    bhighSpeed: boolean;
-    // B저속
-    blowSpeed: boolean;
-    // B배수펌프
-    boutletPump: boolean;
-    // B세척밸브
-    bcleanValve: boolean;
-
+  // B 고액분리기
+  bSeperatorArray: Array<{ id: string; name: string; value: boolean }>;
 };
 
 const initialState: InitialState = {
-    binletPump: true,
-    bhighSeparator: false,
-    bhighSpeed: true,
-    blowSpeed: true,
-    boutletPump: true,
-    bcleanValve: true,
+  bSeperatorArray: [
+    { id: "binletPump", name: "B흡입펌프", value: false },
+    { id: "bhighSeparator", name: "B고액분리기", value: true },
+    { id: "bhighSpeed", name: "B고속", value: true },
+    { id: "bslowSpeed", name: "B저속", value: false },
+    { id: "boutletPump", name: "B배수펌프", value: true },
+    { id: "bcleanValve", name: "B세척밸브", value: false },
+  ],
 };
 
-console.log('B고액분리기 State 관리: ', initialState);
+const bSeperatorState = createSlice({
+  name: "bSeperatorState",
+  initialState,
+  reducers: {
+    setToggleSelect: (state: any, action) => {
+      const { name, newValue } = action.payload;
 
-const  bSeperatorState = createSlice({
-    name: 'bSeperatorState',
-    initialState,
-    reducers: {
-        setToggleSelect: (state: any, action) => {
-            
-            const { name, newValue } = action.payload;
-
-            console.log('리덕스 들어온값: ', name, newValue);
-
-            
-            state[name] = newValue;
-        },
-        // increase: (state, action) => {
-        //     state.ainletPump = state.ainletPump + action.payload;
-        // },
-        // decrease: (state, action) => {
-        //     state.ainletPump = state.ainletPump - action.payload;
-        // }
-    }
+      state[name] = newValue;
+    },
+    // increase: (state, action) => {
+    //     state.ainletPump = state.ainletPump + action.payload;
+    // },
+    // decrease: (state, action) => {
+    //     state.ainletPump = state.ainletPump - action.payload;
+    // }
+  },
 });
 
 export default bSeperatorState;

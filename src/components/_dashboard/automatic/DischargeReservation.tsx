@@ -1,6 +1,9 @@
-import { Typography, Box, Grid, TextField } from "@mui/material";
 import React from "react";
+import { Typography, Box, Grid, TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
+
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 const GridBox = styled(Grid)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -9,6 +12,14 @@ const GridBox = styled(Grid)(({ theme }) => ({
 }));
 
 const DischargeReservation = () => {
+  const dischargeReservationSV = useSelector(
+    (state: RootState) => state.autoDetailState.dischargeReserveSV
+  );
+
+  const dischargeReservationPV = useSelector(
+    (state: RootState) => state.autoDetailState.dischargeReservePV
+  );
+
   return (
     <GridBox item xs={12} sx={{ mt: 4 }}>
       <Box
@@ -21,7 +32,11 @@ const DischargeReservation = () => {
         }}
       >
         <Typography variant="h6">배출예약 SV</Typography>
-        <TextField value="720" disabled sx={{ ml: "auto", maxWidth: 64 }} />
+        <TextField
+          value={dischargeReservationSV}
+          disabled
+          sx={{ ml: "auto", maxWidth: 64 }}
+        />
         <Typography variant="h6" sx={{ ml: 2 }}>
           M
         </Typography>
@@ -35,7 +50,11 @@ const DischargeReservation = () => {
         }}
       >
         <Typography variant="h6">배출예약 PV</Typography>
-        <TextField value="20" disabled sx={{ ml: "auto", maxWidth: 64 }} />
+        <TextField
+          value={dischargeReservationPV}
+          disabled
+          sx={{ ml: "auto", maxWidth: 64 }}
+        />
         <Typography variant="h6" sx={{ ml: 2 }}>
           M
         </Typography>

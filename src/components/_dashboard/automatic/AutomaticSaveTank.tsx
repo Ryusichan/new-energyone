@@ -1,12 +1,8 @@
-import {
-  Typography,
-  Box,
-  Grid,
-  Fab,
-} from "@mui/material";
 import React from "react";
+import { Typography, Box, Grid, Fab } from "@mui/material";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 import { styled } from "@mui/material/styles";
-import { autoSaveTank } from "../../../_mocks_/autoLayout";
 
 const GridBox = styled(Grid)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -15,13 +11,17 @@ const GridBox = styled(Grid)(({ theme }) => ({
 }));
 
 const AutomaticSaveTank = () => {
+  const autoSaveTank = useSelector(
+    (state: RootState) => state.saveTankState.saveTankArray
+  );
+
   return (
     <GridBox item xs={12}>
       <Typography variant="h6">저장탱크</Typography>
       <Box sx={{ display: "flex", mt: 4, pb: 2, overflowX: "auto" }}>
         {autoSaveTank.map((data) => (
           <Box
-            key={data.name}
+            key={data.id}
             sx={{
               display: "flex",
               flexDirection: "column",

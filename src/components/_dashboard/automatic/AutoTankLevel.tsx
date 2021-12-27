@@ -1,6 +1,8 @@
 import { Typography, Grid } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 const GridBox = styled(Grid)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -67,6 +69,10 @@ const Water02 = styled("div")(({ theme }) => ({
 }));
 
 const AutoTankLevel = () => {
+  const storageTankLevel = useSelector(
+    (state: RootState) => state.autoDetailState.storageTankLevel
+  );
+
   return (
     <GridBox sx={{ height: "100%" }}>
       <Typography variant="h6">저장탱크수위</Typography>
@@ -75,7 +81,7 @@ const AutoTankLevel = () => {
           <Water01 />
           <Water02 />
         </WaterWrapper>
-        <LevelText variant="h3">53%</LevelText>
+        <LevelText variant="h3">{storageTankLevel}%</LevelText>
       </WaterBox>
     </GridBox>
   );

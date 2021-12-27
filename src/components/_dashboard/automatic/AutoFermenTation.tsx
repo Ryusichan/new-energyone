@@ -1,7 +1,9 @@
 import { Typography, Box, Grid, Fab } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { autoFermentation } from "../../../_mocks_/autoLayout";
+
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 const GridBox = styled(Grid)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -10,11 +12,15 @@ const GridBox = styled(Grid)(({ theme }) => ({
 }));
 
 const AutoFermenTation = () => {
+  const autoFermenTation = useSelector(
+    (state: RootState) => state.fermenterState.autoFermenTationArray
+  );
+
   return (
     <GridBox item xs={12}>
       <Typography variant="h6">발효건조기</Typography>
       <Box sx={{ display: "flex", mt: 4, pb: 2, overflowX: "auto" }}>
-        {autoFermentation.map((data) => (
+        {autoFermenTation.map((data) => (
           <Box
             key={data.name}
             sx={{

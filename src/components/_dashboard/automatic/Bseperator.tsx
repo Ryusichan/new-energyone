@@ -1,7 +1,8 @@
 import { Typography, Box, Grid, Fab } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { autoBseperator } from "../../../_mocks_/autoLayout";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 const GridBox = styled(Grid)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -10,13 +11,17 @@ const GridBox = styled(Grid)(({ theme }) => ({
 }));
 
 const Bseperator = () => {
+  const bSeperator = useSelector(
+    (state: RootState) => state.bSeperatorState.bSeperatorArray
+  );
+
   return (
     <GridBox item xs={12} sx={{ mt: 4 }}>
       <Typography variant="h6">B 고액분리기</Typography>
       <Box sx={{ display: "flex", mt: 4, pb: 2, overflowX: "auto" }}>
-        {autoBseperator.map((data) => (
+        {bSeperator.map((data) => (
           <Box
-            key={data.name}
+            key={data.id}
             sx={{
               display: "flex",
               flexDirection: "column",

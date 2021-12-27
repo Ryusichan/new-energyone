@@ -39,13 +39,13 @@ const AutomaticDrive = () => {
   };
 
   const dispatch = useDispatch();
-  const highSeparatorState = useSelector(
-    (state: RootState) => state.aSeperatorState.ainletPump
-  );
+  // const highSeparatorState = useSelector(
+  //   (state: RootState) => state.aSeperatorState.ainletPump
+  // );
 
-  const fermentDryState = useSelector(
-    (state: RootState) => state.aSeperatorState.ahighSeparator
-  );
+  // const fermentDryState = useSelector(
+  //   (state: RootState) => state.aSeperatorState.ahighSeparator
+  // );
 
   const setStateautoDetailState = (name: string, value:boolean) => {
     let newValue = !value;
@@ -56,8 +56,8 @@ const AutomaticDrive = () => {
   };
 
   const sysTem = [
-    { name: "고액분리기", type: "highSeparator", systemValue: highSeparatorState },
-    { name: "발효건조기", type: "fermentDry", systemValue: fermentDryState },
+    { name: "고액분리기", type: "highSeparator", systemValue: false },
+    { name: "발효건조기", type: "fermentDry", systemValue: true },
   ];
 
   return (
