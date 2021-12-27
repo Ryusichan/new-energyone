@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   List,
   ListItem,
@@ -6,17 +7,62 @@ import {
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
-// import { styled } from "@mui/material/styles";
-import { menualSeperator } from "../../../_mocks_/menualLayout";
+
+import { RootState } from "../../../store/store";
+import { useSelector } from "react-redux";
 
 const MenualSeparator = () => {
+  //A고액분리기
+  const aHighPressureSeparator = useSelector(
+    (state: RootState) => state.aSeperatorState.aSeperatorArray[1]
+  );
+
+  //A흡입PUMP
+  const aIntakePump = useSelector(
+    (state: RootState) => state.aSeperatorState.aSeperatorArray[0]
+  );
+
+  //A수중PUMP
+  const aWaterPump = useSelector(
+    (state: RootState) => state.saveTankState.saveTankArray[0]
+  );
+
+  //A배수PUMP
+  const aDrainPump = useSelector(
+    (state: RootState) => state.aSeperatorState.aSeperatorArray[4]
+  );
+
+  //B고액분리기
+  const bHighPressureSeparator = useSelector(
+    (state: RootState) => state.bSeperatorState.bSeperatorArray[1]
+  );
+
+  //B흡입PUMP
+  const bIntakePump = useSelector(
+    (state: RootState) => state.bSeperatorState.bSeperatorArray[0]
+  );
+
+  //B수중PUMP
+  const bWaterPump = useSelector(
+    (state: RootState) => state.saveTankState.saveTankArray[1]
+  );
+
+  const menualSeparatorArray = [
+    aHighPressureSeparator,
+    aIntakePump,
+    aWaterPump,
+    aDrainPump,
+    bHighPressureSeparator,
+    bIntakePump,
+    bWaterPump,
+  ];
+
   return (
     <>
       <Typography variant="h6">고액분리기</Typography>
       <List>
-        {menualSeperator.map((data) => (
-          <MainSetting name={data.name} value={data.value} key={data.name}/>
+        {menualSeparatorArray.map((data) => (
+          <MainSetting name={data.name} value={data.value} key={data.name} />
         ))}
       </List>
     </>

@@ -8,11 +8,11 @@ type InitialState = {
 
 const initialState: InitialState = {
   bSeperatorArray: [
-    { id: "binletPump", name: "B흡입펌프", value: false },
+    { id: "binletPump", name: "B흡입PUMP", value: false },
     { id: "bhighSeparator", name: "B고액분리기", value: true },
     { id: "bhighSpeed", name: "B고속", value: true },
     { id: "bslowSpeed", name: "B저속", value: false },
-    { id: "boutletPump", name: "B배수펌프", value: true },
+    { id: "boutletPump", name: "B배수PUMP", value: true },
     { id: "bcleanValve", name: "B세척밸브", value: false },
   ],
 };

@@ -33,7 +33,7 @@ const DischargeReservation = () => {
       >
         <Typography variant="h6">배출예약 SV</Typography>
         <TextField
-          value={dischargeReservationSV}
+          value={dischargeReservationSV.value}
           disabled
           sx={{ ml: "auto", maxWidth: 64 }}
         />
@@ -51,7 +51,7 @@ const DischargeReservation = () => {
       >
         <Typography variant="h6">배출예약 PV</Typography>
         <TextField
-          value={dischargeReservationPV}
+          value={dischargeReservationPV.value}
           disabled
           sx={{ ml: "auto", maxWidth: 64 }}
         />

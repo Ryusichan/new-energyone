@@ -7,15 +7,58 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { menualSaveTank } from "../../../_mocks_/menualLayout";
+
+import { RootState } from "../../../store/store";
+import { useSelector } from "react-redux";
 
 const MenualSaveTank = () => {
+  //배기FAN
+  const outputFan = useSelector(
+    (state: RootState) => state.fermenterState.autoFermenTationArray[5]
+  );
+
+  //배기밸브
+  const outputValve = useSelector(
+    (state: RootState) => state.fermenterState.autoFermenTationArray[6]
+  );
+
+  //A수중PUMP
+  const aWaterPump = useSelector(
+    (state: RootState) => state.saveTankState.saveTankArray[0]
+  );
+
+  //A전자밸브
+  const aElectroValve = useSelector(
+    (state: RootState) => state.saveTankState.saveTankArray[2]
+  );
+
+  //B수중PUMP
+  const bWaterPump = useSelector(
+    (state: RootState) => state.saveTankState.saveTankArray[1]
+  );
+
+  //분진제거밸브
+  const ejectValve = useSelector(
+    (state: RootState) => state.fermenterState.autoFermenTationArray[4]
+  );
+
+  const menualSaveTankArray = [
+    outputFan,
+    outputValve,
+    aWaterPump,
+    aElectroValve,
+    bWaterPump,
+    ejectValve,
+  ];
+
+  console.log("수동 저장탱크", menualSaveTankArray);
+
   return (
     <>
       <Typography variant="h6">저장탱크</Typography>
       <List>
-        {menualSaveTank.map((data) => (
-          <MainSetting name={data.name} value={data.value} key={data.name}/>
+        {menualSaveTankArray.map((data) => (
+          <MainSetting name={data.name} value={data.value} key={data.name} />
         ))}
       </List>
     </>

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   List,
   ListItem,
@@ -6,17 +7,62 @@ import {
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
-// import { styled } from "@mui/material/styles";
-import { menualFermentation } from "../../../_mocks_/menualLayout";
+
+import { RootState } from "../../../store/store";
+import { useSelector } from "react-redux";
 
 const MenualFermentation = () => {
+  //교반기정회전
+  const rotation = useSelector(
+    (state: RootState) => state.fermenterState.autoFermenTationArray[0]
+  );
+
+  //교반기역회전
+  const reverseRotation = useSelector(
+    (state: RootState) => state.fermenterState.autoFermenTationArray[1]
+  );
+
+  //배출정회전
+  const rotation2 = useSelector(
+    (state: RootState) => state.fermenterState.autoFermenTationArray[2]
+  );
+
+  //배출역회전
+  const reverseRotation2 = useSelector(
+    (state: RootState) => state.fermenterState.autoFermenTationArray[3]
+  );
+
+  //발효건조가열
+  const heating = useSelector(
+    (state: RootState) => state.autoDetailState.activationHeater
+  );
+
+  // A LINE 세척 SOL
+  const aLineSol = useSelector(
+    (state: RootState) => state.autoDetailState.aLineCleanSol
+  );
+
+  // B LINE 세척 SOL
+  const bLineSol = useSelector(
+    (state: RootState) => state.autoDetailState.bLineCleanSol
+  );
+
+  const fermentationArray = [
+    rotation,
+    reverseRotation,
+    rotation2,
+    reverseRotation2,
+    heating,
+    aLineSol,
+    bLineSol,
+  ];
+
   return (
     <>
       <Typography variant="h6">발효건조기</Typography>
       <List>
-        {menualFermentation.map((data) => (
-          <MainSetting name={data.name} value={data.value} key={data.name}/>
+        {fermentationArray.map((data) => (
+          <MainSetting name={data.name} value={data.value} key={data.id} />
         ))}
       </List>
     </>

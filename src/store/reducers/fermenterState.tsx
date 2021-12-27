@@ -20,8 +20,8 @@ const initialState: InitialState = {
 
 console.log("자동운전 State 관리: ", initialState);
 
-const autoSlice = createSlice({
-  name: "autoSlice",
+const fermenterState = createSlice({
+  name: "fermenterState",
   initialState,
   reducers: {
     setToggleSelect: (state: any, action) => {
@@ -38,4 +38,4 @@ const autoSlice = createSlice({
   },
 });
 
-export default autoSlice;
+export default fermenterState;

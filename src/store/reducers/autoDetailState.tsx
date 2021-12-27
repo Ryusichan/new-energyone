@@ -3,17 +3,42 @@ import { createSlice } from "@reduxjs/toolkit";
 
 type InitialState = {
   // 배출예약 SV
-  dischargeReserveSV: number;
+  dischargeReserveSV: { id: string; name: string; value: number };
   // 배출예약 PV
-  dischargeReservePV: number;
+  dischargeReservePV: { id: string; name: string; value: number };
   // 저장탱크 수위
-  storageTankLevel: number;
+  storageTankLevel: { id: string; name: string; value: number };
+  // 발효건조가열
+  activationHeater: { id: string; name: string; value: boolean };
+  // A LINE 세척 Sol
+  aLineCleanSol: { id: string; name: string; value: boolean };
+  // B LINE 세척 Sol
+  bLineCleanSol: { id: string; name: string; value: boolean };
 };
 
 const initialState: InitialState = {
-  dischargeReserveSV: 720,
-  dischargeReservePV: 20,
-  storageTankLevel: 64,
+  dischargeReserveSV: {
+    id: "dischargeReserveSV",
+    name: "배출예약 SV",
+    value: 720,
+  },
+  dischargeReservePV: {
+    id: "dischargeReservePV",
+    name: "배출예약 PV",
+    value: 20,
+  },
+  storageTankLevel: {
+    id: "storageTankLevel",
+    name: "저장탱크 수위",
+    value: 64,
+  },
+  activationHeater: {
+    id: "activationHeater",
+    name: "발효건조가열",
+    value: false,
+  },
+  aLineCleanSol: { id: "aLineCleanSol", name: "A LINE 세척 Sol", value: false },
+  bLineCleanSol: { id: "bLineCleanSol", name: "B LINE 세척 Sol", value: false },
 };
 
 const autoDetailState = createSlice({
