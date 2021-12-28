@@ -28,12 +28,31 @@ const WarpDetailSet = () => {
     (state: RootState) => state.highSeperatorDetailState.highSeperatorDetail
   );
 
+  const autoTankLevel = useSelector(
+    (state: RootState) => state.autoDetailState.storageTankLevel
+  );
+
   return (
     <>
       <Typography variant="h6">고액분리기 세부설정</Typography>
       <List>
+        <ListItem>
+          <ListItemText primary={autoTankLevel.name} />
+          <TextField
+            value={autoTankLevel.value}
+            size="small"
+            sx={{ maxWidth: 54, marginRight: 1 }}
+            type="number"
+          />
+          {autoTankLevel.unit}
+        </ListItem>
         {highDetailArray.map((data) => (
-          <DetailSetting name={data.name} value={data.value} key={data.name} />
+          <DetailSetting
+            name={data.name}
+            value={data.value}
+            key={data.name}
+            unit={data.unit}
+          />
         ))}
       </List>
     </>
@@ -43,9 +62,10 @@ const WarpDetailSet = () => {
 interface Props {
   name: string;
   value: number;
+  unit: string;
 }
 
-const DetailSetting = ({ name, value }: Props) => {
+const DetailSetting = ({ name, value, unit }: Props) => {
   const [detailValue, setValue] = useState<number>(value);
   const [openModal, setOpenModal] = useState<boolean>(false);
 
@@ -82,7 +102,7 @@ const DetailSetting = ({ name, value }: Props) => {
           onKeyPress={handleKeyPress}
           type="number"
         />
-        %
+        {unit}
       </ListItem>
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle id="modal-modal-title">{name}</DialogTitle>

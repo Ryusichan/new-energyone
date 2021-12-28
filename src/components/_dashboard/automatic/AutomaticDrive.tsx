@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import {
   Button,
   Typography,
@@ -9,10 +11,9 @@ import {
   DialogActions,
   TextField,
 } from "@mui/material";
-import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../store/store";
+import { useDispatch } from "react-redux";
+
 import aSeperatorState from "../../../store/reducers/aSeperatorState";
 
 const GridBox = styled(Grid)(({ theme }) => ({
@@ -47,12 +48,12 @@ const AutomaticDrive = () => {
   //   (state: RootState) => state.aSeperatorState.ahighSeparator
   // );
 
-  const setStateautoDetailState = (name: string, value:boolean) => {
+  const setStateautoDetailState = (name: string, value: boolean) => {
     let newValue = !value;
     // setTimeout(() => {
     //   console.log(  "보내기전 값", name, newValue);
     // }, 1000);
-    dispatch(aSeperatorState.actions.setToggleSelect({name, newValue}));
+    dispatch(aSeperatorState.actions.setToggleSelect({ name, newValue }));
   };
 
   const sysTem = [
@@ -72,7 +73,7 @@ const AutomaticDrive = () => {
               color={systemValue ? "primary" : "inherit"}
               fullWidth
               // onClick={() => handleOpenModal("highSeparatorState", systemValue)}
-              onClick={() => setStateautoDetailState( type, systemValue)}
+              onClick={() => setStateautoDetailState(type, systemValue)}
               sx={{ ml: 1, mr: 1 }}
             >
               {name}

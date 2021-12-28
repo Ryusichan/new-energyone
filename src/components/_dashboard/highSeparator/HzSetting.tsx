@@ -33,7 +33,12 @@ const WarpHzSetting = () => {
       <Typography variant="h6">고액분리기 세부설정</Typography>
       <List>
         {highHzArray.map((data) => (
-          <HzSetting name={data.name} value={data.value} key={data.name} />
+          <HzSetting
+            name={data.name}
+            value={data.value}
+            key={data.name}
+            unit={data.unit}
+          />
         ))}
       </List>
     </>
@@ -43,9 +48,10 @@ const WarpHzSetting = () => {
 interface Props {
   name: string;
   value: number;
+  unit: string;
 }
 
-const HzSetting = ({ name, value }: Props) => {
+const HzSetting = ({ name, value, unit }: Props) => {
   const [detailValue, setValue] = useState<number>(value);
   const [openModal, setOpenModal] = useState<boolean>(false);
 
@@ -81,7 +87,7 @@ const HzSetting = ({ name, value }: Props) => {
           onKeyPress={handleKeyPress}
           type="number"
         />
-        %
+        {unit}
       </ListItem>
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle id="modal-modal-title">{name}</DialogTitle>

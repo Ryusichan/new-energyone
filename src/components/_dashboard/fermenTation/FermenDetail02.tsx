@@ -13,7 +13,9 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-import { fermenDetail02 } from "../../../_mocks_/fermenTation";
+
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 const innerValueStyle = {
   fontSize: 20,
@@ -30,12 +32,21 @@ const GridBox = styled(Grid)(({ theme }) => ({
 }));
 
 const FermenDetail02 = () => {
+  const fermentDetail02Array = useSelector(
+    (state: RootState) => state.fermentDryState.fermentDetail02
+  );
+
   return (
     <GridBox item xs={12}>
-      <Typography variant="h6">시간세척 설정</Typography>
+      <Typography variant="h6">발효건조기 세부설정02</Typography>
       <List>
-        {fermenDetail02.map((data) => (
-          <DetailSetting name={data.name} value={data.value} key={data.name}/>
+        {fermentDetail02Array.map((data) => (
+          <DetailSetting
+            name={data.name}
+            value={data.value}
+            key={data.name}
+            unit={data.unit}
+          />
         ))}
       </List>
     </GridBox>
@@ -45,9 +56,10 @@ const FermenDetail02 = () => {
 interface Props {
   name: string;
   value: number;
+  unit: string;
 }
 
-const DetailSetting = ({ name, value }: Props) => {
+const DetailSetting = ({ name, value, unit }: Props) => {
   const [detailValue, setValue] = useState<number>(value);
   const [openModal, setOpenModal] = useState<boolean>(false);
 
@@ -84,7 +96,7 @@ const DetailSetting = ({ name, value }: Props) => {
           onKeyPress={handleKeyPress}
           type="number"
         />
-        %
+        {unit}
       </ListItem>
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle id="modal-modal-title">{name}</DialogTitle>

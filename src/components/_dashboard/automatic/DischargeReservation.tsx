@@ -38,7 +38,7 @@ const DischargeReservation = () => {
           sx={{ ml: "auto", maxWidth: 64 }}
         />
         <Typography variant="h6" sx={{ ml: 2 }}>
-          M
+          {dischargeReservationSV.unit}
         </Typography>
       </Box>
       <Box
@@ -56,7 +56,7 @@ const DischargeReservation = () => {
           sx={{ ml: "auto", maxWidth: 64 }}
         />
         <Typography variant="h6" sx={{ ml: 2 }}>
-          M
+          {dischargeReservationPV.unit}
         </Typography>
       </Box>
     </GridBox>

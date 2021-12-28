@@ -9,7 +9,9 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-import { washMainset } from "../../../_mocks_/timeWash";
+
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 const GridBox = styled(Grid)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -18,12 +20,16 @@ const GridBox = styled(Grid)(({ theme }) => ({
 }));
 
 const TimeMainset = () => {
+  const timeMainsetArray = useSelector(
+    (state: RootState) => state.timeWashState.timeWashMain
+  );
+
   return (
     <GridBox item xs={12}>
       <Typography variant="h6">메인설정</Typography>
       <List>
-        {washMainset.map((data) => (
-          <MainSetting name={data.name} value={data.value} key={data.name}/>
+        {timeMainsetArray.map((data) => (
+          <MainSetting name={data.name} value={data.value} key={data.name} />
         ))}
       </List>
     </GridBox>

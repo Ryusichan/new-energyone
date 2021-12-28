@@ -9,7 +9,9 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-import { fermenMainset } from "../../../_mocks_/fermenTation";
+
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 const GridBox = styled(Grid)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -24,12 +26,16 @@ const ListSet = styled(List)(({ theme }) => ({
 }));
 
 const FermenMainset = () => {
+  const fermentMainArray = useSelector(
+    (state: RootState) => state.fermentDryState.fermentMain
+  );
+
   return (
     <GridBox item xs={12}>
       <Typography variant="h6">메인설정</Typography>
       <ListSet>
-        {fermenMainset.map((data) => (
-          <MainSetting name={data.name} value={data.value} key={data.name}/>
+        {fermentMainArray.map((data) => (
+          <MainSetting name={data.name} value={data.value} key={data.name} />
         ))}
       </ListSet>
     </GridBox>

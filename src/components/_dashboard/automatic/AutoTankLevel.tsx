@@ -81,7 +81,10 @@ const AutoTankLevel = () => {
           <Water01 />
           <Water02 />
         </WaterWrapper>
-        <LevelText variant="h3">{storageTankLevel}%</LevelText>
+        <LevelText variant="h3">
+          {storageTankLevel.value}
+          {storageTankLevel.unit}
+        </LevelText>
       </WaterBox>
     </GridBox>
   );

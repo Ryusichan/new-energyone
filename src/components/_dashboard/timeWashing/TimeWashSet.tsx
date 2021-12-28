@@ -13,7 +13,9 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-import { washTimeset } from "../../../_mocks_/timeWash";
+
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 const innerValueStyle = {
   fontSize: 20,
@@ -30,12 +32,21 @@ const GridBox = styled(Grid)(({ theme }) => ({
 }));
 
 const TimeWashSet = () => {
+  const timeWashsetArray = useSelector(
+    (state: RootState) => state.timeWashState.timeWashTimeSet
+  );
+
   return (
     <GridBox item xs={12}>
       <Typography variant="h6">시간세척 설정</Typography>
       <List>
-        {washTimeset.map((data) => (
-          <DetailSetting name={data.name} value={data.value} key={data.name}/>
+        {timeWashsetArray.map((data) => (
+          <DetailSetting
+            name={data.name}
+            value={data.value}
+            key={data.name}
+            unit={data.unit}
+          />
         ))}
       </List>
     </GridBox>
@@ -45,9 +56,10 @@ const TimeWashSet = () => {
 interface Props {
   name: string;
   value: number;
+  unit: string;
 }
 
-const DetailSetting = ({ name, value }: Props) => {
+const DetailSetting = ({ name, value, unit }: Props) => {
   const [detailValue, setValue] = useState<number>(value);
   const [openModal, setOpenModal] = useState<boolean>(false);
 
@@ -84,7 +96,7 @@ const DetailSetting = ({ name, value }: Props) => {
           onKeyPress={handleKeyPress}
           type="number"
         />
-        %
+        {unit}
       </ListItem>
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle id="modal-modal-title">{name}</DialogTitle>

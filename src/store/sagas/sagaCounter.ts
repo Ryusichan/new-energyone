@@ -4,7 +4,7 @@ import {
   fork,
   put,
   takeEvery,
-  takeLatest
+  // takeLatest
 } from "redux-saga/effects";
 import counterSlice from "../reducers/counterSlice";
 // const INCREASESAGA = 'INCREASESAGA';
