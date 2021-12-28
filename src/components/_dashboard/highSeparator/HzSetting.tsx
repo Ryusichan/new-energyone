@@ -11,7 +11,9 @@ import {
   Button,
 } from "@mui/material";
 import React, { useState } from "react";
-import { highHZSetList } from "../../../_mocks_/highsetlist";
+
+import { RootState } from "../../../store/store";
+import { useSelector } from "react-redux";
 
 const innerValueStyle = {
   fontSize: 20,
@@ -22,12 +24,16 @@ const innerValueStyle = {
 };
 
 const WarpHzSetting = () => {
+  const highHzArray = useSelector(
+    (state: RootState) => state.highSeperatorDetailState.highSeperatorHZset
+  );
+
   return (
     <>
       <Typography variant="h6">고액분리기 세부설정</Typography>
       <List>
-        {highHZSetList.map((data) => (
-          <HzSetting name={data.name} value={data.value} key={data.name}/>
+        {highHzArray.map((data) => (
+          <HzSetting name={data.name} value={data.value} key={data.name} />
         ))}
       </List>
     </>

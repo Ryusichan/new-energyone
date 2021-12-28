@@ -11,7 +11,9 @@ import {
   Button,
 } from "@mui/material";
 import React, { useState } from "react";
-import { highDetailSetList } from "../../../_mocks_/highsetlist";
+
+import { RootState } from "../../../store/store";
+import { useSelector } from "react-redux";
 
 const innerValueStyle = {
   fontSize: 20,
@@ -22,12 +24,16 @@ const innerValueStyle = {
 };
 
 const WarpDetailSet = () => {
+  const highDetailArray = useSelector(
+    (state: RootState) => state.highSeperatorDetailState.highSeperatorDetail
+  );
+
   return (
     <>
       <Typography variant="h6">고액분리기 세부설정</Typography>
       <List>
-        {highDetailSetList.map((data) => (
-          <DetailSetting name={data.name} value={data.value} key={data.name}/>
+        {highDetailArray.map((data) => (
+          <DetailSetting name={data.name} value={data.value} key={data.name} />
         ))}
       </List>
     </>

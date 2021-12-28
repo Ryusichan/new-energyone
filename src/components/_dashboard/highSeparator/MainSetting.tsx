@@ -8,15 +8,21 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { hightMainSetList } from "../../../_mocks_/highsetlist";
+
+import { RootState } from "../../../store/store";
+import { useSelector } from "react-redux";
 
 const WarpMainSetting = () => {
+  const highMainArray = useSelector(
+    (state: RootState) => state.highSeperatorDetailState.highSeperatorMain
+  );
+
   return (
     <>
-      <Typography variant="h6">고액분리기 세부설정</Typography>
+      <Typography variant="h6">메인설정</Typography>
       <List>
-        {hightMainSetList.map((data) => (
-          <MainSetting name={data.name} value={data.value} key={data.name}/>
+        {highMainArray.map((data) => (
+          <MainSetting name={data.name} value={data.value} key={data.name} />
         ))}
         <ListItem sx={{ flexDirection: "column", alignItems: "start" }}>
           <ListItemText primary="강제배출" />

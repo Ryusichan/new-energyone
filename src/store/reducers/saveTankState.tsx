@@ -16,8 +16,6 @@ const initialState: InitialState = {
   ],
 };
 
-console.log("자동운전 State 관리: ", initialState);
-
 const saveTankState = createSlice({
   name: "saveTankState",
   initialState,

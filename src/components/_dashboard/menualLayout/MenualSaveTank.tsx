@@ -51,8 +51,6 @@ const MenualSaveTank = () => {
     ejectValve,
   ];
 
-  console.log("수동 저장탱크", menualSaveTankArray);
-
   return (
     <>
       <Typography variant="h6">저장탱크</Typography>

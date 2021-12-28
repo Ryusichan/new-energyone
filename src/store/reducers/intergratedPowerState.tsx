@@ -1,80 +1,64 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 // import { increaseAsync, decreaseAsync } from './actions/counterActions';
 
 type InitialState = {
-    //적산전력 기록화면
-    //전체유효전력
-    totalValidPower: number;
-    //평균역률
-    averagePower: number;
-    //주파수
-    frequency: number;
-    //유효전력량
-    validPower: number;
+  //적산전력 기록화면
+  //적산전력
+  integratedPower: Array<{ id: string; name: string; value: number }>;
 
-    //RS 상간전압
-    rsUpperVoltage: number;
-    //ST 상간전압
-    stUpperVoltage: number;
-    //TR 상간전압
-    trUpperVoltage: number;
+  //상간전압
+  upperVoltage: Array<{ id: string; name: string; value: number }>;
 
-    //R 상전압
-    rUpperVoltage: number;
-    //S 상전압
-    sUpperVoltage: number;
-    //T 상전압
-    tUpperVoltage: number;
+  //상전압
+  upVoltage: Array<{ id: string; name: string; value: number }>;
 
-    //R 상전류값
-    rUpperCurrent: number;
-    //S 상전류값
-    sUpperCurrent: number;
-    //T 상전류값
-    tUpperCurrent: number;
+  //상전전류
+  upPowerVoltage: Array<{ id: string; name: string; value: number }>;
 };
 
 const initialState: InitialState = {
-    totalValidPower: 34,
-    averagePower: 14,
-    frequency: 24,
-    validPower: 84,
+  integratedPower: [
+    { id: "totalValidPower", name: "전체유효전력", value: 34 },
+    { id: "averagePower", name: "평균역률", value: 14 },
+    { id: "frequency", name: "주파수", value: 24 },
+    { id: "validPower", name: "유효전력량", value: 84 },
+  ],
 
-    rsUpperVoltage: 395,
-    stUpperVoltage: 413,
-    trUpperVoltage: 421,
+  upperVoltage: [
+    { id: "rsUpperVoltage", name: "RS 상간전압", value: 395 },
+    { id: "stUpperVoltage", name: "ST 상간전압", value: 413 },
+    { id: "trUpperVoltage", name: "TR 상간전압", value: 421 },
+  ],
 
-    rUpperVoltage: 227,
-    sUpperVoltage: 413,
-    tUpperVoltage: 421,
+  upVoltage: [
+    { id: "rUpperVoltage", name: "R 상전압", value: 227 },
+    { id: "sUpperVoltage", name: "S 상전압", value: 413 },
+    { id: "tUpperVoltage", name: "T 상전압", value: 421 },
+  ],
 
-    rUpperCurrent: 0.1,
-    sUpperCurrent: 0,
-    tUpperCurrent: 0.4,
+  upPowerVoltage: [
+    { id: "rUpperCurrent", name: "R 상전류값", value: 0.1 },
+    { id: "sUpperCurrent", name: "S 상전류값", value: 0 },
+    { id: "tUpperCurrent", name: "T 상전류값", value: 0.4 },
+  ],
 };
 
-console.log('자동운전 State 관리: ', initialState);
+const intergratedPowerState = createSlice({
+  name: "intergratedPowerState",
+  initialState,
+  reducers: {
+    setToggleSelect: (state: any, action) => {
+      const { name, newValue } = action.payload;
 
-const  intergratedPowerState = createSlice({
-    name: 'intergratedPowerState',
-    initialState,
-    reducers: {
-        setToggleSelect: (state: any, action) => {
-            
-            const { name, newValue } = action.payload;
-
-            console.log('리덕스 들어온값: ', name, newValue);
-
-            
-            state[name] = newValue;
-        },
-        // increase: (state, action) => {
-        //     state.ainletPump = state.ainletPump + action.payload;
-        // },
-        // decrease: (state, action) => {
-        //     state.ainletPump = state.ainletPump - action.payload;
-        // }
-    }
+      state[name] = newValue;
+    },
+    // increase: (state, action) => {
+    //     state.ainletPump = state.ainletPump + action.payload;
+    // },
+    // decrease: (state, action) => {
+    //     state.ainletPump = state.ainletPump - action.payload;
+    // }
+  },
 });
 
 export default intergratedPowerState;
