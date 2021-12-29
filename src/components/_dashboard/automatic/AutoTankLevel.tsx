@@ -8,16 +8,26 @@ const GridBox = styled(Grid)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
   padding: theme.spacing(3),
   borderRadius: 12,
+  [theme.breakpoints.down("md")]: {
+    display: "flex",
+    justifyContent: "space-between",
+    alighItems: "center",
+  },
 }));
 
 const WaterBox = styled("div")(({ theme }) => ({
-  width: "calc(100% + 48px)",
-  marginLeft: "-24px",
+  width: "100%",
   height: "100%",
   display: "flex",
   justifyContent: "center",
   alighItem: "center",
-  position: "relative",
+  position: "absolute",
+  top: 0,
+  left: 0,
+  zIndex: -1,
+  [theme.breakpoints.down("md")]: {
+    display: "none",
+  },
 }));
 
 const WaterWrapper = styled("div")(({ theme }) => ({
@@ -36,14 +46,22 @@ const LevelText = styled(Typography)(({ theme }) => ({
   position: "absolute",
   bottom: "10px",
   left: "10px",
+  [theme.breakpoints.down("md")]: {
+    position: "relative",
+    color: "#646464",
+    bottom: "auto",
+    left: "auto",
+  },
 }));
 
-const Water01 = styled("div")(({ theme }) => ({
+const Water01 = styled("div", {
+  shouldForwardProp: (prop) => prop !== "color" && prop !== "myProp",
+})<{ tankLevel: number }>(({ theme, tankLevel }) => ({
   width: "1000px",
   height: "1000px",
   position: "absolute",
-  top: "-205%",
-  left: "-100%",
+  top: `-${tankLevel + 110}%`,
+  left: `-100%`,
   borderRadius: "45%",
   background: "rgba(3,169,244,0.8)",
   animation: "move 5s infinite linear",
@@ -53,11 +71,13 @@ const Water01 = styled("div")(({ theme }) => ({
   },
 }));
 
-const Water02 = styled("div")(({ theme }) => ({
+const Water02 = styled("div", {
+  shouldForwardProp: (prop) => prop !== "color" && prop !== "myProp",
+})<{ tankLevel: number }>(({ theme, tankLevel }) => ({
   width: "1100px",
   height: "1100px",
   position: "absolute",
-  top: "-237%",
+  top: `-${tankLevel + 140}%`,
   left: "-110%",
   borderRadius: "45%",
   background: " #fff",
@@ -77,18 +97,18 @@ const AutoTankLevel = () => {
   const tankUnit = storageTankLevel.unit;
 
   return (
-    <GridBox sx={{ height: "100%" }}>
+    <GridBox sx={{ height: "100%", position: "relative" }}>
       <Typography variant="h6">저장탱크수위</Typography>
       <WaterBox>
         <WaterWrapper>
-          <Water01 />
-          <Water02 />
+          <Water01 tankLevel={tankLevel} />
+          <Water02 tankLevel={tankLevel} />
         </WaterWrapper>
-        <LevelText variant="h3">
-          {tankLevel}
-          {tankUnit}
-        </LevelText>
       </WaterBox>
+      <LevelText variant="h3">
+        {tankLevel}
+        {tankUnit}
+      </LevelText>
     </GridBox>
   );
 };
