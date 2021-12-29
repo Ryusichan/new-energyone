@@ -11,7 +11,6 @@ import NavSection from "../../components/NavSection";
 import { MHidden } from "../../components/@material-extend";
 
 import sidebarConfig from "./SidebarConfig";
-// import productlist from "../../_mocks_/productlist";
 
 const DRAWER_WIDTH = 280;
 

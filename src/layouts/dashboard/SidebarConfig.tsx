@@ -69,16 +69,16 @@ const sidebarConfig = [
   //   path: "/dashboard/MemberManagement",
   //   icon: getIcon(lockFill),
   // },
-  {
-    title: "알림",
-    path: "/dashboard/ManagerNoti",
-    icon: getIcon(bellOutline),
-  },
-  {
-    title: "기록",
-    path: "/dashboard/ManagerHistory",
-    icon: getIcon(noteText),
-  },
+  // {
+  //   title: "알림",
+  //   path: "/dashboard/ManagerNoti",
+  //   icon: getIcon(bellOutline),
+  // },
+  // {
+  //   title: "기록",
+  //   path: "/dashboard/ManagerHistory",
+  //   icon: getIcon(noteText),
+  // },
   //global
   // {
   //   title: "productList",

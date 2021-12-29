@@ -73,6 +73,9 @@ const AutoTankLevel = () => {
     (state: RootState) => state.autoDetailState.storageTankLevel
   );
 
+  const tankLevel = storageTankLevel.value;
+  const tankUnit = storageTankLevel.unit;
+
   return (
     <GridBox sx={{ height: "100%" }}>
       <Typography variant="h6">저장탱크수위</Typography>
@@ -82,8 +85,8 @@ const AutoTankLevel = () => {
           <Water02 />
         </WaterWrapper>
         <LevelText variant="h3">
-          {storageTankLevel.value}
-          {storageTankLevel.unit}
+          {tankLevel}
+          {tankUnit}
         </LevelText>
       </WaterBox>
     </GridBox>

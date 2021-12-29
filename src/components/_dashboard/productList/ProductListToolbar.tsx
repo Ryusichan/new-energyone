@@ -29,11 +29,6 @@ const SearchStyle = styled(OutlinedInput)(({ theme }: any) => ({
 
 // ----------------------------------------------------------------------
 
-ProductListToolbar.propTypes = {
-  filterName: PropTypes.string,
-  onFilterName: PropTypes.func,
-};
-
 interface Props {
   filterName: string;
   onFilterName: (event: any) => void;
@@ -48,7 +43,7 @@ export default function ProductListToolbar({
       <SearchStyle
         value={filterName}
         onChange={onFilterName}
-        placeholder="Search user..."
+        placeholder="Search product..."
         startAdornment={
           <InputAdornment position="start">
             <Box

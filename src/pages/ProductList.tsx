@@ -137,8 +137,8 @@ export default function ProductList() {
               filterName={filterName}
               onFilterName={handleFilterByName}
             />
-            <TableContainer sx={{ minWidth: 800 }}>
-              <Table>
+            <TableContainer>
+              <Table sx={{ minWidth: "720px" }}>
                 <ProductListHead
                   order={order}
                   orderBy={orderBy}
