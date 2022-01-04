@@ -7,14 +7,18 @@ const ObjectContainer = styled(Stack)(({ theme }) => ({
   position: "absolute",
   overflow: "hidden",
   zIndex: -1,
+
+  "& > *": {
+    position: "absolute",
+    objectFit: "cover",
+    objectPosition: "center",
+  },
 }));
 
 const SubBgObject01 = styled("object")(({ theme }) => ({
-  position: "absolute",
   top: "65vh",
   right: "72%",
-  objectFit: "cover",
-  objectPosition: "center",
+  animation: "mainObject01 7.5s infinite ease-in-out",
   [theme.breakpoints.up("xl")]: {
     left: 0,
     right: "auto",
@@ -22,11 +26,11 @@ const SubBgObject01 = styled("object")(({ theme }) => ({
 }));
 
 const SubBgObject02 = styled("object")(({ theme }) => ({
-  position: "absolute",
   top: "65vh",
   right: "70%",
-  objectFit: "cover",
-  objectPosition: "center",
+
+  animation: "mainObject02 5.5s infinite ease-in-out",
+
   [theme.breakpoints.up("xl")]: {
     left: 0,
     right: "auto",
@@ -34,35 +38,41 @@ const SubBgObject02 = styled("object")(({ theme }) => ({
 }));
 
 const MainObject01 = styled("object")(({ theme }) => ({
-  position: "absolute",
+  animation: "mainObject01 10.5s infinite ease-in-out",
   top: "-10vh",
   left: "25%",
-  objectFit: "cover",
-  objectPosition: "center",
   [theme.breakpoints.up("xl")]: {
     left: "auto",
     right: "-25vh",
+  },
+  "@keyframes mainObject01": {
+    "0%": { transform: "skewY(0rad)" },
+    "50%": { transform: "skewY(0.02rad)" },
+    "100%": { transform: "skewY(0rad)" },
   },
 }));
 
 const MainObject02 = styled("object")(({ theme }) => ({
-  position: "absolute",
+  animation: "mainObject02 7.5s infinite ease-in-out",
   top: "-11vh",
   left: "25%",
-  objectFit: "cover",
-  objectPosition: "center",
   [theme.breakpoints.up("xl")]: {
     left: "auto",
     right: "-25vh",
   },
+  "@keyframes mainObject02": {
+    "0%": { transform: "skewY(0rad)" },
+    "50%": { transform: "skewY(0.04rad)" },
+    "100%": { transform: "skewY(0rad)" },
+  },
 }));
 
 const MainObject03 = styled("object")(({ theme }) => ({
-  position: "absolute",
   top: "-8vh",
   left: "25%",
-  objectFit: "cover",
-  objectPosition: "center",
+
+  animation: "mainObject02 9.5s infinite ease-in-out",
+
   [theme.breakpoints.up("xl")]: {
     left: "auto",
     right: "-25vh",
@@ -70,47 +80,34 @@ const MainObject03 = styled("object")(({ theme }) => ({
 }));
 
 const CircleBg01 = styled("object")(({ theme }) => ({
-  position: "absolute",
   top: "30vh",
   right: "89%",
   width: "20px",
-  objectFit: "cover",
-  objectPosition: "center",
+  opacity: 0.7,
 }));
 
 const CircleBg02 = styled("object")(({ theme }) => ({
-  position: "absolute",
   top: "85vh",
   left: "72%",
   width: "20px",
-  objectFit: "cover",
-  objectPosition: "center",
+  opacity: 0.7,
 }));
 
 const CircleBg03 = styled("object")(({ theme }) => ({
-  position: "absolute",
   top: "88vh",
   right: "64%",
   width: "50px",
-  objectFit: "cover",
-  objectPosition: "center",
 }));
 
 const CircleBg04 = styled("object")(({ theme }) => ({
-  position: "absolute",
   top: "37vh",
   right: "93%",
   width: "50px",
-  objectFit: "cover",
-  objectPosition: "center",
 }));
 
 const CircleBg05 = styled("object")(({ theme }) => ({
-  position: "absolute",
   top: "-20vh",
   left: "82%",
-  objectFit: "cover",
-  objectPosition: "center",
 }));
 
 const LoginBgContainer = () => {
