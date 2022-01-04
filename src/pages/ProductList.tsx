@@ -36,9 +36,7 @@ const TABLE_HEAD = [
 ];
 
 const ProductionLayout = styled("div")(({ theme }: any) => ({
-  width: "100%",
-  height: "100%",
-  padding: theme.spacing(4, 0),
+  background: "#F6F6F6",
 }));
 
 const descendingComparator = (a: any, b: any, orderBy: any) => {
@@ -120,7 +118,7 @@ export default function ProductList() {
   return (
     <ProductionLayout>
       <Page title="ProductList | Minimal-UI">
-        <Container>
+        <Container sx={{ pt: 8, pb: 8 }}>
           <Stack
             direction="row"
             alignItems="center"
