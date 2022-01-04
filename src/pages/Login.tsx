@@ -1,13 +1,14 @@
 import { Link as RouterLink } from "react-router-dom";
 // material
 import { styled } from "@mui/material/styles";
-import { Stack, Link, Container, Typography } from "@mui/material";
+import { Stack, Link, Container, Typography, Card } from "@mui/material";
 // layouts
 import AuthLayout from "../layouts/AuthLayout";
 // components
 // import Page from "../components/Page";
 import { MHidden } from "../components/@material-extend";
 import { LoginForm } from "../components/authentication/login";
+import LoginBgContainer from "../components/authentication/login/LoginBgContainer";
 
 const RootStyle = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
@@ -15,14 +16,26 @@ const RootStyle = styled("div")(({ theme }) => ({
   },
 }));
 
-const ContentStyle = styled("div")(({ theme }) => ({
-  maxWidth: 480,
+const ContentStyle = styled(Card)(({ theme }) => ({
+  maxWidth: 460,
   margin: "auto",
   display: "flex",
-  minHeight: "100vh",
   flexDirection: "column",
   justifyContent: "center",
-  padding: theme.spacing(12, 0),
+  padding: theme.spacing(8, 6),
+  width: "calc(100% - 24px )",
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(8, 4),
+  },
+  boxSizing: "border-box",
+}));
+
+const ContainerStyle = styled(Container)(({ theme }) => ({
+  display: "flex",
+  minHeight: "100vh",
+  [theme.breakpoints.down("sm")]: {
+    padding: 0,
+  },
 }));
 
 const Login = () => {
@@ -40,15 +53,15 @@ const Login = () => {
         </Link>
       </AuthLayout>
 
-      <Container maxWidth="sm">
+      <LoginBgContainer />
+
+      <ContainerStyle maxWidth="sm">
         <ContentStyle>
-          <Stack sx={{ mb: 5 }}>
-            <Typography variant="h4" gutterBottom>
-              Sign in to Minimal
+          <Stack sx={{ mb: 5, textAlign: "center" }}>
+            <Typography gutterBottom sx={{ color: "text.secondary", mb: 4 }}>
+              안녕하세요. 에너지원 입니다.
             </Typography>
-            <Typography sx={{ color: "text.secondary" }}>
-              Enter your details below.
-            </Typography>
+            <Typography variant="h4">Log in</Typography>
           </Stack>
 
           <LoginForm />
@@ -62,7 +75,7 @@ const Login = () => {
             </Typography>
           </MHidden>
         </ContentStyle>
-      </Container>
+      </ContainerStyle>
     </RootStyle>
   );
 };
