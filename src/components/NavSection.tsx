@@ -21,7 +21,7 @@ import {
 
 // ----------------------------------------------------------------------
 
-const ListItemStyle = styled((props) => (
+const ListItemStyle = styled((props: any) => (
   <ListItemButton disableGutters {...props} />
 ))(({ theme }) => ({
   ...theme.typography.body2,
@@ -55,19 +55,19 @@ const ListItemIconStyle = styled(ListItemIcon)({
 
 // ----------------------------------------------------------------------
 
-NavItem.propTypes = {
-  item: PropTypes.object,
-  active: PropTypes.func,
+interface ItemProps {
+  item: any,
+  active: any,
 };
 
-function NavItem({ item, active }) {
+function NavItem({ item, active }: ItemProps) {
   const theme = useTheme();
   const isActiveRoot = active(item.path);
   const { title, path, icon, info, children } = item;
   const [open, setOpen] = useState(isActiveRoot);
 
   const handleOpen = () => {
-    setOpen((prev) => !prev);
+    setOpen((prev: any) => !prev);
   };
 
   const activeRootStyle = {
@@ -106,7 +106,7 @@ function NavItem({ item, active }) {
 
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {children.map((item) => {
+            {children.map((item : any) => {
               const { title, path } = item;
               const isActiveSub = active(path);
 
@@ -164,19 +164,19 @@ function NavItem({ item, active }) {
   );
 }
 
-NavSection.propTypes = {
-  navConfig: PropTypes.array,
+interface SelectProps {
+  navConfig: any[],
 };
 
-export default function NavSection({ navConfig, ...other }) {
+export default function NavSection({ navConfig, ...other }: SelectProps) {
   const { pathname } = useLocation();
-  const match = (path) =>
+  const match = (path : any) =>
     path ? !!matchPath({ path, end: false }, pathname) : false;
 
   return (
     <Box {...other}>
       <List disablePadding>
-        {navConfig.map((item) => (
+        {navConfig.map((item: any) => (
           <NavItem key={item.title} item={item} active={match} />
         ))}
       </List>

@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
 // material
 import { visuallyHidden } from "@mui/utils";
 import {
   Box,
+  Checkbox,
   TableRow,
   TableCell,
   TableHead,
@@ -11,30 +11,40 @@ import {
 
 // ----------------------------------------------------------------------
 
-AccumulatedTimeHead.propTypes = {
-  order: PropTypes.oneOf(["asc", "desc"]),
-  orderBy: PropTypes.string,
-  rowCount: PropTypes.number,
-  headLabel: PropTypes.array,
-  numSelected: PropTypes.number,
-  onRequestSort: PropTypes.func,
-  onSelectAllClick: PropTypes.func,
+interface Props {
+  order: any,
+  orderBy: string,
+  rowCount: number,
+  headLabel: any[],
+  numSelected: number,
+  onRequestSort: (event: any, property: string) => void,
+  onSelectAllClick: (event: any) => void,
 };
 
-export default function AccumulatedTimeHead({
+export default function NotificationHead({
   order,
   orderBy,
+  rowCount,
   headLabel,
+  numSelected,
   onRequestSort,
-}) {
-  const createSortHandler = (property) => (event) => {
+  onSelectAllClick,
+}:Props) {
+  const createSortHandler = (property: any) => (event: any) => {
     onRequestSort(event, property);
   };
 
   return (
     <TableHead>
       <TableRow>
-        {headLabel.map((headCell) => (
+        <TableCell padding="checkbox">
+          <Checkbox
+            indeterminate={numSelected > 0 && numSelected < rowCount}
+            checked={rowCount > 0 && numSelected === rowCount}
+            onChange={onSelectAllClick}
+          />
+        </TableCell>
+        {headLabel.map((headCell: any) => (
           <TableCell
             key={headCell.id}
             align={headCell.alignRight ? "right" : "left"}

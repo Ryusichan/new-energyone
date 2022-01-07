@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
 import searchFill from "@iconify/icons-eva/search-fill";
 import trash2Fill from "@iconify/icons-eva/trash-2-fill";
@@ -24,7 +23,7 @@ const RootStyle = styled(Toolbar)(({ theme }) => ({
   padding: theme.spacing(0, 1, 0, 3),
 }));
 
-const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
+const SearchStyle = styled(OutlinedInput)(({ theme }:any) => ({
   width: 240,
   transition: theme.transitions.create(["box-shadow", "width"], {
     easing: theme.transitions.easing.easeInOut,
@@ -39,17 +38,17 @@ const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-NotificationToolbar.propTypes = {
-  numSelected: PropTypes.number,
-  filterName: PropTypes.string,
-  onFilterName: PropTypes.func,
+interface Props {
+  numSelected: number,
+  filterName: string,
+  onFilterName: (value: string) => void,
 };
 
 export default function NotificationToolbar({
   numSelected,
   filterName,
   onFilterName,
-}) {
+}: Props) {
   return (
     <RootStyle
       sx={{
