@@ -39,59 +39,30 @@ const SearchStyle = styled(OutlinedInput)(({ theme }: any) => ({
 // ----------------------------------------------------------------------
 
 interface Props {
-  numSelected: number,
-  filterName: string,
-  onFilterName: (value: string) => void,
-};
+  filterName: string;
+  onFilterName: (value: string) => void;
+}
 
 export default function AccumulatedTimeToolbar({
-  numSelected,
   filterName,
   onFilterName,
 }: Props) {
   return (
-    <RootStyle
-      sx={{
-        ...(numSelected > 0 && {
-          color: "primary.main",
-          bgcolor: "primary.lighter",
-        }),
-      }}
-    >
-      {numSelected > 0 ? (
-        <Typography component="div" variant="subtitle1">
-          {numSelected} selected
-        </Typography>
-      ) : (
-        <SearchStyle
-          value={filterName}
-          onChange={onFilterName}
-          placeholder="Search user..."
-          startAdornment={
-            <InputAdornment position="start">
-              <Box
-                component={Icon}
-                icon={searchFill}
-                sx={{ color: "text.disabled" }}
-              />
-            </InputAdornment>
-          }
-        />
-      )}
-
-      {numSelected > 0 ? (
-        <Tooltip title="Delete">
-          <IconButton>
-            <Icon icon={trash2Fill} />
-          </IconButton>
-        </Tooltip>
-      ) : (
-        <Tooltip title="Filter list">
-          <IconButton>
-            <Icon icon={roundFilterList} />
-          </IconButton>
-        </Tooltip>
-      )}
+    <RootStyle>
+      <SearchStyle
+        value={filterName}
+        onChange={onFilterName}
+        placeholder="Search name..."
+        startAdornment={
+          <InputAdornment position="start">
+            <Box
+              component={Icon}
+              icon={searchFill}
+              sx={{ color: "text.disabled" }}
+            />
+          </InputAdornment>
+        }
+      />
     </RootStyle>
   );
 }

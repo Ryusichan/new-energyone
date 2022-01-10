@@ -11,14 +11,12 @@ import {
 // ----------------------------------------------------------------------
 
 interface Props {
-  order: any,
-  orderBy: any,
-  rowCount: number,
-  headLabel: any[],
-  numSelected: number,
-  onRequestSort: (event: any, property: string) => void,
-  onSelectAllClick?: (event: any) => void,
-};
+  order: any;
+  orderBy: any;
+  headLabel: any[];
+  onRequestSort: (event: any, property: string) => void;
+  onSelectAllClick?: (event: any) => void;
+}
 
 export default function AccumulatedTimeHead({
   order,
@@ -26,8 +24,9 @@ export default function AccumulatedTimeHead({
   headLabel,
   onRequestSort,
 }: Props) {
-  const createSortHandler = (property : any) => (event: any) => {
+  const createSortHandler = (property: any) => (event: any) => {
     onRequestSort(event, property);
+    console.log("onRequestSort", event, property);
   };
 
   return (

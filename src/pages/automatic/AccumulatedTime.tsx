@@ -25,12 +25,18 @@ import {
 //
 import accumulTime from "../../_mocks_/accumulTime";
 
+import { isMobile } from "react-device-detect";
+
 const TABLE_HEAD = [
   { id: "number", label: "번호", alignRight: false },
   { id: "caption", label: "분류", alignRight: false },
   { id: "name", label: "이름", alignRight: false },
   { id: "accumulateTime", label: "가동누적시간", alignRight: false },
-  { id: "" },
+];
+
+const TABLE_MOBILE_HEAD = [
+  { id: "name", label: "이름", alignRight: false },
+  { id: "accumulateTime", label: "가동누적시간", alignRight: false },
 ];
 
 const descendingComparator = (a: any, b: any, orderBy: any) => {
@@ -72,7 +78,7 @@ export default function AccumulatedTime() {
   const [selected, setSelected] = useState<any>([]);
   const [orderBy, setOrderBy] = useState<string>("number");
   const [filterName, setFilterName] = useState<string>("");
-  const [rowsPerPage, setRowsPerPage] = useState<number>(5);
+  const [rowsPerPage, setRowsPerPage] = useState<number>(10);
 
   const handleRequestSort = (event: any, property: any) => {
     const isAsc = orderBy === property && order === "asc";
@@ -120,18 +126,15 @@ export default function AccumulatedTime() {
 
         <Card>
           <AccumulatedTimeToolbar
-            numSelected={selected.length}
             filterName={filterName}
             onFilterName={handleFilterByName}
           />
-          <TableContainer sx={{ minWidth: 800 }}>
+          <TableContainer>
             <Table>
               <AccumulatedTimeHead
                 order={order}
                 orderBy={orderBy}
-                headLabel={TABLE_HEAD}
-                rowCount={accumulTime.length}
-                numSelected={selected.length}
+                headLabel={isMobile ? TABLE_MOBILE_HEAD : TABLE_HEAD}
                 onRequestSort={handleRequestSort}
               />
               <TableBody>
@@ -150,9 +153,13 @@ export default function AccumulatedTime() {
                         selected={isItemSelected}
                         aria-checked={isItemSelected}
                       >
-                        <TableCell align="left">{number}</TableCell>
+                        {isMobile ? undefined : (
+                          <TableCell align="left">{number}</TableCell>
+                        )}
 
-                        <TableCell align="left">{caption}</TableCell>
+                        {isMobile ? undefined : (
+                          <TableCell align="left">{caption}</TableCell>
+                        )}
 
                         <TableCell component="th" scope="row" padding="none">
                           <Stack
@@ -168,9 +175,9 @@ export default function AccumulatedTime() {
                         </TableCell>
                         <TableCell align="left">{accumulatedTime}</TableCell>
 
-                        <TableCell align="right">
+                        {/* <TableCell align="right">
                           <AccumulatedTimeMenu />
-                        </TableCell>
+                        </TableCell> */}
                       </TableRow>
                     );
                   })}
