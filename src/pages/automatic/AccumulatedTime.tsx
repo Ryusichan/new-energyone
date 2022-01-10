@@ -129,8 +129,8 @@ export default function AccumulatedTime() {
             filterName={filterName}
             onFilterName={handleFilterByName}
           />
-          <TableContainer>
-            <Table>
+          <TableContainer sx={{ maxHeight: "54vh" }}>
+            <Table stickyHeader>
               <AccumulatedTimeHead
                 order={order}
                 orderBy={orderBy}
@@ -139,7 +139,7 @@ export default function AccumulatedTime() {
               />
               <TableBody>
                 {filteredUsers
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  // .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row: any) => {
                     const { id, name, number, accumulatedTime, caption } = row;
                     const isItemSelected = selected.indexOf(name) !== -1;
@@ -199,7 +199,7 @@ export default function AccumulatedTime() {
             </Table>
           </TableContainer>
 
-          <TablePagination
+          {/* <TablePagination
             rowsPerPageOptions={[5, 10, 25]}
             component="div"
             count={accumulTime.length}
@@ -207,7 +207,7 @@ export default function AccumulatedTime() {
             page={page}
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
-          />
+          /> */}
         </Card>
       </Container>
     </div>
