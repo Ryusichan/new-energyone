@@ -25,10 +25,10 @@ const GridBox = styled(Grid)(({ theme }) => ({
 const AutomaticDrive = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
 
-  const handleOpenModal = (name: string, value: boolean) => {
-    setOpenModal(true);
-    console.log(name, value);
-  };
+  // const handleOpenModal = (name: string, value: boolean) => {
+  //   setOpenModal(true);
+  //   console.log(name, value);
+  // };
 
   const handleCloseModal = () => {
     setOpenModal(false);

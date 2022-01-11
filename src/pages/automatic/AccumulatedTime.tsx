@@ -13,14 +13,12 @@ import {
   Container,
   Typography,
   TableContainer,
-  TablePagination,
 } from "@mui/material";
 // components
 import SearchNotFound from "../../components/SearchNotFound";
 import {
   AccumulatedTimeHead,
   AccumulatedTimeToolbar,
-  AccumulatedTimeMenu,
 } from "../../components/_dashboard/accumulatedtime";
 //
 import accumulTime from "../../_mocks_/accumulTime";
@@ -84,15 +82,6 @@ export default function AccumulatedTime() {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
-  };
-
-  const handleChangePage = (event: any, newPage: any) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event: any) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
   };
 
   const handleFilterByName = (event: any) => {
@@ -198,16 +187,6 @@ export default function AccumulatedTime() {
               )}
             </Table>
           </TableContainer>
-
-          {/* <TablePagination
-            rowsPerPageOptions={[5, 10, 25]}
-            component="div"
-            count={accumulTime.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          /> */}
         </Card>
       </Container>
     </div>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
 import {
   NavLink as RouterLink,
@@ -56,9 +55,9 @@ const ListItemIconStyle = styled(ListItemIcon)({
 // ----------------------------------------------------------------------
 
 interface ItemProps {
-  item: any,
-  active: any,
-};
+  item: any;
+  active: any;
+}
 
 function NavItem({ item, active }: ItemProps) {
   const theme = useTheme();
@@ -106,7 +105,7 @@ function NavItem({ item, active }: ItemProps) {
 
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {children.map((item : any) => {
+            {children.map((item: any) => {
               const { title, path } = item;
               const isActiveSub = active(path);
 
@@ -165,12 +164,12 @@ function NavItem({ item, active }: ItemProps) {
 }
 
 interface SelectProps {
-  navConfig: any[],
-};
+  navConfig: any[];
+}
 
 export default function NavSection({ navConfig, ...other }: SelectProps) {
   const { pathname } = useLocation();
-  const match = (path : any) =>
+  const match = (path: any) =>
     path ? !!matchPath({ path, end: false }, pathname) : false;
 
   return (

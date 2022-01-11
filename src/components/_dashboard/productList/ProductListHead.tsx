@@ -11,14 +11,6 @@ import {
 
 // ----------------------------------------------------------------------
 
-UserListHead.propTypes = {
-  order: PropTypes.oneOf(["asc", "desc"]),
-  orderBy: PropTypes.string,
-  rowCount: PropTypes.number,
-  headLabel: PropTypes.array,
-  onRequestSort: PropTypes.func,
-};
-
 interface Props {
   order: any;
   orderBy: string;

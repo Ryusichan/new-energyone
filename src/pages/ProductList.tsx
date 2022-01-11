@@ -181,7 +181,9 @@ export default function ProductList() {
 
                           <TableCell align="left">{contractdate}</TableCell>
 
-                          <TableCell align="left">{accumulatedTime}</TableCell>
+                          <TableCell align="left">
+                            {accumulatedTime} DAY
+                          </TableCell>
 
                           <TableCell align="left">{tankLevel}%</TableCell>
 
