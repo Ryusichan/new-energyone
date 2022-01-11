@@ -56,11 +56,11 @@ const LevelText = styled(Typography)(({ theme }) => ({
 
 const Water01 = styled("div", {
   shouldForwardProp: (prop) => prop !== "color" && prop !== "myProp",
-})<{ tankLevel: number }>(({ theme, tankLevel }) => ({
+})<{ tanklevel: number }>(({ theme, tanklevel }) => ({
   width: "1000px",
   height: "1000px",
   position: "absolute",
-  top: `-${tankLevel + 110}%`,
+  top: `-${tanklevel + 110}%`,
   left: `-100%`,
   borderRadius: "45%",
   background: "rgba(3,169,244,0.8)",
@@ -73,11 +73,11 @@ const Water01 = styled("div", {
 
 const Water02 = styled("div", {
   shouldForwardProp: (prop) => prop !== "color" && prop !== "myProp",
-})<{ tankLevel: number }>(({ theme, tankLevel }) => ({
+})<{ tanklevel: number }>(({ theme, tanklevel }) => ({
   width: "1100px",
   height: "1100px",
   position: "absolute",
-  top: `-${tankLevel + 140}%`,
+  top: `-${tanklevel + 140}%`,
   left: "-110%",
   borderRadius: "45%",
   background: " #fff",
@@ -101,8 +101,8 @@ const AutoTankLevel = () => {
       <Typography variant="h6">저장탱크수위</Typography>
       <WaterBox>
         <WaterWrapper>
-          <Water01 tankLevel={tankLevel} />
-          <Water02 tankLevel={tankLevel} />
+          <Water01 tanklevel={tankLevel} />
+          <Water02 tanklevel={tankLevel} />
         </WaterWrapper>
       </WaterBox>
       <LevelText variant="h3">

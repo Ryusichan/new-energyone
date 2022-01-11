@@ -31,7 +31,7 @@ const TimeBseperator = () => {
       <Typography variant="h6">B 고액분리기</Typography>
       {isMobile ? (
         timeBseperatorArray.map((data) => (
-          <ListItem>
+          <ListItem key={data.id}>
             <ListItemText primary={data.name} />
             <ToggleButtonGroup
               // onChange={handleToggle}

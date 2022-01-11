@@ -144,7 +144,7 @@ const users = [...Array(19)].map((_, index) => ({
   name: Products[index].name,
   number: index + 1,
   contractdate: Products[index].date,
-  AccumulatedTime: Products[index].lateTime,
+  accumulatedTime: Products[index].lateTime,
   tankLevel: Products[index].level,
 }));
 

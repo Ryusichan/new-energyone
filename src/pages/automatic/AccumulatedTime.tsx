@@ -31,12 +31,12 @@ const TABLE_HEAD = [
   { id: "number", label: "번호", alignRight: false },
   { id: "caption", label: "분류", alignRight: false },
   { id: "name", label: "이름", alignRight: false },
-  { id: "accumulateTime", label: "가동누적시간", alignRight: false },
+  { id: "accumulatedTime", label: "가동누적시간", alignRight: false },
 ];
 
 const TABLE_MOBILE_HEAD = [
   { id: "name", label: "이름", alignRight: false },
-  { id: "accumulateTime", label: "가동누적시간", alignRight: false },
+  { id: "accumulatedTime", label: "가동누적시간", alignRight: false },
 ];
 
 const descendingComparator = (a: any, b: any, orderBy: any) => {

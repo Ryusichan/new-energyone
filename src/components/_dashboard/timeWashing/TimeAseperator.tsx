@@ -31,7 +31,7 @@ const TimeAseperator = () => {
       <Typography variant="h6">A 고액분리기</Typography>
       {isMobile ? (
         timeAseperatorArray.map((data) => (
-          <ListItem>
+          <ListItem key={data.id}>
             <ListItemText primary={data.name} />
 
             <ToggleButtonGroup

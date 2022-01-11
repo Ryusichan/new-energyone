@@ -31,7 +31,7 @@ const AutoFermenTation = () => {
       <Typography variant="h6">발효건조기</Typography>
       {isMobile ? (
         autoFermenTation.map((data) => (
-          <ListItem>
+          <ListItem key={data.id}>
             <ListItemText primary={data.name} />
 
             <ToggleButtonGroup

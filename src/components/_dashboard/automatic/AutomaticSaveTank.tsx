@@ -30,7 +30,7 @@ const AutomaticSaveTank = () => {
       <Typography variant="h6">저장탱크</Typography>
       {isMobile ? (
         autoSaveTank.map((data) => (
-          <ListItem>
+          <ListItem key={data.id}>
             <ListItemText primary={data.name} />
 
             <ToggleButtonGroup

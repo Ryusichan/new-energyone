@@ -31,8 +31,8 @@ const TABLE_HEAD = [
   { id: "location", label: "지역", alignRight: false },
   { id: "name", label: "이름", alignRight: false },
   { id: "contractdate", label: "계약일시", alignRight: false },
-  { id: "accumulateTime", label: "가동누적시간", alignRight: false },
-  { id: "tankLavel", label: "저장탱크수위", alignRight: false },
+  { id: "accumulatedTime", label: "가동누적시간", alignRight: false },
+  { id: "tankLevel", label: "저장탱크수위", alignRight: false },
 ];
 
 const ProductionLayout = styled("div")(({ theme }: any) => ({
@@ -154,7 +154,7 @@ export default function ProductList() {
                         name,
                         number,
                         contractdate,
-                        AccumulatedTime,
+                        accumulatedTime,
                         tankLevel,
                       } = row;
 
@@ -181,7 +181,7 @@ export default function ProductList() {
 
                           <TableCell align="left">{contractdate}</TableCell>
 
-                          <TableCell align="left">{AccumulatedTime}</TableCell>
+                          <TableCell align="left">{accumulatedTime}</TableCell>
 
                           <TableCell align="left">{tankLevel}%</TableCell>
 
