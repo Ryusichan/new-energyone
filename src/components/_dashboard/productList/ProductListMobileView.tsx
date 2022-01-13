@@ -68,6 +68,10 @@ const TankValueText = styled("span")(({ theme }: any) => ({
   color: theme.palette.grey[600],
 }));
 
+const ListItemTextSecond = styled("span")(({ theme }: any) => ({
+  fontSize: "12px",
+}));
+
 const ProductListMobileView = () => {
   const navigate = useNavigate();
   const moveProduct = (id: string) => {
@@ -88,7 +92,9 @@ const ProductListMobileView = () => {
             </ListItemAvatar>
             <ListItemText
               primary={product.name}
-              secondary={product.contractdate}
+              secondary={
+                <ListItemTextSecond>{product.contractdate}</ListItemTextSecond>
+              }
             />
             <ListItemSecondaryAction>
               <TankLevelBox>
