@@ -31,6 +31,7 @@ const TankLevelBox = styled("span")(({ theme }: any) => ({
   width: "100px",
   height: "100%",
   position: "relative",
+  marginTop: "6px",
 }));
 
 const TankLevelBg = styled("span")(({ theme }: any) => ({
@@ -51,10 +52,10 @@ const TankLevelValue = styled("span")<{ tanklevel: number }>(
 
 const TankValueText = styled("span")(({ theme }: any) => ({
   position: "absolute",
-  top: "-15px",
+  top: "-17px",
   left: "50%",
   transform: "translateX(-50%)",
-  fontSize: "11px",
+  fontSize: "12px",
   color: theme.palette.grey[600],
 }));
 
