@@ -31,6 +31,11 @@ const GridBox = styled(Grid)(({ theme }) => ({
   borderRadius: 12,
 }));
 
+const UnitValue = styled("span")(({ theme }) => ({
+  width: '18px',
+  textAlign: 'right',
+}));
+
 const FermenDetail01 = () => {
   const fermentDetail01Array = useSelector(
     (state: RootState) => state.fermentDryState.fermentDetail01
@@ -96,7 +101,7 @@ const DetailSetting = ({ name, value, unit }: Props) => {
           onKeyPress={handleKeyPress}
           type="number"
         />
-        {unit}
+        <UnitValue>{unit}</UnitValue>
       </ListItem>
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle id="modal-modal-title">{name}</DialogTitle>

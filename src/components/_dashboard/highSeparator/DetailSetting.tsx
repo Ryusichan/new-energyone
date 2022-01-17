@@ -11,6 +11,7 @@ import {
   Button,
 } from "@mui/material";
 import React, { useState } from "react";
+import { styled } from "@mui/material/styles";
 
 import { RootState } from "../../../store/store";
 import { useSelector } from "react-redux";
@@ -22,6 +23,11 @@ const innerValueStyle = {
   borderRadius: "4px",
   color: "#fff",
 };
+
+const UnitValue = styled("span")(({ theme }) => ({
+  width: '18px',
+  textAlign: 'right',
+}));
 
 const WarpDetailSet = () => {
   const highDetailArray = useSelector(
@@ -44,7 +50,7 @@ const WarpDetailSet = () => {
             sx={{ maxWidth: 54, marginRight: 1 }}
             type="number"
           />
-          {autoTankLevel.unit}
+          <UnitValue>{autoTankLevel.unit}</UnitValue>
         </ListItem>
         {highDetailArray.map((data) => (
           <DetailSetting
@@ -102,7 +108,7 @@ const DetailSetting = ({ name, value, unit }: Props) => {
           onKeyPress={handleKeyPress}
           type="number"
         />
-        {unit}
+        <UnitValue>{unit}</UnitValue>
       </ListItem>
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle id="modal-modal-title">{name}</DialogTitle>

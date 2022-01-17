@@ -31,6 +31,11 @@ const GridBox = styled(Grid)(({ theme }) => ({
   borderRadius: 12,
 }));
 
+const UnitValue = styled("span")(({ theme }) => ({
+  width: '18px',
+  textAlign: 'right',
+}));
+
 const TimeWashSet = () => {
   const timeWashsetArray = useSelector(
     (state: RootState) => state.timeWashState.timeWashTimeSet
@@ -96,7 +101,7 @@ const DetailSetting = ({ name, value, unit }: Props) => {
           onKeyPress={handleKeyPress}
           type="number"
         />
-        {unit}
+        <UnitValue>{unit}</UnitValue>
       </ListItem>
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle id="modal-modal-title">{name}</DialogTitle>

@@ -12,6 +12,8 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
+import { styled } from "@mui/material/styles";
+
 import { RootState } from "../../../store/store";
 import { useSelector } from "react-redux";
 
@@ -22,6 +24,11 @@ const innerValueStyle = {
   borderRadius: "4px",
   color: "#fff",
 };
+
+const UnitValue = styled("span")(({ theme }) => ({
+  width: '24px',
+  textAlign: 'right',
+}));
 
 const WarpHzSetting = () => {
   const highHzArray = useSelector(
@@ -87,7 +94,7 @@ const HzSetting = ({ name, value, unit }: Props) => {
           onKeyPress={handleKeyPress}
           type="number"
         />
-        {unit}
+        <UnitValue>{unit}</UnitValue>
       </ListItem>
       <Dialog open={openModal} onClose={handleCloseModal}>
         <DialogTitle id="modal-modal-title">{name}</DialogTitle>
