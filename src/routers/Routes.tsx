@@ -21,6 +21,7 @@ import Login from "../pages/Login";
 import ProductList from "../pages/ProductList";
 import NotFound from "../pages/NotFound";
 import SnackbarMsg from "../components/global/SnackbarMsg";
+import DialogModal from "../components/global/DialogModal";
 
 // ----------------------------------------------------------------------
 
@@ -77,6 +78,7 @@ const AppWrapper = () => {
     <BrowserRouter>
       <Router />
       <SnackbarMsg />
+      <DialogModal />
     </BrowserRouter>
   );
 };

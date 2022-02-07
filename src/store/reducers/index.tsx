@@ -11,6 +11,7 @@ import fermentDryState from "./fermentDryState";
 import intergratedPowerState from "./intergratedPowerState";
 
 import snackbarSlice from "./snackBarSlice";
+import dialogSlice from "./dialogSlice";
 
 const rootReducer = combineReducers({
   // state 관리
@@ -36,6 +37,8 @@ const rootReducer = combineReducers({
 
   //snack bar
   snackbar: snackbarSlice.reducer,
+  //dialog
+  dialog: dialogSlice.reducer,
 });
 
 export default rootReducer;

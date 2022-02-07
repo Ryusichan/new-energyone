@@ -15,6 +15,7 @@ import { styled } from "@mui/material/styles";
 import { useDispatch } from "react-redux";
 
 import aSeperatorState from "../../../store/reducers/aSeperatorState";
+import dialogSlice from "../../../store/reducers/dialogSlice";
 
 const GridBox = styled(Grid)(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -48,12 +49,27 @@ const AutomaticDrive = () => {
   //   (state: RootState) => state.aSeperatorState.ahighSeparator
   // );
 
-  const setStateautoDetailState = (name: string, value: boolean) => {
+  const setStateautoDetailState = (
+    name: string,
+    type: string,
+    value: boolean
+  ) => {
     let newValue = !value;
     // setTimeout(() => {
     //   console.log(  "보내기전 값", name, newValue);
     // }, 1000);
-    dispatch(aSeperatorState.actions.setToggleSelect({ name, newValue }));
+    dispatch(aSeperatorState.actions.setToggleSelect({ type, newValue }));
+    //dialog form
+    dispatch(
+      dialogSlice.actions.setDialogInfo({
+        dialogOpen: true,
+        dialogTitle: name,
+        dialogMessage: `${name}를 ${
+          newValue ? "가동" : "정지"
+        } 상태로 변경하겠습니까?`,
+        dialogType: "passwordConfirm",
+      })
+    );
   };
 
   const sysTem = [
@@ -73,7 +89,7 @@ const AutomaticDrive = () => {
               color={systemValue ? "primary" : "inherit"}
               fullWidth
               // onClick={() => handleOpenModal("highSeparatorState", systemValue)}
-              onClick={() => setStateautoDetailState(type, systemValue)}
+              onClick={() => setStateautoDetailState(name, type, systemValue)}
               sx={{ ml: 1, mr: 1 }}
             >
               {name}

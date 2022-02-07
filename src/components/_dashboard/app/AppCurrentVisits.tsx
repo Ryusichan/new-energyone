@@ -38,12 +38,7 @@ export default function AppCurrentVisits() {
   const theme = useTheme();
 
   const chartOptions = merge(BaseOptionChart(), {
-    colors: [
-      theme.palette.primary.main,
-      theme.palette.info.main,
-      theme.palette.warning.main,
-      theme.palette.error.main,
-    ],
+    colors: ["#2196f3", "#673ab7", "#FFC107", "#FF4842"],
     labels: [
       "발효건조기 교반기 역회전 ON",
       "B배수 PUMP ON",
