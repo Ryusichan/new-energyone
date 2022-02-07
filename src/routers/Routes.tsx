@@ -20,6 +20,7 @@ import ManagerHistory from "../pages/manager/ManagerHistory";
 import Login from "../pages/Login";
 import ProductList from "../pages/ProductList";
 import NotFound from "../pages/NotFound";
+import SnackbarMsg from "../components/global/SnackbarMsg";
 
 // ----------------------------------------------------------------------
 
@@ -75,6 +76,7 @@ const AppWrapper = () => {
   return (
     <BrowserRouter>
       <Router />
+      <SnackbarMsg />
     </BrowserRouter>
   );
 };

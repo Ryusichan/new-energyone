@@ -10,12 +10,26 @@ import {
 import React, { useState } from "react";
 
 import { RootState } from "../../../store/store";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import snackBarSlice from "../../../store/reducers/snackBarSlice";
 
 const WarpMainSetting = () => {
+  const dispatch = useDispatch();
+
   const highMainArray = useSelector(
     (state: RootState) => state.highSeperatorDetailState.highSeperatorMain
   );
+
+  const handlePush = () => {
+    //snackbarTest
+    dispatch(
+      snackBarSlice.actions.setSnackbarInfo({
+        snackbarOpen: true,
+        snackbarMessage: "저장탱크 배출이 완료되었습니다.",
+        snackbarType: "success",
+      })
+    );
+  };
 
   return (
     <>
@@ -26,7 +40,13 @@ const WarpMainSetting = () => {
         ))}
         <ListItem sx={{ flexDirection: "column", alignItems: "start" }}>
           <ListItemText primary="강제배출" />
-          <Button color="primary" variant="contained" fullWidth sx={{ mt: 2 }}>
+          <Button
+            color="primary"
+            variant="contained"
+            fullWidth
+            sx={{ mt: 2 }}
+            onClick={handlePush}
+          >
             배출하기
           </Button>
         </ListItem>

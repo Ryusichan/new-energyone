@@ -75,25 +75,25 @@ const SECONDARY: Color = {
   contrastText: "#fff",
 };
 const INFO: Color = {
-  lighter: "#ede7f6",
-  light: "#b39ddb",
-  main: "#673ab7",
-  dark: "#5e35b1",
-  darker: "#4527a0",
+  lighter: GREY[300],
+  light: GREY[500],
+  main: GREY[700],
+  dark: GREY[800],
+  darker: GREY[900],
   contrastText: "#fff",
 };
 const SUCCESS: Color = {
-  lighter: "#E9FCD4",
-  light: "#AAF27F",
-  main: "#54D62C",
-  dark: "#229A16",
-  darker: "#08660D",
-  contrastText: GREY[800],
+  lighter: "#e3f2fd",
+  light: "#90caf9",
+  main: "#2196f3",
+  dark: "#1e88e5",
+  darker: "#1565c0",
+  contrastText: "#fff",
 };
 const WARNING: Color = {
   lighter: "#FFF7CD",
   light: "#FFE16A",
-  main: "#FFC107",
+  main: "#ed6c02",
   dark: "#B78103",
   darker: "#7A4F01",
   contrastText: GREY[800],
@@ -101,7 +101,7 @@ const WARNING: Color = {
 const ERROR: Color = {
   lighter: "#FFE7D9",
   light: "#FFA48D",
-  main: "#FF4842",
+  main: "#d32f2f",
   dark: "#B72136",
   darker: "#7A0C2E",
   contrastText: "#fff",
