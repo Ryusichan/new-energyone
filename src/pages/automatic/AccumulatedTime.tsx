@@ -71,12 +71,12 @@ const applySortFilter = (array: any, comparator: any, query: any) => {
 };
 
 export default function AccumulatedTime() {
-  const [page, setPage] = useState<number>(0);
+  // const [page, setPage] = useState<number>(0);
   const [order, setOrder] = useState<string>("asc");
-  const [selected, setSelected] = useState<any>([]);
+  // const [selected, setSelected] = useState<any>([]);
   const [orderBy, setOrderBy] = useState<string>("number");
   const [filterName, setFilterName] = useState<string>("");
-  const [rowsPerPage, setRowsPerPage] = useState<number>(10);
+  // const [rowsPerPage, setRowsPerPage] = useState<number>(10);
 
   const handleRequestSort = (event: any, property: any) => {
     const isAsc = orderBy === property && order === "asc";
@@ -88,8 +88,7 @@ export default function AccumulatedTime() {
     setFilterName(event.target.value);
   };
 
-  const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - accumulTime.length) : 0;
+  const emptyRows = accumulTime.length;
 
   const filteredUsers = applySortFilter(
     accumulTime,
@@ -127,49 +126,39 @@ export default function AccumulatedTime() {
                 onRequestSort={handleRequestSort}
               />
               <TableBody>
-                {filteredUsers
-                  // .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row: any) => {
-                    const { id, name, number, accumulatedTime, caption } = row;
-                    const isItemSelected = selected.indexOf(name) !== -1;
+                {filteredUsers.map((row: any) => {
+                  const { id, name, number, accumulatedTime, caption } = row;
 
-                    return (
-                      <TableRow
-                        hover
-                        key={id}
-                        tabIndex={-1}
-                        role="checkbox"
-                        selected={isItemSelected}
-                        aria-checked={isItemSelected}
-                      >
-                        {isMobile ? undefined : (
-                          <TableCell align="left">{number}</TableCell>
-                        )}
+                  return (
+                    <TableRow hover key={id} tabIndex={-1} role="checkbox">
+                      {isMobile ? undefined : (
+                        <TableCell align="left">{number}</TableCell>
+                      )}
 
-                        {isMobile ? undefined : (
-                          <TableCell align="left">{caption}</TableCell>
-                        )}
+                      {isMobile ? undefined : (
+                        <TableCell align="left">{caption}</TableCell>
+                      )}
 
-                        <TableCell component="th" scope="row" padding="none">
-                          <Stack
-                            direction="row"
-                            alignItems="center"
-                            spacing={2}
-                            sx={{ pl: 2 }}
-                          >
-                            <Typography variant="subtitle2" noWrap>
-                              {name}
-                            </Typography>
-                          </Stack>
-                        </TableCell>
-                        <TableCell align="left">{accumulatedTime}</TableCell>
+                      <TableCell component="th" scope="row" padding="none">
+                        <Stack
+                          direction="row"
+                          alignItems="center"
+                          spacing={2}
+                          sx={{ pl: 2 }}
+                        >
+                          <Typography variant="subtitle2" noWrap>
+                            {name}
+                          </Typography>
+                        </Stack>
+                      </TableCell>
+                      <TableCell align="left">{accumulatedTime}</TableCell>
 
-                        {/* <TableCell align="right">
+                      {/* <TableCell align="right">
                           <AccumulatedTimeMenu />
                         </TableCell> */}
-                      </TableRow>
-                    );
-                  })}
+                    </TableRow>
+                  );
+                })}
                 {emptyRows > 0 && (
                   <TableRow style={{ height: 53 * emptyRows }}>
                     <TableCell colSpan={6} />

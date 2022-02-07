@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 // material
 import { visuallyHidden } from "@mui/utils";
 import {
