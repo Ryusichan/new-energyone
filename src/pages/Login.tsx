@@ -41,7 +41,7 @@ const ContainerStyle = styled(Container)(({ theme }) => ({
 const Login = () => {
   return (
     <RootStyle title="Login">
-      <AuthLayout>
+      {/* <AuthLayout>
         Don’t have an account? &nbsp;
         <Link
           underline="none"
@@ -51,7 +51,7 @@ const Login = () => {
         >
           Get started
         </Link>
-      </AuthLayout>
+      </AuthLayout> */}
 
       <LoginBgContainer />
 
@@ -66,14 +66,14 @@ const Login = () => {
 
           <LoginForm />
 
-          <MHidden width="smUp">
+          {/* <MHidden width="smUp">
             <Typography variant="body2" align="center" sx={{ mt: 3 }}>
               Don’t have an account?&nbsp;
               <Link variant="subtitle2" component={RouterLink} to="register">
                 Get started
               </Link>
             </Typography>
-          </MHidden>
+          </MHidden> */}
         </ContentStyle>
       </ContainerStyle>
     </RootStyle>
