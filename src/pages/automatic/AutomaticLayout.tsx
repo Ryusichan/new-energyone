@@ -25,7 +25,7 @@ const AutomaticLayout = () => {
       <Container maxWidth="xl">
         <Box>
           <Typography variant="h4" sx={{ mb: 5 }}>
-            자동운전화면1
+            자동운전화면
           </Typography>
         </Box>
         <Grid container spacing={4}>
