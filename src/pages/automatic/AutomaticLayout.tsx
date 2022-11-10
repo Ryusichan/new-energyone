@@ -1,11 +1,6 @@
 import React from "react";
 // material
-import {
-  Box,
-  Grid,
-  Container,
-  Typography,
-} from "@mui/material";
+import { Box, Grid, Container, Typography } from "@mui/material";
 
 // import { styled } from "@mui/material/styles";
 
@@ -30,7 +25,7 @@ const AutomaticLayout = () => {
       <Container maxWidth="xl">
         <Box>
           <Typography variant="h4" sx={{ mb: 5 }}>
-            자동운전화면
+            자동운전화면1
           </Typography>
         </Box>
         <Grid container spacing={4}>
